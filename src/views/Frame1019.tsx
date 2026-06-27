@@ -4,12 +4,8 @@ import { useState } from "react";
 import Checkbox from "@/components/Checkbox";
 import "@/styles/Frame1019.css";
 
-// 💡 1. 추가할 다른 화면 컴포넌트들을 불러옵니다.
-import Frame63357 from "./Frame63357"; // 타임라인
-import Frame63372 from "./Frame63372"; // 트래커
-
 const Frame1019 = () => {
-    // 🌟 2. 현재 선택된 메뉴 탭 상태를 저장하는 변수 (기본값: 체크리스트)
+    // 🌟 1. 메뉴 탭의 상태를 관리하는 변수 추가 (기본값: checklist)
     const [menuState, setMenuState] = useState("checklist");
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
@@ -32,7 +28,6 @@ const Frame1019 = () => {
     const [transitionConfig12_612, setTransitionConfig12_612] = useState({});
     const [transitionConfig12_601, setTransitionConfig12_601] = useState({});
     const [transitionConfig12_590, setTransitionConfig12_590] = useState({});
-    
     const transitionConfig: any = {
         "12:590_53:212_c": { transition: { duration: 0, ease: [0, 0, 1, 1] } }
     };
@@ -48,16 +43,6 @@ const Frame1019 = () => {
     const click_12_601 = () => { setCheckbox_state_12_601("checked"); };
     const click_12_590 = () => { setCheckbox_state_12_590("checked"); };
 
-    // 🌟 3. 메뉴 상태에 따른 조건부 화면 전환
-    // (다른 화면에서도 메뉴를 클릭할 수 있도록 setMenuState 함수를 넘겨줍니다)
-    if (menuState === "timeline") {
-        return <Frame63357 setMenuState={setMenuState} />;
-    }
-    if (menuState === "tracker") {
-        return <Frame63372 setMenuState={setMenuState} />;
-    }
-
-    // 🌟 기본 상태 (checklist) 일 때 보여질 원본 디자인
     return (
         <div className="scroll-container">
             <div id="10_19" className="Pixso-frame-10_19">
@@ -101,10 +86,13 @@ const Frame1019 = () => {
                         </div>
                     </div>
                 </div>
+                
+                {/* 🌟 2. 하드코딩 되어있던 "checklist" 대신, 동적으로 변하는 {menuState}를 넣어줍니다! */}
                 <Menutab
                     id="10_8"
                     className="Pixso-instance-10_8"
-                    menu_state="checklist"
+                    menu_state={menuState}
+                    
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
@@ -116,14 +104,14 @@ const Frame1019 = () => {
                     slot_92_5702={<div id="12_597" className="Pixso-vector-12_597"></div>}
                     slot_92_5692={<div id="12_586" className="Pixso-vector-12_586"></div>}
                     
-                    {/* 🌟 4. 마우스를 올리면 손가락 모양(pointer)이 되고, 누르면 화면이 바뀌는 onClick 추가! */}
+                    {/* 🌟 3. 버튼 글씨를 클릭했을 때 알맞은 상태로 변하도록 onClick을 연결합니다! */}
                     slot_9_37={
                         <p id="12_711" className="Pixso-paragraph-12_711" style={{ cursor: "pointer" }} onClick={() => setMenuState("tracker")}>
                             {"TRACKER"}
                         </p>
                     }
                     slot_9_35={
-                        <p id="12_709" className="Pixso-paragraph-12_709" style={{ cursor: "pointer" }} onClick={() => setMenuState("timeline")}>
+                        <p id="12_709" className="Pixso-paragraph-12_709" style={{ cursor: "pointer" }} onClick={() => setMenuState("daily_planner")}>
                             {"TIMELINE"}
                         </p>
                     }
@@ -132,7 +120,7 @@ const Frame1019 = () => {
                             {"CHECKLIST"}
                         </p>
                     }
-
+                    
                     slot_92_5800={
                         <Insertbutton
                             id="12_703"
@@ -140,9 +128,7 @@ const Frame1019 = () => {
                             insert_button_state={insert_button_state_12_703}
                             transitionConfig={transitionConfig12_703}
                             mouseover={mouseover_12_703}
-                            slot_53_245={
-                                <p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>
-                            }
+                            slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
                         ></Insertbutton>
                     }
                     slot_92_5799={<p id="12_702" className="Pixso-paragraph-12_702">{"REP"}</p>}
