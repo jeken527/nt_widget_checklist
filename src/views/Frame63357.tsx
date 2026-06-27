@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { getPathByGuid } from "@/router/routes";
 import { useState } from "react";
 import "@/styles/Frame63357.css";
-const Frame63357 = () => {
+const Frame63357 = ({ setMenuState }: { setMenuState: any }) => {
     const navigate = useNavigate();
     const [button3state_63_328, setButton3state_63_328] = useState("default");
     const [transitionConfig63_328, setTransitionConfig63_328] = useState({});
