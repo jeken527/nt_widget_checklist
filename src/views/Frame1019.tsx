@@ -5,7 +5,6 @@ import Checkbox from "@/components/Checkbox";
 import "@/styles/Frame1019.css";
 
 const Frame1019 = () => {
-    // 🌟 1. 메뉴 탭의 상태를 관리하는 변수 추가 (기본값: checklist)
     const [menuState, setMenuState] = useState("checklist");
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
@@ -87,12 +86,10 @@ const Frame1019 = () => {
                     </div>
                 </div>
                 
-                {/* 🌟 2. 하드코딩 되어있던 "checklist" 대신, 동적으로 변하는 {menuState}를 넣어줍니다! */}
                 <Menutab
                     id="10_8"
                     className="Pixso-instance-10_8"
                     menu_state={menuState}
-                    
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
@@ -103,8 +100,6 @@ const Frame1019 = () => {
                     slot_92_5712={<div id="12_608" className="Pixso-vector-12_608"></div>}
                     slot_92_5702={<div id="12_597" className="Pixso-vector-12_597"></div>}
                     slot_92_5692={<div id="12_586" className="Pixso-vector-12_586"></div>}
-                    
-                    {/* 🌟 3. 버튼 글씨를 클릭했을 때 알맞은 상태로 변하도록 onClick을 연결합니다! */}
                     slot_9_37={
                         <p id="12_711" className="Pixso-paragraph-12_711" style={{ cursor: "pointer" }} onClick={() => setMenuState("tracker")}>
                             {"TRACKER"}
@@ -120,7 +115,6 @@ const Frame1019 = () => {
                             {"CHECKLIST"}
                         </p>
                     }
-                    
                     slot_92_5800={
                         <Insertbutton
                             id="12_703"
