@@ -6,7 +6,7 @@ import { getPathByGuid } from "@/router/routes";
 import { useState } from "react";
 import Routinedataselect from "@/components/Routinedataselect";
 import "@/styles/Frame63372.css";
-const Frame63372 = () => {
+const Frame63372 = ({ setMenuState }: { setMenuState: any }) => {
     const navigate = useNavigate();
     const [button3state_63_376, setButton3state_63_376] = useState("default");
     const [routinedatastate_63_402, setRoutinedatastate_63_402] =
