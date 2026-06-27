@@ -1,0 +1,105 @@
+
+.Pixso-symbol-53_214 {
+        flex-shrink: 0;
+      }
+.Pixso-symbol-53_213 {
+        width: 18px;
+height: 18px;
+position: relative;
+background-color: transparent;
+mix-blend-mode: normal;
+      }
+.Pixso-rectangle-53_202 {
+        width: 100%;
+height: 100%;
+position: relative;
+box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1) ;
+background-color: rgba(255, 255, 255, 1);
+mix-blend-mode: normal;
+      }
+.stroke-wrapper-53_202 {
+        position: absolute;
+left: 0%;
+top: 0%;
+right: 0%;
+bottom: 0%;
+width: 100%;
+height: 100%;
+      }
+.stroke-53_202 {
+        position: absolute;
+inset: 0px;
+border-radius: 0px 0px 0px 0px;
+pointer-events: none;
+border-width: 1px 1px 1px 1px;
+border-style: dashed;
+box-sizing: border-box;
+border-color: rgba(0, 0, 0, 1);
+      }
+.Pixso-symbol-53_212 {
+        width: 100%;
+height: 100%;
+position: relative;
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: flex-start;
+padding: 2px 2px 2px 2px;
+background-color: rgba(255, 255, 255, 1);
+mix-blend-mode: normal;
+      }
+.stroke-wrapper-53_212 {
+        position: relative;
+width: 18px;
+height: 18px;
+display: flex;
+      }
+.stroke-53_212 {
+        position: absolute;
+inset: 0px;
+border-radius: 0px 0px 0px 0px;
+pointer-events: none;
+border-width: 0px 1px 1px 0px;
+border-style: dashed;
+box-sizing: border-box;
+border-color: rgba(0, 0, 0, 1);
+      }
+.shadow-blend-unknown-0 {
+        position: absolute;
+inset: 0;
+box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 1) inset;
+pointer-events: none;
+mix-blend-mode: normal;
+      }
+.Pixso-frame-53_206 {
+        width: 14px;
+height: 14px;
+position: relative;
+flex-shrink: 0;
+mix-blend-mode: normal;
+      }
+.Pixso-vector-53_207 {
+        width: 14.060546875px;
+height: 14.0606689453125px;
+background-image: url(@/assets/images/Line211.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: absolute;
+left: 0.5302734375px;
+top: 0.46966552734375px;
+      }
+.Pixso-vector-53_208 {
+        width: 14.060546875px;
+height: 14.0606689453125px;
+background-image: url(@/assets/images/Line31.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: absolute;
+left: 0.5302734375px;
+top: 0.53033447265625px;
+      }
+.component-53_214 {
+        width: fit-content;
+height: fit-content;
+      }
+
