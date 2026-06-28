@@ -3107,6 +3107,7 @@ const Menutab = (props: MenutabProps) => {
         value={planRoutine1}
         onChange={(e) => setPlanRoutine1(e.target.value)}
         placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8541"
         style={{
             width: "180px",
             height: "20px",
@@ -3122,6 +3123,7 @@ const Menutab = (props: MenutabProps) => {
             boxSizing: "border-box"
         }}
     />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3176,26 +3178,14 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8547">
                                                                             {slot_92_8548 ?? (
-                                                                               <input
-        type="text"
-        value={planRoutine2}
-        onChange={(e) => setPlanRoutine1(e.target.value)}
-        placeholder="TYPE HERE"
-        style={{
-            width: "180px",
-            height: "20px",
-            border: "none",
-            outline: "none",
-            background: "transparent",
-            fontFamily: "inherit",
-            fontSize: "12pt",
-            color: "inherit",
-            padding: 0,
-            margin: 0,
-            lineHeight: "normal",
-            boxSizing: "border-box"
-        }}
-    />
+                                                                                <p
+                                                                                    id="92_8548"
+                                                                                    className="Pixso-paragraph-92_8548"
+                                                                                >
+                                                                                    {
+                                                                                        "데이터 분석하기"
+                                                                                    }
+                                                                                </p>
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3250,26 +3240,14 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8554">
                                                                             {slot_92_8555 ?? (
-                                                                                <input
-        type="text"
-        value={planRoutine3}
-        onChange={(e) => setPlanRoutine1(e.target.value)}
-        placeholder="TYPE HERE"
-        style={{
-            width: "180px",
-            height: "20px",
-            border: "none",
-            outline: "none",
-            background: "transparent",
-            fontFamily: "inherit",
-            fontSize: "12pt",
-            color: "inherit",
-            padding: 0,
-            margin: 0,
-            lineHeight: "normal",
-            boxSizing: "border-box"
-        }}
-    />
+                                                                                <p
+                                                                                    id="92_8555"
+                                                                                    className="Pixso-paragraph-92_8555"
+                                                                                >
+                                                                                    {
+                                                                                        "폴더 정리 및 메일 확인"
+                                                                                    }
+                                                                                </p>
                                                                             )}
                                                                         </div>
                                                                     </div>
