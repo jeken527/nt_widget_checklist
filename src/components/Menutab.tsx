@@ -4325,7 +4325,7 @@ const Menutab = (props: MenutabProps) => {
     className="Pixso-span-92_8655_0_1" 
     style={{ 
         width: "360px",
-        height: "50px",
+        height: "45px",
         border: "none", 
         outline: "none", 
         background: "transparent", 
@@ -4548,7 +4548,7 @@ const Menutab = (props: MenutabProps) => {
     placeholder="SEARCH"
 	className="Pixso-paragraph-92_7328"
     style={{
-		width: "130px",
+		width: "140px",
 		height: "27px",
 		border: "none",
 		outline: "none",
