@@ -4557,7 +4557,9 @@ const Menutab = (props: MenutabProps) => {
 		margin: 0,
 		color: "inherit",
 		fontFamily: "inherit",
-		fontSize: "inherit" }} 
+		fontSize: "inherit",
+		wordBreak: 'break-all'
+	}} 
 />
                                                                         )}
                                                                     </div>
