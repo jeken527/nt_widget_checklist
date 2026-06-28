@@ -3116,7 +3116,7 @@ const Menutab = (props: MenutabProps) => {
             background: "transparent",
             fontFamily: "inherit",
             color: "inherit",
-            padding: 0,
+            padding: "10px",
             margin: 0,
             lineHeight: "normal",
             boxSizing: "border-box"
@@ -3177,14 +3177,27 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8547">
                                                                             {slot_92_8548 ?? (
-                                                                                <p
-                                                                                    id="92_8548"
-                                                                                    className="Pixso-paragraph-92_8548"
-                                                                                >
-                                                                                    {
-                                                                                        "데이터 분석하기"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine2}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8548"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3239,14 +3252,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8554">
                                                                             {slot_92_8555 ?? (
-                                                                                <p
-                                                                                    id="92_8555"
-                                                                                    className="Pixso-paragraph-92_8555"
-                                                                                >
-                                                                                    {
-                                                                                        "폴더 정리 및 메일 확인"
-                                                                                    }
-                                                                                </p>
+                                                                               <input
+        type="text"
+        value={planRoutine3}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8555"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3301,14 +3326,27 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8561">
                                                                             {slot_92_8562 ?? (
-                                                                                <p
-                                                                                    id="92_8562"
-                                                                                    className="Pixso-paragraph-92_8562"
-                                                                                >
-                                                                                    {
-                                                                                        "회의 안건 찾아보기"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine4}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8562"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3363,14 +3401,27 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8568">
                                                                             {slot_92_8569 ?? (
-                                                                                <p
-                                                                                    id="92_8569"
-                                                                                    className="Pixso-paragraph-92_8569"
-                                                                                >
-                                                                                    {
-                                                                                        "이슈 크롤링"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine5}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8569"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3425,14 +3476,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8575">
                                                                             {slot_92_8576 ?? (
-                                                                                <p
-                                                                                    id="92_8576"
-                                                                                    className="Pixso-paragraph-92_8576"
-                                                                                >
-                                                                                    {
-                                                                                        "회의록 작성하기"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine6}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8576"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3487,14 +3550,27 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8582">
                                                                             {slot_92_8583 ?? (
-                                                                                <p
-                                                                                    id="92_8583"
-                                                                                    className="Pixso-paragraph-92_8583"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine7}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8583"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3549,14 +3625,27 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8589">
                                                                             {slot_92_8590 ?? (
-                                                                                <p
-                                                                                    id="92_8590"
-                                                                                    className="Pixso-paragraph-92_8590"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine8}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8590"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3611,14 +3700,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8596">
                                                                             {slot_92_8597 ?? (
-                                                                                <p
-                                                                                    id="92_8597"
-                                                                                    className="Pixso-paragraph-92_8597"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine9}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8597"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3673,14 +3774,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8603">
                                                                             {slot_92_8604 ?? (
-                                                                                <p
-                                                                                    id="92_8604"
-                                                                                    className="Pixso-paragraph-92_8604"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine10}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8604"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3735,14 +3848,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8610">
                                                                             {slot_92_8611 ?? (
-                                                                                <p
-                                                                                    id="92_8611"
-                                                                                    className="Pixso-paragraph-92_8611"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                               <input
+        type="text"
+        value={planRoutine11}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8611"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3797,14 +3922,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8617">
                                                                             {slot_92_8618 ?? (
-                                                                                <p
-                                                                                    id="92_8618"
-                                                                                    className="Pixso-paragraph-92_8618"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine12}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8618"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3859,14 +3996,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8624">
                                                                             {slot_92_8625 ?? (
-                                                                                <p
-                                                                                    id="92_8625"
-                                                                                    className="Pixso-paragraph-92_8625"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                               <input
+        type="text"
+        value={planRoutine13}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8625"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3921,14 +4070,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8631">
                                                                             {slot_92_8632 ?? (
-                                                                                <p
-                                                                                    id="92_8632"
-                                                                                    className="Pixso-paragraph-92_8632"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                               <input
+        type="text"
+        value={planRoutine14}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8632"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3983,14 +4144,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8638">
                                                                             {slot_92_8639 ?? (
-                                                                                <p
-                                                                                    id="92_8639"
-                                                                                    className="Pixso-paragraph-92_8639"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine15}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8639"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -4045,14 +4218,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8645">
                                                                             {slot_92_8646 ?? (
-                                                                                <p
-                                                                                    id="92_8646"
-                                                                                    className="Pixso-paragraph-92_8646"
-                                                                                >
-                                                                                    {
-                                                                                        "DUMMY"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine16}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8646"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
