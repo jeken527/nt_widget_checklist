@@ -4124,14 +4124,6 @@ const Menutab = (props: MenutabProps) => {
         lineHeight: "normal" 
     }}
 />
-                                                                            <span
-                                                                                id="92_8655_0_2"
-                                                                                className="Pixso-span-92_8655_0_2"
-                                                                            >
-                                                                                {
-                                                                                    "."
-                                                                                }
-                                                                            </span>
                                                                         </p>
                                                                     </div>
                                                                 )}
