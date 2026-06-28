@@ -143,7 +143,7 @@ const Frame1019 = () => {
                             value={repInput} 
                             onChange={(e) => setRepInput(e.target.value)} 
                             placeholder="REP"
-                            className="Pixso-paragraph-12_702" /* 원래 피그마 폰트 스타일 부활! */
+                            className="Pixso-paragraph-12_702"
                             style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, textAlign: "center", color: "inherit" }}
                         />
                     }
@@ -153,7 +153,7 @@ const Frame1019 = () => {
                             value={descrbInput} 
                             onChange={(e) => setDescrbInput(e.target.value)} 
                             placeholder="DESCRB"
-                            className="Pixso-paragraph-12_700" /* 원래 피그마 폰트 스타일 부활! */
+                            className="Pixso-paragraph-12_700"
                             style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
                         />
                     }
@@ -163,7 +163,7 @@ const Frame1019 = () => {
                             value={priInput} 
                             onChange={(e) => setPriInput(e.target.value)} 
                             placeholder="PRI"
-                            className="Pixso-paragraph-12_698" /* 원래 피그마 폰트 스타일 부활! */
+                            className="Pixso-paragraph-12_698"
                             style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, textAlign: "center", color: "inherit" }}
                         />
                     }
