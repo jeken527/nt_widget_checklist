@@ -720,6 +720,7 @@ interface MenutabProps {
     slot_9_62?: React.ReactNode;
 }
 const Menutab = (props: MenutabProps) => {
+    const [searchInput, setSearchInput] = useState("");
     const {
         setMenuState,
         menu_state,
