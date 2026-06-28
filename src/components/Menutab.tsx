@@ -3115,7 +3115,6 @@ const Menutab = (props: MenutabProps) => {
             outline: "none",
             background: "transparent",
             fontFamily: "inherit",
-            fontSize: "12pt",
             color: "inherit",
             padding: 0,
             margin: 0,
