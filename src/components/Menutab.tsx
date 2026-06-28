@@ -4545,8 +4545,19 @@ const Menutab = (props: MenutabProps) => {
     type="text" 
     value={searchInput} 
     onChange={(e) => setSearchInput(e.target.value)} 
-    placeholder="SEARCH" 
-    style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit", fontFamily: "inherit", fontSize: "inherit" }} 
+    placeholder="SEARCH"
+	className="Pixso-paragraph-92_7328"
+    style={{
+		width: "150px",
+		height: "27px",
+		border: "none",
+		outline: "none",
+		background: "transparent",
+		padding: 0,
+		margin: 0,
+		color: "inherit",
+		fontFamily: "inherit",
+		fontSize: "inherit" }} 
 />
                                                                         )}
                                                                     </div>
