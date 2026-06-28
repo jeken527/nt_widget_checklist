@@ -738,6 +738,9 @@ const Menutab = (props: MenutabProps) => {
     const [planRoutine14, setPlanRoutine14] = useState("");
     const [planRoutine15, setPlanRoutine15] = useState("");
     const [planRoutine16, setPlanRoutine16] = useState("");
+	const today = new Date();
+	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
+	const currentYear = `${today.getFullYear()}`;
     const {
         setMenuState,
         menu_state,
@@ -1755,7 +1758,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                 className="Pixso-paragraph-92_5675"
                                                                             >
                                                                                 {
-                                                                                    "2026 - 06 - 24"
+                                                                                    currentDate
                                                                                 }
                                                                             </p>
                                                                         )}
@@ -2997,7 +3000,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                 className="Pixso-paragraph-92_8526"
                                                                             >
                                                                                 {
-                                                                                    "2026 - 06 - 24"
+                                                                                    currentDate
                                                                                 }
                                                                             </p>
                                                                         )}
@@ -4511,7 +4514,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                     className="Pixso-paragraph-92_7324"
                                                                                 >
                                                                                     {
-                                                                                        "2026"
+                                                                                        currentYear
                                                                                     }
                                                                                 </p>
                                                                             )}
