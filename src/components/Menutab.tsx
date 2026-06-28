@@ -4323,7 +4323,6 @@ const Menutab = (props: MenutabProps) => {
         value={reminderInput}
         onChange={(e) => setReminderInput(e.target.value)}
         placeholder="오늘의 한 줄"
-	className="Pixso-span-92_8655_0_1"
         style={{
             width: "380px",
             height: "60px",
