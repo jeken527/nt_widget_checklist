@@ -10,6 +10,27 @@ const Frame1019 = () => {
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
     const [repInput, setRepInput] = useState("");
+    const [routineList, setRoutineList] = useState<any[]>([]);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const handleInsertClick = () => {
+        if (priInput.trim() === "" && descrbInput.trim() === "" && repInput.trim() === "") {
+            setIsPopupOpen(true);
+            alert("CHECKLIST_POPUP 이 나타납니다!");
+        }
+        else if (priInput.trim() !== "" && descrbInput.trim() !== "" && repInput.trim() !== "") {
+            const newRoutine = {
+                id: Date.now(),
+                priority: priInput,
+                description: descrbInput,
+                repeat: repInput
+            };
+            setRoutineList([...routineList, newRoutine]);
+            
+            setPriInput("");
+            setDescrbInput("");
+            setRepInput("");
+        }
+    };
     const today = new Date();
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     const currentYear = `${today.getFullYear()}`;
@@ -128,6 +149,7 @@ const Frame1019 = () => {
                             id="12_703"
                             className="Pixso-instance-12_703"
                             insert_button_state={insert_button_state_12_703}
+                            click={handleInsertClick}
                             transitionConfig={transitionConfig12_703}
                             mouseover={mouseover_12_703}
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
@@ -295,6 +317,34 @@ const Frame1019 = () => {
                         </div>
                     }
                 ></Menutab>
+
+                {menuState === "checklist" && routineList.map((routine) => (
+                    <div key={routine.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '381px', height: '24px', position: 'absolute', left: '36px', top: `${310 + routineList.indexOf(routine) * 35}px`, zIndex: 10 }}>
+                        
+                        {/* PRI (우선순위 숫자) */}
+                        <p className="Pixso-paragraph-12_698" style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0 }}>
+                            {routine.priority}
+                        </p>
+
+                        {/* DESCRB (체크리스트 내용) */}
+                        <p className="Pixso-paragraph-12_700" style={{ flex: 1, paddingLeft: '15px', margin: 0, padding: 0, textAlign: 'left' }}>
+                            {routine.description}
+                        </p>
+
+                        {/* REP (반복 횟수 숫자) */}
+                        <p className="Pixso-paragraph-12_702" style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0 }}>
+                            {routine.repeat}
+                        </p>
+
+                        {/* 자동으로 추가되는 체크박스 부품 */}
+                        <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <Checkbox checkbox_state="default" />
+                        </div>
+
+                        {/* 자동으로 추가되는 밑줄 일러스트 (Line 2) */}
+                        <div className="Pixso-vector-12_681" style={{ position: 'absolute', bottom: '-4px', left: 0, width: '100%' }}></div>
+                    </div>
+                ))}
                 
                 <div id="6_15" className="Pixso-frame-6_15">
                     <div className="frame-content-6_15">
