@@ -5,6 +5,7 @@ import Serchbutton from "@/components/Serchbutton";
 import Datecomponents from "@/components/Datecomponents";
 import "@/styles/Menutab.css";
 interface MenutabProps {
+    setMenuState?: any;
     menu_state?: string;
     id?: string;
     className?: string;
@@ -720,7 +721,10 @@ interface MenutabProps {
 }
 const Menutab = (props: MenutabProps) => {
     const {
+        setMenuState,
         menu_state,
+        id,
+        className,
         id,
         className = "",
         slot_92_5669,
@@ -2817,12 +2821,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_32">
                                     <div className="frame-content-9_32">
                                         {slot_9_33 ?? (
-                                            <p
-                                                id="9_33"
-                                                className="Pixso-paragraph-9_33"
-                                            >
-                                                {"CHECKLIST"}
-                                            </p>
+                                           <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("checklist")}>
+    <p
+        id="9_33"
+        className="Pixso-paragraph-9_33"
+        style={{ margin: 0 }}
+    >
+        {"CHECKLIST"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -2832,12 +2839,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_34">
                                     <div className="frame-content-9_34">
                                         {slot_9_35 ?? (
-                                            <p
-                                                id="9_35"
-                                                className="Pixso-paragraph-9_35"
-                                            >
-                                                {"TIMELINE"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("daily_planner")}>
+    <p
+        id="9_35"
+        className="Pixso-paragraph-9_35"
+        style={{ margin: 0 }}
+    >
+        {"TIMELINE"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -2847,12 +2857,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_36">
                                     <div className="frame-content-9_36">
                                         {slot_9_37 ?? (
-                                            <p
-                                                id="9_37"
-                                                className="Pixso-paragraph-9_37"
-                                            >
-                                                {"TRACKER"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("tracker")}>
+    <p
+        id="9_37"
+        className="Pixso-paragraph-9_37"
+        style={{ margin: 0 }}
+    >
+        {"TRACKER"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -2862,7 +2875,7 @@ const Menutab = (props: MenutabProps) => {
                     </div>
                 )}
                 {menu_state === "daily_planner" && (
-                    <div id="9_64" className="Pixso-symbol-9_64">
+    <div id={id} className={`Pixso-symbol-9_64 ${className || ""}`}>
                         <div id="9_43" className="stroke-wrapper-9_43">
                             <div className="Pixso-frame-9_43">
                                 <div className="frame-content-9_43">
@@ -4115,12 +4128,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_46">
                                     <div className="frame-content-9_46">
                                         {slot_9_47 ?? (
-                                            <p
-                                                id="9_47"
-                                                className="Pixso-paragraph-9_47"
-                                            >
-                                                {"CHECKLIST"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("checklist")}>
+    <p
+        id="9_47"
+        className="Pixso-paragraph-9_47"
+        style={{ margin: 0 }}
+    >
+        {"CHECKLIST"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -4130,12 +4146,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_48">
                                     <div className="frame-content-9_48">
                                         {slot_9_49 ?? (
-                                            <p
-                                                id="9_49"
-                                                className="Pixso-paragraph-9_49"
-                                            >
-                                                {"TIMELINE"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("daily_planner")}>
+    <p
+        id="9_49"
+        className="Pixso-paragraph-9_49"
+        style={{ margin: 0 }}
+    >
+        {"TIMELINE"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -4145,12 +4164,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_50">
                                     <div className="frame-content-9_50">
                                         {slot_9_51 ?? (
-                                            <p
-                                                id="9_51"
-                                                className="Pixso-paragraph-9_51"
-                                            >
-                                                {"TRACKER"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("tracker")}>
+    <p
+        id="9_51"
+        className="Pixso-paragraph-9_51"
+        style={{ margin: 0 }}
+    >
+        {"TRACKER"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -4159,8 +4181,8 @@ const Menutab = (props: MenutabProps) => {
                         </div>
                     </div>
                 )}
-                {menu_state === "tracker" && (
-                    <div id="9_63" className="Pixso-symbol-9_63">
+               {menu_state === "tracker" && (
+    <div id={id} className={`Pixso-symbol-9_63 ${className || ""}`}>
                         <div id="9_54" className="stroke-wrapper-9_54">
                             <div className="Pixso-frame-9_54">
                                 <div className="frame-content-9_54">
@@ -12246,12 +12268,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_57">
                                     <div className="frame-content-9_57">
                                         {slot_9_58 ?? (
-                                            <p
-                                                id="9_58"
-                                                className="Pixso-paragraph-9_58"
-                                            >
-                                                {"CHECKLIST"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("checklist")}>
+    <p
+        id="9_58"
+        className="Pixso-paragraph-9_58"
+        style={{ margin: 0 }}
+    >
+        {"CHECKLIST"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -12261,12 +12286,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_59">
                                     <div className="frame-content-9_59">
                                         {slot_9_60 ?? (
-                                            <p
-                                                id="9_60"
-                                                className="Pixso-paragraph-9_60"
-                                            >
-                                                {"TIMELINE"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("daily_planner")}>
+    <p
+        id="9_60"
+        className="Pixso-paragraph-9_60"
+        style={{ margin: 0 }}
+    >
+        {"TIMELINE"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
@@ -12276,12 +12304,15 @@ const Menutab = (props: MenutabProps) => {
                                 <div className="Pixso-frame-9_61">
                                     <div className="frame-content-9_61">
                                         {slot_9_62 ?? (
-                                            <p
-                                                id="9_62"
-                                                className="Pixso-paragraph-9_62"
-                                            >
-                                                {"TRACKER"}
-                                            </p>
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} onClick={() => setMenuState && setMenuState("tracker")}>
+    <p
+        id="9_62"
+        className="Pixso-paragraph-9_62"
+        style={{ margin: 0 }}
+    >
+        {"TRACKER"}
+    </p>
+</div>
                                         )}
                                     </div>
                                 </div>
