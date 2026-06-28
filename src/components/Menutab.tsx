@@ -4318,7 +4318,6 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div className="shadow-blend-unknown-0"></div>
                                                                     <div className="frame-content-92_7327">
                                                                         {slot_92_7328 ?? (
-                                                                            <input 
     <input 
     type="text" 
     value={searchInput} 
