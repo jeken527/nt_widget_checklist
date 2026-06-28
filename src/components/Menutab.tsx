@@ -1629,7 +1629,19 @@ const Menutab = (props: MenutabProps) => {
 
     return (
         <div className={`component-9_66 ${className}`} id={id}>
-            <div id="9_66" className="Pixso-symbol-9_66" style={{ position: "relative" }}>
+            <div 
+                id="9_66" 
+                className="Pixso-symbol-9_66" 
+                style={{ 
+                    position: "absolute", 
+                    left: "20px",
+                    top: "51px",
+                    width: "455px",
+                    height: "712px",
+                    margin: 0,
+                    padding: 0
+                }}
+            >
                 {menu_state === "checklist" && (
                     <div id="9_65" className="Pixso-symbol-9_65" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_29" className="stroke-wrapper-9_29">
