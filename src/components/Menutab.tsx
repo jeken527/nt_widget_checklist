@@ -722,6 +722,22 @@ interface MenutabProps {
 const Menutab = (props: MenutabProps) => {
     const [searchInput, setSearchInput] = useState("");
     const [reminderInput, setReminderInput] = useState("");
+    const [planRoutine1, setPlanRoutine1] = useState("");
+    const [planRoutine2, setPlanRoutine2] = useState("");
+    const [planRoutine3, setPlanRoutine3] = useState("");
+    const [planRoutine4, setPlanRoutine4] = useState("");
+    const [planRoutine5, setPlanRoutine5] = useState("");
+    const [planRoutine6, setPlanRoutine6] = useState("");
+    const [planRoutine7, setPlanRoutine7] = useState("");
+    const [planRoutine8, setPlanRoutine8] = useState("");
+    const [planRoutine9, setPlanRoutine9] = useState("");
+    const [planRoutine10, setPlanRoutine10] = useState("");
+    const [planRoutine11, setPlanRoutine11] = useState("");
+    const [planRoutine12, setPlanRoutine12] = useState("");
+    const [planRoutine13, setPlanRoutine13] = useState("");
+    const [planRoutine14, setPlanRoutine14] = useState("");
+    const [planRoutine15, setPlanRoutine15] = useState("");
+    const [planRoutine16, setPlanRoutine16] = useState("");
     const {
         setMenuState,
         menu_state,
@@ -3086,14 +3102,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8540">
                                                                             {slot_92_8541 ?? (
-                                                                                <p
-                                                                                    id="92_8541"
-                                                                                    className="Pixso-paragraph-92_8541"
-                                                                                >
-                                                                                    {
-                                                                                        "일간 데이터 정리하기"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine1}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            fontSize: "12pt",
+            color: "inherit",
+            padding: 0,
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3148,14 +3176,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8547">
                                                                             {slot_92_8548 ?? (
-                                                                                <p
-                                                                                    id="92_8548"
-                                                                                    className="Pixso-paragraph-92_8548"
-                                                                                >
-                                                                                    {
-                                                                                        "데이터 분석하기"
-                                                                                    }
-                                                                                </p>
+                                                                               <input
+        type="text"
+        value={planRoutine2}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            fontSize: "12pt",
+            color: "inherit",
+            padding: 0,
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
@@ -3210,14 +3250,26 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8554">
                                                                             {slot_92_8555 ?? (
-                                                                                <p
-                                                                                    id="92_8555"
-                                                                                    className="Pixso-paragraph-92_8555"
-                                                                                >
-                                                                                    {
-                                                                                        "폴더 정리 및 메일 확인"
-                                                                                    }
-                                                                                </p>
+                                                                                <input
+        type="text"
+        value={planRoutine3}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            fontSize: "12pt",
+            color: "inherit",
+            padding: 0,
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
                                                                             )}
                                                                         </div>
                                                                     </div>
