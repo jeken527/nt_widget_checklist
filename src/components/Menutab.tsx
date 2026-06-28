@@ -4319,12 +4319,13 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div className="frame-content-92_7327">
                                                                         {slot_92_7328 ?? (
                                                                             <input 
+    <input 
     type="text" 
     value={searchInput} 
     onChange={(e) => setSearchInput(e.target.value)} 
     placeholder="SEARCH" 
     className="Pixso-paragraph-92_7328" 
-    style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit", fontSize: "10px" }}
+    style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit", display: "flex", alignItems: "center", lineHeight: "normal" }} // 🌟 display, alignItems, lineHeight 추가 완료!
 />
                                                                         )}
                                                                     </div>
