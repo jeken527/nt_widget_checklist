@@ -3086,15 +3086,14 @@ const Menutab = (props: MenutabProps) => {
                                                                     >
                                                                         <div className="frame-content-92_8540">
                                                                             {slot_92_8541 ?? (
-                                                                                <input 
-                            type="text" 
-                            value={routine1} 
-                            onChange={(e) => setRoutine1(e.target.value)} 
-                            placeholder="   "
-                            className="Pixso-paragraph-92_8541"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit", display: "flex", alignItems: "center", lineHeight: "normal" }}
-                        />
-
+                                                                                <p
+                                                                                    id="92_8541"
+                                                                                    className="Pixso-paragraph-92_8541"
+                                                                                >
+                                                                                    {
+                                                                                        "일간 데이터 정리하기"
+                                                                                    }
+                                                                                </p>
                                                                             )}
                                                                         </div>
                                                                     </div>
