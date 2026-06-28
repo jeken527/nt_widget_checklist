@@ -10,12 +10,9 @@ const Frame1019 = () => {
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
     const [repInput, setRepInput] = useState("");
-    const [reminderInput, setReminderInput] = useState("");
-    const [routine1, setRoutine1] = useState("");
-    const [routine2, setRoutine2] = useState("");
-    const [routine3, setRoutine3] = useState("");
-    const [routine4, setRoutine4] = useState("");
-    const [routine5, setRoutine5] = useState("");
+    const today = new Date();
+    const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
+    const currentYear = `${today.getFullYear()}`;
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
     const [checkbox_state_12_678, setCheckbox_state_12_678] = useState("default");
@@ -284,7 +281,7 @@ const Frame1019 = () => {
                     slot_92_5684={<p id="12_578" className="Pixso-paragraph-12_578">{"REP."}</p>}
                     slot_92_5683={<p id="12_577" className="Pixso-paragraph-12_577">{"DESCR."}</p>}
                     slot_92_5682={<p id="12_576" className="Pixso-paragraph-12_576">{"PRI."}</p>}
-                    slot_92_5675={<p id="12_569" className="Pixso-paragraph-12_569">{"2026 - 06 - 24"}</p>}
+                    slot_92_5675={<p id="12_569" className="Pixso-paragraph-12_569">{currentDate}</p>}
                     slot_92_5673={<p id="12_567" className="Pixso-paragraph-12_567">{"DATE:"}</p>}
                     slot_92_5671={<p id="12_565" className="Pixso-paragraph-12_565">{"DON’T FORGET TO CHECKOUT DAILY ROUTINES"}</p>}
                     slot_92_5669={
