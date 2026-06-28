@@ -4325,16 +4325,16 @@ const Menutab = (props: MenutabProps) => {
     placeholder="오늘의 한 줄" 
     className="Pixso-span-92_8655_0_1"
     style={{ 
-        width: "380px", 
-        height: "60px", 
+        width: "100%", 
+        height: "100%", 
         border: "none", 
         outline: "none", 
         background: "transparent", 
-        padding: "10px", 
-        margin: "5px", 
+        padding: 0, 
+        margin: 0, 
         color: "inherit", 
         display: "flex", 
-        alignItems: "flex-start", 
+        alignItems: "center", 
         lineHeight: "normal" 
     }}
 />
