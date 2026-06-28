@@ -130,14 +130,15 @@ const Frame1019 = () => {
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
                         ></Insertbutton>
                     }
-                    /* 🌟 2단계: 기존 글씨 태그를 투명하고 깔끔한 실제 입력창(input)으로 교체합니다! */
+                    
                     slot_92_5799={
                         <input 
                             type="text" 
                             value={repInput} 
                             onChange={(e) => setRepInput(e.target.value)} 
                             placeholder="REP"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", textAlign: "center", color: "inherit" }}
+                            className="Pixso-paragraph-12_702" /* 원래 피그마 폰트 스타일 부활! */
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, textAlign: "center", color: "inherit" }}
                         />
                     }
                     slot_92_5797={
@@ -146,7 +147,8 @@ const Frame1019 = () => {
                             value={descrbInput} 
                             onChange={(e) => setDescrbInput(e.target.value)} 
                             placeholder="DESCRB"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", color: "inherit", paddingLeft: "4px" }}
+                            className="Pixso-paragraph-12_700" /* 원래 피그마 폰트 스타일 부활! */
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
                         />
                     }
                     slot_92_5795={
@@ -155,7 +157,8 @@ const Frame1019 = () => {
                             value={priInput} 
                             onChange={(e) => setPriInput(e.target.value)} 
                             placeholder="PRI"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", textAlign: "center", color: "inherit" }}
+                            className="Pixso-paragraph-12_698" /* 원래 피그마 폰트 스타일 부활! */
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, textAlign: "center", color: "inherit" }}
                         />
                     }
                     slot_92_5788={<p id="12_691" className="Pixso-paragraph-12_691">{"%"}</p>}
