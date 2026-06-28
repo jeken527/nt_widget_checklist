@@ -4329,7 +4329,7 @@ const Menutab = (props: MenutabProps) => {
         border: "none", 
         outline: "none", 
         background: "transparent", 
-        padding: "10px 12px",
+        padding: 0,
         margin: 0, 
         color: "inherit", 
         fontFamily: "inherit", 
