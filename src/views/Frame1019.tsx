@@ -7,6 +7,10 @@ import "@/styles/Frame1019.css";
 const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
 
+    const [priInput, setPriInput] = useState("");
+    const [descrbInput, setDescrbInput] = useState("");
+    const [repInput, setRepInput] = useState("");
+
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
     const [checkbox_state_12_678, setCheckbox_state_12_678] = useState("default");
     const [checkbox_state_12_667, setCheckbox_state_12_667] = useState("default");
@@ -126,9 +130,34 @@ const Frame1019 = () => {
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
                         ></Insertbutton>
                     }
-                    slot_92_5799={<p id="12_702" className="Pixso-paragraph-12_702">{"REP"}</p>}
-                    slot_92_5797={<p id="12_700" className="Pixso-paragraph-12_700">{"DESCRB"}</p>}
-                    slot_92_5795={<p id="12_698" className="Pixso-paragraph-12_698">{"PRI"}</p>}
+                    /* 🌟 2단계: 기존 글씨 태그를 투명하고 깔끔한 실제 입력창(input)으로 교체합니다! */
+                    slot_92_5799={
+                        <input 
+                            type="text" 
+                            value={repInput} 
+                            onChange={(e) => setRepInput(e.target.value)} 
+                            placeholder="REP"
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", textAlign: "center", color: "inherit" }}
+                        />
+                    }
+                    slot_92_5797={
+                        <input 
+                            type="text" 
+                            value={descrbInput} 
+                            onChange={(e) => setDescrbInput(e.target.value)} 
+                            placeholder="DESCRB"
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", color: "inherit", paddingLeft: "4px" }}
+                        />
+                    }
+                    slot_92_5795={
+                        <input 
+                            type="text" 
+                            value={priInput} 
+                            onChange={(e) => setPriInput(e.target.value)} 
+                            placeholder="PRI"
+                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", fontFamily: "inherit", fontSize: "inherit", textAlign: "center", color: "inherit" }}
+                        />
+                    }
                     slot_92_5788={<p id="12_691" className="Pixso-paragraph-12_691">{"%"}</p>}
                     slot_92_5787={<p id="12_690" className="Pixso-paragraph-12_690">{"80"}</p>}
                     slot_92_5785={<p id="12_688" className="Pixso-paragraph-12_688">{"RATE:"}</p>}
