@@ -163,7 +163,7 @@ const Frame1019 = () => {
                             value={priInput} 
                             onChange={(e) => setPriInput(e.target.value)} 
                             placeholder="PRI"
-                            className="Pixso-paragraph-12_698"
+                            className="Pixso-paragraph-12_698" /* 원래 피그마 폰트 스타일 부활! */
                             style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, textAlign: "center", color: "inherit" }}
                         />
                     }
@@ -230,16 +230,7 @@ const Frame1019 = () => {
                         ></Checkbox>
                     }
                     slot_92_5734={<p id="12_632" className="Pixso-paragraph-12_632">{"1"}</p>}
-                    slot_92_5731={
-                        <input 
-                            type="text" 
-                            value={routine1} 
-                            onChange={(e) => setRoutine1(e.target.value)} 
-                            placeholder="이슈 크롤링"
-                            className="Pixso-paragraph-12_629"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5731={<p id="12_629" className="Pixso-paragraph-12_629">{"이슈 크롤링"}</p>}
                     slot_92_5729={<p id="12_627" className="Pixso-paragraph-12_627">{"5"}</p>}
                     slot_92_5726={
                         <Checkbox
@@ -251,16 +242,7 @@ const Frame1019 = () => {
                         ></Checkbox>
                     }
                     slot_92_5724={<p id="12_621" className="Pixso-paragraph-12_621">{"2"}</p>}
-                    slot_92_5721={
-                        <input 
-                            type="text" 
-                            value={routine2} 
-                            onChange={(e) => setRoutine2(e.target.value)} 
-                            placeholder="회의 안건 찾아보기"
-                            className="Pixso-paragraph-12_618"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5721={<p id="12_618" className="Pixso-paragraph-12_618">{"회의 안건 찾아보기"}</p>}
                     slot_92_5719={<p id="12_616" className="Pixso-paragraph-12_616">{"4"}</p>}
                     slot_92_5716={
                         <Checkbox
@@ -272,16 +254,7 @@ const Frame1019 = () => {
                         ></Checkbox>
                     }
                     slot_92_5714={<p id="12_610" className="Pixso-paragraph-12_610">{"2"}</p>}
-                    slot_92_5711={
-                        <input 
-                            type="text" 
-                            value={routine3} 
-                            onChange={(e) => setRoutine3(e.target.value)} 
-                            placeholder="폴더 정리 및 메일 확인"
-                            className="Pixso-paragraph-12_607"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5711={<p id="12_607" className="Pixso-paragraph-12_607">{"폴더 정리 및 메일 확인"}</p>}
                     slot_92_5709={<p id="12_605" className="Pixso-paragraph-12_605">{"3"}</p>}
                     slot_92_5706={
                         <Checkbox
@@ -293,16 +266,7 @@ const Frame1019 = () => {
                         ></Checkbox>
                     }
                     slot_92_5704={<p id="12_599" className="Pixso-paragraph-12_599">{"1"}</p>}
-                    slot_92_5701={
-                        <input 
-                            type="text" 
-                            value={routine4} 
-                            onChange={(e) => setRoutine4(e.target.value)} 
-                            placeholder="데이터 분석하기"
-                            className="Pixso-paragraph-12_596"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5701={<p id="12_596" className="Pixso-paragraph-12_596">{"데이터 분석하기"}</p>}
                     slot_92_5699={<p id="12_594" className="Pixso-paragraph-12_594">{"2"}</p>}
                     slot_92_5696={
                         <Checkbox
@@ -314,16 +278,7 @@ const Frame1019 = () => {
                         ></Checkbox>
                     }
                     slot_92_5694={<p id="12_588" className="Pixso-paragraph-12_588">{"1"}</p>}
-                    slot_92_5691={
-                        <input 
-                            type="text" 
-                            value={routine5} 
-                            onChange={(e) => setRoutine5(e.target.value)} 
-                            placeholder="일간 데이터 정리하기"
-                            className="Pixso-paragraph-12_585"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5691={<p id="12_585" className="Pixso-paragraph-12_585">{"일간 데이터 정리하기"}</p>}
                     slot_92_5689={<p id="12_583" className="Pixso-paragraph-12_583">{"1"}</p>}
                     slot_92_5685={<p id="12_579" className="Pixso-paragraph-12_579">{"CHECK"}</p>}
                     slot_92_5684={<p id="12_578" className="Pixso-paragraph-12_578">{"REP."}</p>}
@@ -331,16 +286,7 @@ const Frame1019 = () => {
                     slot_92_5682={<p id="12_576" className="Pixso-paragraph-12_576">{"PRI."}</p>}
                     slot_92_5675={<p id="12_569" className="Pixso-paragraph-12_569">{"2026 - 06 - 24"}</p>}
                     slot_92_5673={<p id="12_567" className="Pixso-paragraph-12_567">{"DATE:"}</p>}
-                    slot_92_5671={
-                        <input 
-                            type="text" 
-                            value={reminderInput} 
-                            onChange={(e) => setReminderInput(e.target.value)} 
-                            placeholder="DON’T FORGET TO CHECKOUT DAILY ROUTINES"
-                            className="Pixso-paragraph-12_565"
-                            style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
-                        />
-                    }
+                    slot_92_5671={<p id="12_565" className="Pixso-paragraph-12_565">{"DON’T FORGET TO CHECKOUT DAILY ROUTINES"}</p>}
                     slot_92_5669={
                         <div id="12_563" className="Pixso-text-12_563">
                             <p id="12_563_0" className="Pixso-paragraph-12_563_0">
