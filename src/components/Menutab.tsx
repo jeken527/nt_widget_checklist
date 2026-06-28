@@ -4318,14 +4318,14 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div className="shadow-blend-unknown-0"></div>
                                                                     <div className="frame-content-92_7327">
                                                                         {slot_92_7328 ?? (
-                                                                            <p
-                                                                                id="92_7328"
-                                                                                className="Pixso-paragraph-92_7328"
-                                                                            >
-                                                                                {
-                                                                                    "SEARCH"
-                                                                                }
-                                                                            </p>
+                                                                            <input 
+    type="text" 
+    value={searchInput} 
+    onChange={(e) => setSearchInput(e.target.value)} 
+    placeholder="SEARCH" 
+    className="Pixso-paragraph-92_7328" 
+    style={{ width: "100%", height: "100%", border: "none", outline: "none", background: "transparent", padding: 0, margin: 0, color: "inherit" }}
+/>
                                                                         )}
                                                                     </div>
                                                                 </div>
