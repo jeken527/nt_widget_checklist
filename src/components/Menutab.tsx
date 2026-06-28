@@ -724,8 +724,6 @@ const Menutab = (props: MenutabProps) => {
         setMenuState,
         menu_state,
         id,
-        className,
-        id,
         className = "",
         slot_92_5669,
         slot_92_5671,
