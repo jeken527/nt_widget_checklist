@@ -86,7 +86,6 @@ const Frame1019 = () => {
                     </div>
                 </div>
                 
-                {/* 🌟 레이아웃 틀어짐 방지를 위해 가장 바깥을 감싸는 wrapper를 유지합니다 */}
                 <div style={{ position: "relative", zIndex: 10 }}>
                     <Menutab
                         id="10_8"
@@ -102,8 +101,6 @@ const Frame1019 = () => {
                         slot_92_5712={<div id="12_608" className="Pixso-vector-12_608"></div>}
                         slot_92_5702={<div id="12_597" className="Pixso-vector-12_597"></div>}
                         slot_92_5692={<div id="12_586" className="Pixso-vector-12_586"></div>}
-                        
-                        {/* 🌟 클릭 터치 영역(div)을 글씨 밖으로 확장하고 클릭 이벤트를 연결합니다! */}
                         slot_9_37={
                             <div 
                                 style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: "pointer" }} 
@@ -128,8 +125,6 @@ const Frame1019 = () => {
                                 <p id="12_707" className="Pixso-paragraph-12_707" style={{ margin: 0 }}>{"CHECKLIST"}</p>
                             </div>
                         }
-
-                        // 🌟 여기부터는 기존 슬롯들 그대로 유지!
                         slot_92_5800={
                             <Insertbutton
                                 id="12_703"
@@ -253,4 +248,40 @@ const Frame1019 = () => {
                                 click={click_12_590}
                             ></Checkbox>
                         }
-                        slot_92_5694
+                        slot_92_5694={<p id="12_588" className="Pixso-paragraph-12_588">{"1"}</p>}
+                        slot_92_5691={<p id="12_585" className="Pixso-paragraph-12_585">{"일간 데이터 정리하기"}</p>}
+                        slot_92_5689={<p id="12_583" className="Pixso-paragraph-12_583">{"1"}</p>}
+                        slot_92_5685={<p id="12_579" className="Pixso-paragraph-12_579">{"CHECK"}</p>}
+                        slot_92_5684={<p id="12_578" className="Pixso-paragraph-12_578">{"REP."}</p>}
+                        slot_92_5683={<p id="12_577" className="Pixso-paragraph-12_577">{"DESCR."}</p>}
+                        slot_92_5682={<p id="12_576" className="Pixso-paragraph-12_576">{"PRI."}</p>}
+                        slot_92_5675={<p id="12_569" className="Pixso-paragraph-12_569">{"2026 - 06 - 24"}</p>}
+                        slot_92_5673={<p id="12_567" className="Pixso-paragraph-12_567">{"DATE:"}</p>}
+                        slot_92_5671={<p id="12_565" className="Pixso-paragraph-12_565">{"DON’T FORGET TO CHECKOUT DAILY ROUTINES"}</p>}
+                        slot_92_5669={
+                            <div id="12_563" className="Pixso-text-12_563">
+                                <p id="12_563_0" className="Pixso-paragraph-12_563_0">
+                                    <span id="12_563_0_1" className="Pixso-span-12_563_0_1">{"ROUTINE"}</span>
+                                </p>
+                                <p id="12_563_1" className="Pixso-paragraph-12_563_1">
+                                    <span id="12_563_1_1" className="Pixso-span-12_563_1_1">{"CHECKLIST"}</span>
+                                </p>
+                            </div>
+                        }
+                    ></Menutab>
+                </div>
+                
+                <div id="6_15" className="Pixso-frame-6_15">
+                    <div className="frame-content-6_15">
+                        <div id="6_16" className="Pixso-rectangle-6_16"></div>
+                        <div id="6_17" className="Pixso-rectangle-6_17"></div>
+                        <div id="6_18" className="Pixso-rectangle-6_18"></div>
+                        <div id="6_19" className="Pixso-rectangle-6_19"></div>
+                        <div id="6_20" className="Pixso-rectangle-6_20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Frame1019;
