@@ -4324,8 +4324,8 @@ const Menutab = (props: MenutabProps) => {
     placeholder="오늘의 한 줄" 
     className="Pixso-span-92_8655_0_1" 
     style={{ 
-        width: "380px",
-        height: "60px",
+        width: "360px",
+        height: "50px",
         border: "none", 
         outline: "none", 
         background: "transparent", 
@@ -4548,7 +4548,7 @@ const Menutab = (props: MenutabProps) => {
     placeholder="SEARCH"
 	className="Pixso-paragraph-92_7328"
     style={{
-		width: "150px",
+		width: "130px",
 		height: "27px",
 		border: "none",
 		outline: "none",
