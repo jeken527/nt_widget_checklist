@@ -4318,25 +4318,26 @@ const Menutab = (props: MenutabProps) => {
                                                                             id="92_8655_0"
                                                                             className="Pixso-paragraph-92_8655_0"
                                                                         >
-                                                                            <input
-        type="text"
-        value={reminderInput}
-        onChange={(e) => setReminderInput(e.target.value)}
-        placeholder="오늘의 한 줄"
-        style={{
-            width: "380px",
-            height: "60px",
-            border: "none",
-            outline: "none",
-            background: "transparent",
-            fontFamily: "inherit",
-            color: "inherit",
-            padding: "10px",
-            margin: 0,
-            lineHeight: "normal",
-            boxSizing: "border-box"
-        }}
-    />
+                                                                            <input 
+    type="text" 
+    value={reminderInput} 
+    onChange={(e) => setReminderInput(e.target.value)} 
+    placeholder="오늘의 한 줄" 
+    className="Pixso-span-92_8655_0_1"
+    style={{ 
+        width: "100%", 
+        height: "100%", 
+        border: "none", 
+        outline: "none", 
+        background: "transparent", 
+        padding: 0, 
+        margin: 0, 
+        color: "inherit", 
+        display: "flex", 
+        alignItems: "flex-start", 
+        lineHeight: "normal" 
+    }}
+/>
                                                                         </p>
                                                                     </div>
                                                                 )}
