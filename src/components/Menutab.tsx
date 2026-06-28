@@ -1629,9 +1629,9 @@ const Menutab = (props: MenutabProps) => {
 
     return (
         <div className={`component-9_66 ${className}`} id={id}>
-            <div id="9_66" className="Pixso-symbol-9_66">
+            <div id="9_66" className="Pixso-symbol-9_66" style={{ position: "relative" }}>
                 {menu_state === "checklist" && (
-                    <div id="9_65" className="Pixso-symbol-9_65">
+                    <div id="9_65" className="Pixso-symbol-9_65" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_29" className="stroke-wrapper-9_29">
                             <div className="Pixso-frame-9_29">
                                 <div className="frame-content-9_29">
@@ -2873,7 +2873,7 @@ const Menutab = (props: MenutabProps) => {
                     </div>
                 )}
                 {menu_state === "daily_planner" && (
-    <div id={id} className={`Pixso-symbol-9_64 ${className || ""}`}>
+                    <div id="9_64" className="Pixso-symbol-9_64" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_43" className="stroke-wrapper-9_43">
                             <div className="Pixso-frame-9_43">
                                 <div className="frame-content-9_43">
@@ -4180,7 +4180,7 @@ const Menutab = (props: MenutabProps) => {
                     </div>
                 )}
                {menu_state === "tracker" && (
-    <div id={id} className={`Pixso-symbol-9_63 ${className || ""}`}>
+                    <div id="9_63" className="Pixso-symbol-9_63" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_54" className="stroke-wrapper-9_54">
                             <div className="Pixso-frame-9_54">
                                 <div className="frame-content-9_54">
