@@ -6,7 +6,8 @@ import { getPathByGuid } from "@/router/routes";
 import { useState } from "react";
 import Routinedataselect from "@/components/Routinedataselect";
 import "@/styles/Frame63372.css";
-const Frame63372 = () => {
+const Frame63372 = (props: { close?: () => void }) => {
+    const { close } = props;
     const navigate = useNavigate();
     const [button3state_63_376, setButton3state_63_376] = useState("default");
     const [routinedatastate_63_402, setRoutinedatastate_63_402] =
@@ -159,20 +160,21 @@ const Frame63372 = () => {
                                     {"SEARCH"}
                                 </p>
                                 <Button3components
-                                    id="63_376"
-                                    className="Pixso-instance-63_376"
-                                    onClick63_37663_311139_132={withStopPropagation(
-                                        () => {
-                                            OverlayManager.instance.close();
-                                        }
-                                    )}
-                                    onClick63_37663_311135_151={withStopPropagation(
-                                        click_63_376_63_311_135_151
-                                    )}
-                                    button3state={button3state_63_376}
-                                    transitionConfig={transitionConfig63_376}
-                                    mouseover={mouseover_63_376}
-                                ></Button3components>
+    id="63_376"
+    className="Pixso-instance-63_376"
+    click={close}
+    onClick63_37663_311139_132={withStopPropagation(
+        () => {
+            OverlayManager.instance.close();
+        }
+    )}
+    onClick63_37663_311135_151={withStopPropagation(
+        click_63_376_63_311_135_151
+    )}
+    button3state={button3state_63_376}
+    transitionConfig={transitionConfig63_376}
+    mouseover={mouseover_63_376}
+></Button3components>
                             </div>
                         </div>
                         <div id="63_391" className="stroke-wrapper-63_391">
