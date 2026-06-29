@@ -1,0 +1,29 @@
+JSONBINX-Master-Key
+$2a$10$x3TfW2VCFKPWZIm.NcihLuwFeqhZOcl9IdjZoWFxAdQLf4s4WYjXq
+
+BIN
+6a3f8c6ada38895dfe069101
+
+
+
+
+Locofy
+Builder.io
+
+fontSize: "12px"
+
+
+
+2) checklist 의 insert-checklist-button 버튼(src/components/Insertbutton.tsx)
+
+: priority_number-input, description-input, repeat_number-input 모두 아무것도 작성해두지 않고, placeholder 만 표시되는 중일 때, insert-checklist-button 을 누르면 CHECKLIST_POPUP(src/views/Frame6528.tsx) 이 나타나도록 설계가 필요함.
+
+
+
++) priority_number-input, description-input, repeat_number-input 모두 기재하고 insert-checklist-button 을 누르면 checklist-container 에 해당 내용이 routine-list 형식을 갖춰 삽입되도록 함.
+
+routine-list 형식 : priority_number(기재 내용), routine_description(기재 내용), Line 2, repeat_number(기재 내용), checkbox
+
+모든 입력 칸은 기존 routine-list 내부의 칸 위치, 칸 크기(패딩 등 포함)와 동일하며, 기재하지 않은 Line 2, checkbox 는 자동으로 추가되는 형태.
+
+.Pixso-instance-63_402 { : routine-data-select
