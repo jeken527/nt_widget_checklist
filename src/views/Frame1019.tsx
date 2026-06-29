@@ -117,6 +117,7 @@ const Frame1019 = () => {
                     className="Pixso-instance-10_8"
                     menu_state={menuState}
                     setMenuState={setMenuState}
+                    routineList={routineList}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
