@@ -12581,8 +12581,8 @@ const Menutab = (props: MenutabProps) => {
                         top: "150px",       // 🌟 수첩 내부 화면의 적절한 높이에 위치하도록 조정 (필요시 수치 변경 가능)
                         left: "50%",        // 🌟 가로 정중앙 배치를 위한 기본 정렬
                         transform: "translateX(-50%)", // 🌟 W 455px 수첩 틀 안에서 완벽하게 가운데로 정렬해 줍니다.
-                        width: "240px",     // 🌟 유저님이 정하신 가로 고정 크기
-                        height: "150px",    // 🌟 유저님이 정하신 세로 고정 크기
+                        width: '100%',     // 🌟 유저님이 정하신 가로 고정 크기
+                        height: '100%',    // 🌟 유저님이 정하신 세로 고정 크기
                         paddingLeft: "5px",  // 🌟 왼쪽 패딩 5px 고정
                         paddingRight: "3px", // 🌟 오른쪽 패딩 3px 고정
                         marginTop: "5px",    // 🌟 위 마진 5px 고정
