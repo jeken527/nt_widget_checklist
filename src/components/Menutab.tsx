@@ -1843,65 +1843,787 @@ const Menutab = (props: MenutabProps) => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div 
-                        className="checklist-container-dynamic"
-                        style={{
-                            width: "380px",       // 🌟 피그마 고정 가로 크기
-                            height: "190px",      // 🌟 피그마 고정 세로 크기 (리스트가 없어도 이 크기로 공간 유지)
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",  // 🌟 상단 가운데 정렬
-                            justifyContent: "flex-start",
-                            gap: "2px",           // 🌟 피그마 간격 2px 고정
-                            overflowX: "hidden",   // 가로 넘침 숨김
-                            overflowY: "auto",     // 🌟 세로로 190px 넘치면 콘텐츠 숨기고 스크롤바 생성
-                            marginTop: "8px",     // 헤더 글씨와 너무 붙지 않게 여백 미세 조절
-                            boxSizing: "border-box"
-                        }}
-                    >
-                        {/* 🌟 이제 사용자가 타이핑 후 추가한 진짜 routineList 데이터만 이 상자 안에서 일렬로 출력됩니다. */}
-                        {routineList && routineList.map((routine) => (
-                            <div key={routine.id} className="routine-list-item" style={{ 
-                                display: 'flex', 
-                                alignItems: 'center', // 텍스트와 이음줄 수직 정중앙 일렬 정렬
-                                width: '100%', 
-                                minHeight: '24px',
-                                height: '24px',
-                                flexShrink: 0
-                            }}>
-                                {/* [1] PRI (선명한 검은색) */}
-                                <p style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontWeight: 'bold' }}>
-                                    {routine.priority}
-                                </p>
-
-                                {/* [2] DESCRB (선명한 검은색) */}
-                                <p style={{ paddingLeft: '8px', margin: 0, padding: 0, textAlign: 'left', flexShrink: 0, color: '#000000' }}>
-                                    {routine.description}
-                                </p>
-
-                                {/* [3] Line 2 (가운데 정렬 점선 이음줄) */}
-                                <div style={{ 
-                                    flex: 1, 
-                                    height: '1px', 
-                                    margin: '0 8px', 
-                                    backgroundImage: 'url(@/assets/images/Line2.svg)',
-                                    backgroundSize: '100% 100%',
-                                    backgroundRepeat: 'no-repeat',
-                                    flexShrink: 1
-                                }}></div>
-
-                                {/* [4] REP (선명한 검은색) */}
-                                <p style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000' }}>
-                                    {routine.repeat}
-                                </p>
-
-                                {/* [5] Checkbox (자동 토글 스위치 부품) */}
-                                <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0 }}>
-                                    <Checkbox checkbox_state="default" />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                                                    <div
+                                                        id="92_5686"
+                                                        className="Pixso-frame-92_5686"
+                                                    >
+                                                        <div className="frame-content-92_5686">
+                                                            <div
+                                                                id="92_5687"
+                                                                className="Pixso-frame-92_5687"
+                                                            >
+                                                                <div className="frame-content-92_5687">
+                                                                    <div
+                                                                        id="92_5688"
+                                                                        className="Pixso-frame-92_5688"
+                                                                    >
+                                                                        <div className="frame-content-92_5688">
+                                                                            {slot_92_5689 ?? (
+                                                                                <p
+                                                                                    id="92_5689"
+                                                                                    className="Pixso-paragraph-92_5689"
+                                                                                >
+                                                                                    {
+                                                                                        "1"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5690"
+                                                                        className="Pixso-frame-92_5690"
+                                                                    >
+                                                                        <div className="frame-content-92_5690">
+                                                                            {slot_92_5691 ?? (
+                                                                                <p
+                                                                                    id="92_5691"
+                                                                                    className="Pixso-paragraph-92_5691"
+                                                                                >
+                                                                                    {
+                                                                                        "일간 데이터 정리하기"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5692 ?? (
+                                                                        <div
+                                                                            id="92_5692"
+                                                                            className="Pixso-vector-92_5692"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5693"
+                                                                        className="Pixso-frame-92_5693"
+                                                                    >
+                                                                        <div className="frame-content-92_5693">
+                                                                            {slot_92_5694 ?? (
+                                                                                <p
+                                                                                    id="92_5694"
+                                                                                    className="Pixso-paragraph-92_5694"
+                                                                                >
+                                                                                    {
+                                                                                        "1"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5695"
+                                                                        className="Pixso-frame-92_5695"
+                                                                    >
+                                                                        <div className="frame-content-92_5695">
+                                                                            {slot_92_5696 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5696"
+                                                                                    className="Pixso-instance-92_5696"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5696
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5696
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5696
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5697"
+                                                                className="Pixso-frame-92_5697"
+                                                            >
+                                                                <div className="frame-content-92_5697">
+                                                                    <div
+                                                                        id="92_5698"
+                                                                        className="Pixso-frame-92_5698"
+                                                                    >
+                                                                        <div className="frame-content-92_5698">
+                                                                            {slot_92_5699 ?? (
+                                                                                <p
+                                                                                    id="92_5699"
+                                                                                    className="Pixso-paragraph-92_5699"
+                                                                                >
+                                                                                    {
+                                                                                        "2"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5700"
+                                                                        className="Pixso-frame-92_5700"
+                                                                    >
+                                                                        <div className="frame-content-92_5700">
+                                                                            {slot_92_5701 ?? (
+                                                                                <p
+                                                                                    id="92_5701"
+                                                                                    className="Pixso-paragraph-92_5701"
+                                                                                >
+                                                                                    {
+                                                                                        "데이터 분석하기"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5702 ?? (
+                                                                        <div
+                                                                            id="92_5702"
+                                                                            className="Pixso-vector-92_5702"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5703"
+                                                                        className="Pixso-frame-92_5703"
+                                                                    >
+                                                                        <div className="frame-content-92_5703">
+                                                                            {slot_92_5704 ?? (
+                                                                                <p
+                                                                                    id="92_5704"
+                                                                                    className="Pixso-paragraph-92_5704"
+                                                                                >
+                                                                                    {
+                                                                                        "1"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5705"
+                                                                        className="Pixso-frame-92_5705"
+                                                                    >
+                                                                        <div className="frame-content-92_5705">
+                                                                            {slot_92_5706 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5706"
+                                                                                    className="Pixso-instance-92_5706"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5706
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5706
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5706
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5707"
+                                                                className="Pixso-frame-92_5707"
+                                                            >
+                                                                <div className="frame-content-92_5707">
+                                                                    <div
+                                                                        id="92_5708"
+                                                                        className="Pixso-frame-92_5708"
+                                                                    >
+                                                                        <div className="frame-content-92_5708">
+                                                                            {slot_92_5709 ?? (
+                                                                                <p
+                                                                                    id="92_5709"
+                                                                                    className="Pixso-paragraph-92_5709"
+                                                                                >
+                                                                                    {
+                                                                                        "3"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5710"
+                                                                        className="Pixso-frame-92_5710"
+                                                                    >
+                                                                        <div className="frame-content-92_5710">
+                                                                            {slot_92_5711 ?? (
+                                                                                <p
+                                                                                    id="92_5711"
+                                                                                    className="Pixso-paragraph-92_5711"
+                                                                                >
+                                                                                    {
+                                                                                        "폴더 정리 및 메일 확인"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5712 ?? (
+                                                                        <div
+                                                                            id="92_5712"
+                                                                            className="Pixso-vector-92_5712"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5713"
+                                                                        className="Pixso-frame-92_5713"
+                                                                    >
+                                                                        <div className="frame-content-92_5713">
+                                                                            {slot_92_5714 ?? (
+                                                                                <p
+                                                                                    id="92_5714"
+                                                                                    className="Pixso-paragraph-92_5714"
+                                                                                >
+                                                                                    {
+                                                                                        "2"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5715"
+                                                                        className="Pixso-frame-92_5715"
+                                                                    >
+                                                                        <div className="frame-content-92_5715">
+                                                                            {slot_92_5716 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5716"
+                                                                                    className="Pixso-instance-92_5716"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5716
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5716
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5716
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5717"
+                                                                className="Pixso-frame-92_5717"
+                                                            >
+                                                                <div className="frame-content-92_5717">
+                                                                    <div
+                                                                        id="92_5718"
+                                                                        className="Pixso-frame-92_5718"
+                                                                    >
+                                                                        <div className="frame-content-92_5718">
+                                                                            {slot_92_5719 ?? (
+                                                                                <p
+                                                                                    id="92_5719"
+                                                                                    className="Pixso-paragraph-92_5719"
+                                                                                >
+                                                                                    {
+                                                                                        "4"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5720"
+                                                                        className="Pixso-frame-92_5720"
+                                                                    >
+                                                                        <div className="frame-content-92_5720">
+                                                                            {slot_92_5721 ?? (
+                                                                                <p
+                                                                                    id="92_5721"
+                                                                                    className="Pixso-paragraph-92_5721"
+                                                                                >
+                                                                                    {
+                                                                                        "회의 안건 찾아보기"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5722 ?? (
+                                                                        <div
+                                                                            id="92_5722"
+                                                                            className="Pixso-vector-92_5722"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5723"
+                                                                        className="Pixso-frame-92_5723"
+                                                                    >
+                                                                        <div className="frame-content-92_5723">
+                                                                            {slot_92_5724 ?? (
+                                                                                <p
+                                                                                    id="92_5724"
+                                                                                    className="Pixso-paragraph-92_5724"
+                                                                                >
+                                                                                    {
+                                                                                        "2"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5725"
+                                                                        className="Pixso-frame-92_5725"
+                                                                    >
+                                                                        <div className="frame-content-92_5725">
+                                                                            {slot_92_5726 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5726"
+                                                                                    className="Pixso-instance-92_5726"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5726
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5726
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5726
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5727"
+                                                                className="Pixso-frame-92_5727"
+                                                            >
+                                                                <div className="frame-content-92_5727">
+                                                                    <div
+                                                                        id="92_5728"
+                                                                        className="Pixso-frame-92_5728"
+                                                                    >
+                                                                        <div className="frame-content-92_5728">
+                                                                            {slot_92_5729 ?? (
+                                                                                <p
+                                                                                    id="92_5729"
+                                                                                    className="Pixso-paragraph-92_5729"
+                                                                                >
+                                                                                    {
+                                                                                        "5"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5730"
+                                                                        className="Pixso-frame-92_5730"
+                                                                    >
+                                                                        <div className="frame-content-92_5730">
+                                                                            {slot_92_5731 ?? (
+                                                                                <p
+                                                                                    id="92_5731"
+                                                                                    className="Pixso-paragraph-92_5731"
+                                                                                >
+                                                                                    {
+                                                                                        "이슈 크롤링"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5732 ?? (
+                                                                        <div
+                                                                            id="92_5732"
+                                                                            className="Pixso-vector-92_5732"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5733"
+                                                                        className="Pixso-frame-92_5733"
+                                                                    >
+                                                                        <div className="frame-content-92_5733">
+                                                                            {slot_92_5734 ?? (
+                                                                                <p
+                                                                                    id="92_5734"
+                                                                                    className="Pixso-paragraph-92_5734"
+                                                                                >
+                                                                                    {
+                                                                                        "1"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5735"
+                                                                        className="Pixso-frame-92_5735"
+                                                                    >
+                                                                        <div className="frame-content-92_5735">
+                                                                            {slot_92_5736 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5736"
+                                                                                    className="Pixso-instance-92_5736"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5736
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5736
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5736
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5737"
+                                                                className="Pixso-frame-92_5737"
+                                                            >
+                                                                <div className="frame-content-92_5737">
+                                                                    <div
+                                                                        id="92_5738"
+                                                                        className="Pixso-frame-92_5738"
+                                                                    >
+                                                                        <div className="frame-content-92_5738">
+                                                                            {slot_92_5739 ?? (
+                                                                                <p
+                                                                                    id="92_5739"
+                                                                                    className="Pixso-paragraph-92_5739"
+                                                                                >
+                                                                                    {
+                                                                                        "6"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5740"
+                                                                        className="Pixso-frame-92_5740"
+                                                                    >
+                                                                        <div className="frame-content-92_5740">
+                                                                            {slot_92_5741 ?? (
+                                                                                <p
+                                                                                    id="92_5741"
+                                                                                    className="Pixso-paragraph-92_5741"
+                                                                                >
+                                                                                    {
+                                                                                        "DUMMY"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5742 ?? (
+                                                                        <div
+                                                                            id="92_5742"
+                                                                            className="Pixso-vector-92_5742"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5743"
+                                                                        className="Pixso-frame-92_5743"
+                                                                    >
+                                                                        <div className="frame-content-92_5743">
+                                                                            {slot_92_5744 ?? (
+                                                                                <p
+                                                                                    id="92_5744"
+                                                                                    className="Pixso-paragraph-92_5744"
+                                                                                >
+                                                                                    {
+                                                                                        "5"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5745"
+                                                                        className="Pixso-frame-92_5745"
+                                                                    >
+                                                                        <div className="frame-content-92_5745">
+                                                                            {slot_92_5746 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5746"
+                                                                                    className="Pixso-instance-92_5746"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5746
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5746
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5746
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5747"
+                                                                className="Pixso-frame-92_5747"
+                                                            >
+                                                                <div className="frame-content-92_5747">
+                                                                    <div
+                                                                        id="92_5748"
+                                                                        className="Pixso-frame-92_5748"
+                                                                    >
+                                                                        <div className="frame-content-92_5748">
+                                                                            {slot_92_5749 ?? (
+                                                                                <p
+                                                                                    id="92_5749"
+                                                                                    className="Pixso-paragraph-92_5749"
+                                                                                >
+                                                                                    {
+                                                                                        "7"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5750"
+                                                                        className="Pixso-frame-92_5750"
+                                                                    >
+                                                                        <div className="frame-content-92_5750">
+                                                                            {slot_92_5751 ?? (
+                                                                                <p
+                                                                                    id="92_5751"
+                                                                                    className="Pixso-paragraph-92_5751"
+                                                                                >
+                                                                                    {
+                                                                                        "DUMMY"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5752 ?? (
+                                                                        <div
+                                                                            id="92_5752"
+                                                                            className="Pixso-vector-92_5752"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5753"
+                                                                        className="Pixso-frame-92_5753"
+                                                                    >
+                                                                        <div className="frame-content-92_5753">
+                                                                            {slot_92_5754 ?? (
+                                                                                <p
+                                                                                    id="92_5754"
+                                                                                    className="Pixso-paragraph-92_5754"
+                                                                                >
+                                                                                    {
+                                                                                        "1"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5755"
+                                                                        className="Pixso-frame-92_5755"
+                                                                    >
+                                                                        <div className="frame-content-92_5755">
+                                                                            {slot_92_5756 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5756"
+                                                                                    className="Pixso-instance-92_5756"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5756
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5756
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5756
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5757"
+                                                                className="Pixso-frame-92_5757"
+                                                            >
+                                                                <div className="frame-content-92_5757">
+                                                                    <div
+                                                                        id="92_5758"
+                                                                        className="Pixso-frame-92_5758"
+                                                                    >
+                                                                        <div className="frame-content-92_5758">
+                                                                            {slot_92_5759 ?? (
+                                                                                <p
+                                                                                    id="92_5759"
+                                                                                    className="Pixso-paragraph-92_5759"
+                                                                                >
+                                                                                    {
+                                                                                        "8"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5760"
+                                                                        className="Pixso-frame-92_5760"
+                                                                    >
+                                                                        <div className="frame-content-92_5760">
+                                                                            {slot_92_5761 ?? (
+                                                                                <p
+                                                                                    id="92_5761"
+                                                                                    className="Pixso-paragraph-92_5761"
+                                                                                >
+                                                                                    {
+                                                                                        "DUMMY"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5762 ?? (
+                                                                        <div
+                                                                            id="92_5762"
+                                                                            className="Pixso-vector-92_5762"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5763"
+                                                                        className="Pixso-frame-92_5763"
+                                                                    >
+                                                                        <div className="frame-content-92_5763">
+                                                                            {slot_92_5764 ?? (
+                                                                                <p
+                                                                                    id="92_5764"
+                                                                                    className="Pixso-paragraph-92_5764"
+                                                                                >
+                                                                                    {
+                                                                                        "3"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5765"
+                                                                        className="Pixso-frame-92_5765"
+                                                                    >
+                                                                        <div className="frame-content-92_5765">
+                                                                            {slot_92_5766 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5766"
+                                                                                    className="Pixso-instance-92_5766"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5766
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5766
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5766
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="92_5767"
+                                                                className="Pixso-frame-92_5767"
+                                                            >
+                                                                <div className="frame-content-92_5767">
+                                                                    <div
+                                                                        id="92_5768"
+                                                                        className="Pixso-frame-92_5768"
+                                                                    >
+                                                                        <div className="frame-content-92_5768">
+                                                                            {slot_92_5769 ?? (
+                                                                                <p
+                                                                                    id="92_5769"
+                                                                                    className="Pixso-paragraph-92_5769"
+                                                                                >
+                                                                                    {
+                                                                                        "9"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5770"
+                                                                        className="Pixso-frame-92_5770"
+                                                                    >
+                                                                        <div className="frame-content-92_5770">
+                                                                            {slot_92_5771 ?? (
+                                                                                <p
+                                                                                    id="92_5771"
+                                                                                    className="Pixso-paragraph-92_5771"
+                                                                                >
+                                                                                    {
+                                                                                        "DUMMY"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    {slot_92_5772 ?? (
+                                                                        <div
+                                                                            id="92_5772"
+                                                                            className="Pixso-vector-92_5772"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_5773"
+                                                                        className="Pixso-frame-92_5773"
+                                                                    >
+                                                                        <div className="frame-content-92_5773">
+                                                                            {slot_92_5774 ?? (
+                                                                                <p
+                                                                                    id="92_5774"
+                                                                                    className="Pixso-paragraph-92_5774"
+                                                                                >
+                                                                                    {
+                                                                                        "3"
+                                                                                    }
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_5775"
+                                                                        className="Pixso-frame-92_5775"
+                                                                    >
+                                                                        <div className="frame-content-92_5775">
+                                                                            {slot_92_5776 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_5776"
+                                                                                    className="Pixso-instance-92_5776"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_5776
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_5776
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_5776
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div
                                                         id="92_5777"
                                                         className="Pixso-frame-92_5777"
