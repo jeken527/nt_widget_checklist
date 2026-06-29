@@ -10,6 +10,9 @@ const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
     const [routineList, setRoutineList] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [priorityInput, setPriorityInput] = useState("");
+    const [descriptionInput, setDescriptionInput] = useState("");
+    const [repeatInput, setRepeatInput] = useState("");
     useEffect(() => {
         const loadData = async () => {
             setIsLoading(true);
@@ -147,7 +150,29 @@ const Frame1019 = () => {
                             transitionConfig={transitionConfig12_703}
                             mouseover={mouseover_12_703}
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
-                        ></Insertbutton>
+                            click={async () => {
+        if (!priorityInput || !descriptionInput || !repeatInput) {
+            alert("모든 빈칸을 입력해주세요!");
+            return;
+        }
+        const newRoutine = {
+            id: Date.now().toString(),
+            priority: priorityInput,
+            description: descriptionInput,
+            repeat: repeatInput,
+            checked: false
+        };
+
+        const updatedList = [...routineList, newRoutine];
+        setRoutineList(updatedList);
+
+        await saveRoutineData({ routines: updatedList });
+
+        setPriorityInput("");
+        setDescriptionInput("");
+        setRepeatInput("");
+    }}
+></Insertbutton>
                     }
                     
                     slot_92_5799={
