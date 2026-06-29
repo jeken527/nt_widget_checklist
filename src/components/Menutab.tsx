@@ -12569,12 +12569,12 @@ const Menutab = (props: MenutabProps) => {
                                     </div>
                                 </div>
                                 <div className="stroke-9_61"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 )}
 
+                {/* 🌟 서치 팝업창 렌더링 구역 (수첩 내용이 다 닫힌 후 가장 바깥에 안전하게 위치) */}
                 {isSearchPopupOpen && (
                     <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
                         <Frame63372 />
@@ -12585,4 +12585,5 @@ const Menutab = (props: MenutabProps) => {
         </div>
     );
 };
+
 export default Menutab;
