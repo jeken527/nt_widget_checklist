@@ -150,27 +150,28 @@ const Frame1019 = () => {
                             transitionConfig={transitionConfig12_703}
                             mouseover={mouseover_12_703}
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
-                            click={async () => {
-        if (!priorityInput || !descriptionInput || !repeatInput) {
+    click={async () => {
+        if (!priInput || !descrbInput || !repInput) {
             alert("모든 빈칸을 입력해주세요!");
             return;
         }
+        
         const newRoutine = {
-            id: Date.now().toString(),
-            priority: priorityInput,
-            description: descriptionInput,
-            repeat: repeatInput,
+            id: Date.now().toString(), // 고유 번호표
+            priority: priInput,
+            description: descrbInput,
+            repeat: repInput,
             checked: false
         };
-
+        
         const updatedList = [...routineList, newRoutine];
         setRoutineList(updatedList);
-
+        
         await saveRoutineData({ routines: updatedList });
-
-        setPriorityInput("");
-        setDescriptionInput("");
-        setRepeatInput("");
+        
+        setPriInput("");
+        setDescrbInput("");
+        setRepInput("");
     }}
 ></Insertbutton>
                     }
