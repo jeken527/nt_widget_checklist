@@ -96,7 +96,7 @@ height: 100px;
 overflow: hidden;
 position: relative;
 flex-shrink: 0;
-overflow-y: auto;
+overflow-y: hidden;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -109,8 +109,8 @@ flex-direction: column;
 gap: 2px;
 align-items: center;
 padding: 10px 10px 10px 10px;
-width: 100%;
-height: 100%;
+width: 220px;
+height: 100px;
 position: relative;
       }
 .stroke-wrapper-63_391 {
