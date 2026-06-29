@@ -4,6 +4,7 @@ import Insertbutton from "@/components/Insertbutton";
 import Serchbutton from "@/components/Serchbutton";
 import Datecomponents from "@/components/Datecomponents";
 import "@/styles/Menutab.css";
+import Frame63372 from "@/views/Frame63372";
 interface MenutabProps {
     setMenuState?: any;
     menu_state?: string;
@@ -721,6 +722,7 @@ interface MenutabProps {
 }
 const Menutab = (props: MenutabProps) => {
     const [searchInput, setSearchInput] = useState("");
+	const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
     const [reminderInput, setReminderInput] = useState("");
     const [planRoutine1, setPlanRoutine1] = useState("");
     const [planRoutine2, setPlanRoutine2] = useState("");
@@ -4571,18 +4573,19 @@ const Menutab = (props: MenutabProps) => {
                                                             </div>
                                                             {slot_92_7329 ?? (
                                                                 <Serchbutton
-                                                                    id="92_7329"
-                                                                    className="Pixso-instance-92_7329"
-                                                                    search_button_state={
-                                                                        search_button_state_92_7329
-                                                                    }
-                                                                    transitionConfig={
-                                                                        transitionConfig92_7329
-                                                                    }
-                                                                    mouseover={
-                                                                        mouseover_92_7329
-                                                                    }
-                                                                ></Serchbutton>
+    id="92_7329"
+    className="Pixso-instance-92_7329"
+    search_button_state={
+        search_button_state_92_7329
+    }
+    transitionConfig={
+        transitionConfig92_7329
+    }
+    mouseover={
+        mouseover_92_7329
+    }
+    click={() => setIsSearchPopupOpen(true)}
+></Serchbutton>
                                                             )}
                                                         </div>
                                                     </div>
@@ -12566,10 +12569,17 @@ const Menutab = (props: MenutabProps) => {
                                     </div>
                                 </div>
                                 <div className="stroke-9_61"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 )}
+                {isSearchPopupOpen && (
+                    <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
+                        <Frame63372 />
+                    </div>
+                )}
+
             </div>
         </div>
     );
