@@ -10,27 +10,6 @@ const Frame1019 = () => {
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
     const [repInput, setRepInput] = useState("");
-    const [routineList, setRoutineList] = useState<any[]>([]);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const handleInsertClick = () => {
-        if (priInput.trim() === "" && descrbInput.trim() === "" && repInput.trim() === "") {
-            setIsPopupOpen(true);
-            alert("CHECKLIST_POPUP 이 나타납니다!");
-        }
-        else if (priInput.trim() !== "" && descrbInput.trim() !== "" && repInput.trim() !== "") {
-            const newRoutine = {
-                id: Date.now(),
-                priority: priInput,
-                description: descrbInput,
-                repeat: repInput
-            };
-            setRoutineList([...routineList, newRoutine]);
-            
-            setPriInput("");
-            setDescrbInput("");
-            setRepInput("");
-        }
-    };
     const today = new Date();
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     const currentYear = `${today.getFullYear()}`;
@@ -119,7 +98,6 @@ const Frame1019 = () => {
                     className="Pixso-instance-10_8"
                     menu_state={menuState}
                     setMenuState={setMenuState}
-                    routineList={routineList}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
@@ -150,7 +128,6 @@ const Frame1019 = () => {
                             id="12_703"
                             className="Pixso-instance-12_703"
                             insert_button_state={insert_button_state_12_703}
-                            click={handleInsertClick}
                             transitionConfig={transitionConfig12_703}
                             mouseover={mouseover_12_703}
                             slot_53_245={<p id="12_704" className="Pixso-paragraph-12_704">{"INSERT"}</p>}
@@ -192,7 +169,114 @@ const Frame1019 = () => {
                     slot_92_5785={<p id="12_688" className="Pixso-paragraph-12_688">{"RATE:"}</p>}
                     slot_92_5783={<p id="12_686" className="Pixso-paragraph-12_686">{"10"}</p>}
                     slot_92_5781={<p id="12_684" className="Pixso-paragraph-12_684">{"TOTAL:"}</p>}
-                    
+                    slot_92_5776={
+                        <Checkbox
+                            id="12_678"
+                            className="Pixso-instance-12_678"
+                            checkbox_state={checkbox_state_12_678}
+                            transitionConfig={transitionConfig12_678}
+                            click={click_12_678}
+                        ></Checkbox>
+                    }
+                    slot_92_5774={<p id="12_676" className="Pixso-paragraph-12_676">{"3"}</p>}
+                    slot_92_5771={<p id="12_673" className="Pixso-paragraph-12_673">{"DUMMY"}</p>}
+                    slot_92_5769={<p id="12_671" className="Pixso-paragraph-12_671">{"9"}</p>}
+                    slot_92_5766={
+                        <Checkbox
+                            id="12_667"
+                            className="Pixso-instance-12_667"
+                            checkbox_state={checkbox_state_12_667}
+                            transitionConfig={transitionConfig12_667}
+                            click={click_12_667}
+                        ></Checkbox>
+                    }
+                    slot_92_5764={<p id="12_665" className="Pixso-paragraph-12_665">{"3"}</p>}
+                    slot_92_5761={<p id="12_662" className="Pixso-paragraph-12_662">{"DUMMY"}</p>}
+                    slot_92_5759={<p id="12_660" className="Pixso-paragraph-12_660">{"8"}</p>}
+                    slot_92_5756={
+                        <Checkbox
+                            id="12_656"
+                            className="Pixso-instance-12_656"
+                            checkbox_state={checkbox_state_12_656}
+                            transitionConfig={transitionConfig12_656}
+                            click={click_12_656}
+                        ></Checkbox>
+                    }
+                    slot_92_5754={<p id="12_654" className="Pixso-paragraph-12_654">{"1"}</p>}
+                    slot_92_5751={<p id="12_651" className="Pixso-paragraph-12_651">{"DUMMY"}</p>}
+                    slot_92_5749={<p id="12_649" className="Pixso-paragraph-12_649">{"7"}</p>}
+                    slot_92_5746={
+                        <Checkbox
+                            id="12_645"
+                            className="Pixso-instance-12_645"
+                            checkbox_state={checkbox_state_12_645}
+                            transitionConfig={transitionConfig12_645}
+                            click={click_12_645}
+                        ></Checkbox>
+                    }
+                    slot_92_5744={<p id="12_643" className="Pixso-paragraph-12_643">{"5"}</p>}
+                    slot_92_5741={<p id="12_640" className="Pixso-paragraph-12_640">{"DUMMY"}</p>}
+                    slot_92_5739={<p id="12_638" className="Pixso-paragraph-12_638">{"6"}</p>}
+                    slot_92_5736={
+                        <Checkbox
+                            id="12_634"
+                            className="Pixso-instance-12_634"
+                            checkbox_state={checkbox_state_12_634}
+                            transitionConfig={transitionConfig12_634}
+                            click={click_12_634}
+                        ></Checkbox>
+                    }
+                    slot_92_5734={<p id="12_632" className="Pixso-paragraph-12_632">{"1"}</p>}
+                    slot_92_5731={<p id="12_629" className="Pixso-paragraph-12_629">{"이슈 크롤링"}</p>}
+                    slot_92_5729={<p id="12_627" className="Pixso-paragraph-12_627">{"5"}</p>}
+                    slot_92_5726={
+                        <Checkbox
+                            id="12_623"
+                            className="Pixso-instance-12_623"
+                            checkbox_state={checkbox_state_12_623}
+                            transitionConfig={transitionConfig12_623}
+                            click={click_12_623}
+                        ></Checkbox>
+                    }
+                    slot_92_5724={<p id="12_621" className="Pixso-paragraph-12_621">{"2"}</p>}
+                    slot_92_5721={<p id="12_618" className="Pixso-paragraph-12_618">{"회의 안건 찾아보기"}</p>}
+                    slot_92_5719={<p id="12_616" className="Pixso-paragraph-12_616">{"4"}</p>}
+                    slot_92_5716={
+                        <Checkbox
+                            id="12_612"
+                            className="Pixso-instance-12_612"
+                            checkbox_state={checkbox_state_12_612}
+                            transitionConfig={transitionConfig12_612}
+                            click={click_12_612}
+                        ></Checkbox>
+                    }
+                    slot_92_5714={<p id="12_610" className="Pixso-paragraph-12_610">{"2"}</p>}
+                    slot_92_5711={<p id="12_607" className="Pixso-paragraph-12_607">{"폴더 정리 및 메일 확인"}</p>}
+                    slot_92_5709={<p id="12_605" className="Pixso-paragraph-12_605">{"3"}</p>}
+                    slot_92_5706={
+                        <Checkbox
+                            id="12_601"
+                            className="Pixso-instance-12_601"
+                            checkbox_state={checkbox_state_12_601}
+                            transitionConfig={transitionConfig12_601}
+                            click={click_12_601}
+                        ></Checkbox>
+                    }
+                    slot_92_5704={<p id="12_599" className="Pixso-paragraph-12_599">{"1"}</p>}
+                    slot_92_5701={<p id="12_596" className="Pixso-paragraph-12_596">{"데이터 분석하기"}</p>}
+                    slot_92_5699={<p id="12_594" className="Pixso-paragraph-12_594">{"2"}</p>}
+                    slot_92_5696={
+                        <Checkbox
+                            id="12_590"
+                            className="Pixso-instance-12_590"
+                            checkbox_state={checkbox_state_12_590}
+                            transitionConfig={transitionConfig12_590}
+                            click={click_12_590}
+                        ></Checkbox>
+                    }
+                    slot_92_5694={<p id="12_588" className="Pixso-paragraph-12_588">{"1"}</p>}
+                    slot_92_5691={<p id="12_585" className="Pixso-paragraph-12_585">{"일간 데이터 정리하기"}</p>}
+                    slot_92_5689={<p id="12_583" className="Pixso-paragraph-12_583">{"1"}</p>}
                     slot_92_5685={<p id="12_579" className="Pixso-paragraph-12_579">{"CHECK"}</p>}
                     slot_92_5684={<p id="12_578" className="Pixso-paragraph-12_578">{"REP."}</p>}
                     slot_92_5683={<p id="12_577" className="Pixso-paragraph-12_577">{"DESCR."}</p>}
