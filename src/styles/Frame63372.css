@@ -121,7 +121,7 @@ display: flex;
 flex-shrink: 0;
       }
 .stroke-63_391 {
-        position: absolute;
+        position: relative;
 inset: 0px;
 border-radius: 0px 0px 0px 0px;
 pointer-events: none;
