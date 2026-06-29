@@ -3,10 +3,26 @@ import Insertbutton from "@/components/Insertbutton";
 import { useState } from "react";
 import Checkbox from "@/components/Checkbox";
 import "@/styles/Frame1019.css";
+import { fetchRoutineData, saveRoutineData } from "@/api/jsonbin";
+import { useEffect } from "react";
 
 const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
-
+    const [routineList, setRoutineList] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        const loadData = async () => {
+            setIsLoading(true);
+            const data = await fetchRoutineData();
+            if (data && Array.isArray(data.routines)) { 
+                setRoutineList(data.routines);
+            }
+            setIsLoading(false);
+        };
+        
+        loadData();
+    }, []);
+    
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
     const [repInput, setRepInput] = useState("");
