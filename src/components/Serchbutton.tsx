@@ -1,26 +1,32 @@
 import { withStopPropagation } from "@/utils/utils";
 import "@/styles/Serchbutton.css";
+
 interface SerchbuttonProps {
     search_button_state?: string;
     searchbutton?: string;
     id?: string;
     className?: string;
     mouseover?: (e: any) => void;
+    click?: (e: any) => void;
 }
+
 const Serchbutton = (props: SerchbuttonProps) => {
     const {
         search_button_state,
         searchbutton,
         id,
         className = "",
-        mouseover
+        mouseover,
+        click
     } = props;
 
     return (
         <div
             className={`component-55_283 ${className}`}
             id={id}
-            onMouseover={withStopPropagation(mouseover)}
+            onMouseOver={mouseover ? withStopPropagation(mouseover) : undefined}
+            onClick={click ? withStopPropagation(click) : undefined}
+            style={{ cursor: "pointer" }}
         >
             <div id="55_283" className="Pixso-symbol-55_283">
                 {search_button_state === "default" && (
