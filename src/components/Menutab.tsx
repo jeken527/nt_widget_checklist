@@ -10,6 +10,7 @@ interface MenutabProps {
     menu_state?: string;
     id?: string;
     className?: string;
+	routineList?: any[];
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -748,6 +749,7 @@ const Menutab = (props: MenutabProps) => {
         menu_state,
         id,
         className = "",
+		routineList = [],
         slot_92_5669,
         slot_92_5671,
         slot_92_5673,
