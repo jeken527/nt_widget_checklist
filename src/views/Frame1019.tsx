@@ -119,6 +119,7 @@ const Frame1019 = () => {
                     className="Pixso-instance-10_8"
                     menu_state={menuState}
                     setMenuState={setMenuState}
+                    routineList={routineList}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
@@ -210,68 +211,6 @@ const Frame1019 = () => {
                         </div>
                     }
                 ></Menutab>
-                
-                {/* 🌟 유저님의 피그마 레이어 구성을 100% 반영한 동적 컨테이너 (W 380 * H 190, 세로 스크롤) */}
-                {menuState === "checklist" && (
-                    <div 
-                        className="checklist-container-dynamic" 
-                        style={{ 
-                            position: 'absolute', 
-                            left: '36px',       // 원래 디자인의 왼쪽 여백 위치
-                            top: '310px',       // 원래 디자인의 첫 줄 시작 위치
-                            width: '380px',     // checklist-container 가로 크기
-                            height: '190px',    // checklist-container 세로 크기
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '2px',         // 오토 레이아웃 간격 2px
-                            overflowY: 'auto',   // 넘친 콘텐츠 숨기기 및 세로 스크롤 활성화
-                            overflowX: 'hidden',
-                            zIndex: 10 
-                        }}
-                    >
-                        {routineList.map((routine) => (
-                            <div key={routine.id} className="routine-list-item" style={{ 
-                                display: 'flex', 
-                                alignItems: 'center',
-                                width: '100%', 
-                                minHeight: '24px',
-                                flexShrink: 0
-                            }}>
-                                
-                                <p className="Pixso-paragraph-12_698" style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0 }}>
-                                    {routine.priority}
-                                </p>
-
-                                <p className="Pixso-paragraph-12_700" style={{ paddingLeft: '8px', margin: 0, padding: 0, textAlign: 'left', flexShrink: 0 }}>
-                                    {routine.description}
-                                </p>
-
-                                <div 
-                                    className="Pixso-vector-12_681" 
-                                    style={{ 
-                                        flex: 1, 
-                                        height: '1px', 
-                                        margin: '0 8px',
-                                        backgroundImage: 'url(@/assets/images/Line2.svg)',
-                                        backgroundSize: '100% 100%',
-                                        backgroundRepeat: 'no-repeat',
-                                        position: 'relative',
-                                        flexShrink: 1
-                                    }}
-                                ></div>
-
-                                <p className="Pixso-paragraph-12_702" style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0 }}>
-                                    {routine.repeat}
-                                </p>
-
-                                <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '8px', flexShrink: 0 }}>
-                                    <Checkbox checkbox_state="default" />
-                                </div>
-
-                            </div>
-                        ))}
-                    </div>
-                )}
                 
                 <div id="6_15" className="Pixso-frame-6_15">
                     <div className="frame-content-6_15">
