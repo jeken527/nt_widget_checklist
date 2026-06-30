@@ -1897,7 +1897,7 @@ const Menutab = (props: MenutabProps) => {
                                     {routine.repeat}
                                 </p>
 
-                                {{/* [5] Checkbox (자동 토글 스위치 부품) */}
+                                {/* [5] Checkbox (자동 토글 스위치 부품) */}
                                 <div 
                                     style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0, cursor: 'pointer' }}
                                     // 🌟 1. 이 div를 클릭하면 부모가 준 toggle 함수를 실행!
