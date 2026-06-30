@@ -36,14 +36,10 @@ const Frame6528 = (props: Frame6528Props) => {
                                 <Button3components
                                     id="65_32"
                                     className="Pixso-instance-65_32"
-                                    onClick65_3263_311139_132={withStopPropagation(() => {
-                                        if (onClose) onClose(); // 닫기[X] 버튼 누르면 부모에게 닫으라고 알림!
-                                        OverlayManager.instance.close();
-                                    })}
-                                    onClick65_3263_311135_151={withStopPropagation(() => {
+                                    // 🌟 우리가 개조했던 부품에 맞춰서 "click" 이라는 이름으로 닫기 명령을 내립니다!
+                                    click={() => {
                                         if (onClose) onClose();
-                                        OverlayManager.instance.close();
-                                    })}
+                                    }}
                                 ></Button3components>
                             </div>
                         </div>
