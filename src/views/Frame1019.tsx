@@ -26,53 +26,53 @@ const Frame1019 = () => {
     useEffect(() => {
         const loadAndCheckReset = async () => {
             setIsLoading(true);
-            const data = await fetchRoutineData(); // JSONBin에서 데이터 가져오기
+            const data = await fetchRoutineData(); 
 
             if (data) {
                 const todayKST = getKSTDateString();
                 
-                // 데이터 꺼내기 (없으면 빈 가방으로)
                 let savedRoutines = data.routines || [];
                 let savedHistory = data.history || {};
-                let savedPlanner = data.daily_planner || {};
-                const lastDate = data.lastDate || todayKST; // 마지막 접속일
+                let savedPlanner = data.daily_planner || ""; // 🌟 만약 텍스트 그대로 저장했다면 기본값 ""
+                const lastDate = data.lastDate || todayKST;
 
-                // ⏰ [리셋 조건] 마지막 접속일과 오늘 날짜가 다르다면? (날이 바뀌었다면!)
+                // ⏰ 날이 바뀌었을 때
                 if (lastDate !== todayKST) {
-                    // 1. 어제 날짜에 체크(checked: true)된 루틴들의 'description(이름)'만 쏙 뽑아냅니다.
                     const completedRoutines = savedRoutines
                         .filter((r: any) => r.checked === true)
                         .map((r: any) => r.description);
                     
-                    // 2. 뽑아낸 기록을 history 방의 '어제 날짜' 서랍에 고스란히 저장 (트래커용)
                     if (completedRoutines.length > 0) {
                         savedHistory[lastDate] = completedRoutines; 
                     }
 
-                    // 3. 루틴들의 체크박스를 모두 해제(false)하여 새 아침 준비!
+                    // 1. 루틴 체크박스만 초기화!
                     savedRoutines = savedRoutines.map((r: any) => ({ ...r, checked: false }));
                     
-                    // 4. 데일리 플래너 메모장 비우기 (만약 날짜별로 저장하고 싶다면 history처럼 저장 가능)
-                    savedPlanner = {}; // 혹은 "" 로 초기화
+                    // ❌ 데일리 플래너 리셋 코드는 넣지 않습니다! (savedPlanner 데이터 유지)
 
-                    // 5. 청소된 깨끗한 데이터들을 JSONBin에 바로 덮어쓰기!
+                    // 2. 금고에 그대로 저장
                     await saveRoutineData({
-                        lastDate: todayKST,       // 이제 마지막 접속일은 오늘!
+                        lastDate: todayKST,
                         routines: savedRoutines,
                         history: savedHistory,
-                        daily_planner: savedPlanner
+                        daily_planner: savedPlanner // 🌟 어제 쓰던 내용 그대로 백업!
                     });
                 }
 
-                // 📺 [화면 출력] 정리가 다 끝난 데이터를 화면 변수에 세팅!
+                // 📺 [화면 출력] 정리가 다 끝난 데이터를 진짜 화면 변수에 세팅!
                 setRoutineList(savedRoutines);
                 setHistoryData(savedHistory);
+                
+                // 🌟 [주석 해제 및 수정] 금고에서 가져온 리마인더 텍스트를 부모 변수에 보관합니다.
+                setReminderInput(savedPlanner); 
             }
             setIsLoading(false);
         };
         
         loadAndCheckReset();
     }, []);
+    
     const toggleRoutineCheck = async (id: string) => {
         const updatedList = routineList.map((routine) => 
             routine.id === id ? { ...routine, checked: !routine.checked } : routine
@@ -181,6 +181,9 @@ const Frame1019 = () => {
                     menu_state={menuState}
                     setMenuState={setMenuState}
                     routineList={routineList}
+                    toggleRoutineCheck={toggleRoutineCheck}
+                    reminderInput={reminderInput}
+                    setReminderInput={setReminderInput}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
