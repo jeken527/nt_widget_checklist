@@ -1897,13 +1897,17 @@ const Menutab = (props: MenutabProps) => {
                                     {routine.repeat}
                                 </p>
 
-                                {/* [5] Checkbox */}
-                                <div style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0 }}>
-                                    <Checkbox checkbox_state="default" />
+                                {{/* [5] Checkbox (자동 토글 스위치 부품) */}
+                                <div 
+                                    style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0, cursor: 'pointer' }}
+                                    // 🌟 1. 이 div를 클릭하면 부모가 준 toggle 함수를 실행!
+                                    onClick={() => props.toggleRoutineCheck && props.toggleRoutineCheck(routine.id)}
+                                >
+                                    <Checkbox 
+                                        // 🌟 2. routine.checked가 true면 "checked" 모양을, false면 "default" 모양을 띄움!
+                                        checkbox_state={routine.checked ? "checked" : "default"} 
+                                    />
                                 </div>
-                            </div>
-                        ))}
-                    </div>
                                                     <div
                                                         id="92_5777"
                                                         className="Pixso-frame-92_5777"
