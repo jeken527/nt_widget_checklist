@@ -7,25 +7,87 @@ import { fetchRoutineData, saveRoutineData } from "@/api/jsonbin";
 import { useEffect } from "react";
 import Frame6528 from "@/views/Frame6528";
 
+const getKSTDateString = () => {
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const kst = new Date(utc + (9 * 3600000)); // UTC + 9시간
+    return kst.toISOString().split('T')[0]; 
+};
+
 const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
     const [routineList, setRoutineList] = useState<any[]>([]);
+    const [historyData, setHistoryData] = useState<any>({});
+    const [reminderInput, setReminderInput] = useState("")
     const [isLoading, setIsLoading] = useState(true);
     const [priorityInput, setPriorityInput] = useState("");
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
     useEffect(() => {
-        const loadData = async () => {
+        const loadAndCheckReset = async () => {
             setIsLoading(true);
-            const data = await fetchRoutineData();
-            if (data && Array.isArray(data.routines)) { 
-                setRoutineList(data.routines);
+            const data = await fetchRoutineData(); // JSONBin에서 데이터 가져오기
+
+            if (data) {
+                const todayKST = getKSTDateString();
+                
+                // 데이터 꺼내기 (없으면 빈 가방으로)
+                let savedRoutines = data.routines || [];
+                let savedHistory = data.history || {};
+                let savedPlanner = data.daily_planner || {};
+                const lastDate = data.lastDate || todayKST; // 마지막 접속일
+
+                // ⏰ [리셋 조건] 마지막 접속일과 오늘 날짜가 다르다면? (날이 바뀌었다면!)
+                if (lastDate !== todayKST) {
+                    // 1. 어제 날짜에 체크(checked: true)된 루틴들의 'description(이름)'만 쏙 뽑아냅니다.
+                    const completedRoutines = savedRoutines
+                        .filter((r: any) => r.checked === true)
+                        .map((r: any) => r.description);
+                    
+                    // 2. 뽑아낸 기록을 history 방의 '어제 날짜' 서랍에 고스란히 저장 (트래커용)
+                    if (completedRoutines.length > 0) {
+                        savedHistory[lastDate] = completedRoutines; 
+                    }
+
+                    // 3. 루틴들의 체크박스를 모두 해제(false)하여 새 아침 준비!
+                    savedRoutines = savedRoutines.map((r: any) => ({ ...r, checked: false }));
+                    
+                    // 4. 데일리 플래너 메모장 비우기 (만약 날짜별로 저장하고 싶다면 history처럼 저장 가능)
+                    savedPlanner = {}; // 혹은 "" 로 초기화
+
+                    // 5. 청소된 깨끗한 데이터들을 JSONBin에 바로 덮어쓰기!
+                    await saveRoutineData({
+                        lastDate: todayKST,       // 이제 마지막 접속일은 오늘!
+                        routines: savedRoutines,
+                        history: savedHistory,
+                        daily_planner: savedPlanner
+                    });
+                }
+
+                // 📺 [화면 출력] 정리가 다 끝난 데이터를 화면 변수에 세팅!
+                setRoutineList(savedRoutines);
+                setHistoryData(savedHistory);
             }
             setIsLoading(false);
         };
         
-        loadData();
+        loadAndCheckReset();
     }, []);
+    const toggleRoutineCheck = async (id: string) => {
+        const updatedList = routineList.map((routine) => 
+            routine.id === id ? { ...routine, checked: !routine.checked } : routine
+        );
+        
+        setRoutineList(updatedList); // 화면 즉시 변경 (틱! 하고 체크됨)
+        
+        // JSONBin에 변경된 상태를 통째로 덮어쓰기 (새로고침해도 체크 상태 유지!)
+        await saveRoutineData({
+            lastDate: getKSTDateString(),
+            routines: updatedList,
+            history: historyData, // 기존 히스토리 유지
+            daily_planner: {} // 데일리 플래너 데이터 유지 (필요에 따라 변수 추가)
+        });
+    };
     const [isChecklistPopupOpen, setIsChecklistPopupOpen] = useState(false);
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
