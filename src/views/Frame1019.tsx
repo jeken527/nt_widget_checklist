@@ -20,6 +20,10 @@ const Frame1019 = () => {
     const [historyData, setHistoryData] = useState<any>({});
     const [reminderInput, setReminderInput] = useState("")
     const [isLoading, setIsLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredRoutines, setFilteredRoutines] = useState<any[]>([]); 
+    const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false); 
+    const [isNoResultPopupOpen, setIsSearchNoResultPopupOpen] = useState(false);
     const [priorityInput, setPriorityInput] = useState("");
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
@@ -95,6 +99,8 @@ const Frame1019 = () => {
     const today = new Date();
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     const currentYear = `${today.getFullYear()}`;
+
+
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
     const [checkbox_state_12_678, setCheckbox_state_12_678] = useState("default");
@@ -184,6 +190,8 @@ const Frame1019 = () => {
                     toggleRoutineCheck={toggleRoutineCheck}
                     reminderInput={reminderInput}
                     setReminderInput={setReminderInput}
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
