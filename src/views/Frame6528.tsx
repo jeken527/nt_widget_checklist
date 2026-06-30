@@ -6,7 +6,16 @@ import { getPathByGuid } from "@/router/routes";
 import { useState } from "react";
 import Routinedataselect from "@/components/Routinedataselect";
 import "@/styles/Frame6528.css";
-const Frame6528 = () => {
+
+interface Frame6528Props {
+    routineList?: any[];
+    onClose?: () => void;
+    onSelectDesc?: (desc: string) => void;
+}
+
+const Frame6528 = (props: Frame6528Props) => {
+    const { routineList = [], onClose, onSelectDesc } = props;
+    const uniqueDescriptions = Array.from(new Set(routineList.map(r => r.description)));
     const navigate = useNavigate();
     const [button3state_65_32, setButton3state_65_32] = useState("default");
     const [routinedatastate_92_5435, setRoutinedatastate_92_5435] =
@@ -306,6 +315,7 @@ const Frame6528 = () => {
         <div className="scroll-container">
             <div id="65_28" className="stroke-wrapper-65_28">
                 <div className="Pixso-frame-65_28">
+                    <div onClick={onClose} style={{ cursor: "pointer", /* 기존 스타일 */ }}>닫기</div>
                     <div className="frame-content-65_28">
                         <div
                             id="65_29"
