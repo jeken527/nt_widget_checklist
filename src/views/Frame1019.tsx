@@ -6,6 +6,8 @@ import "@/styles/Frame1019.css";
 import { fetchRoutineData, saveRoutineData } from "@/api/jsonbin";
 import { useEffect } from "react";
 import Frame6528 from "@/views/Frame6528";
+import Frame63372 from "@/views/Frame63372";
+import Frame63357 from "@/views/Frame63357";
 
 const getKSTDateString = () => {
     const now = new Date();
@@ -438,7 +440,25 @@ setIsChecklistPopupOpen(false);
 />
 </div>
 )}
-</div>
+            {isSearchPopupOpen && (
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
+                    <Frame63372 
+                        filteredRoutines={filteredRoutines} // 필터링된 진짜 결과만 전달!
+                        onClose={() => setIsSearchPopupOpen(false)} // 닫기 스위치
+                    />
+                </div>
+            )}
+
+            {/* 🌟 2. 검색 결과가 없을 때 띄우는 팝업 (Frame63357) */}
+            {isNoResultPopupOpen && (
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
+                    <Frame63357 
+                        onClose={() => setIsSearchNoResultPopupOpen(false)} // 닫기 스위치
+                    />
+                </div>
+            )}
+
+        </div> // <-- Frame1019 전체 껍데기 닫는 div
     );
 };
 export default Frame1019;
