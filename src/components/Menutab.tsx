@@ -11,6 +11,9 @@ interface MenutabProps {
     id?: string;
     className?: string;
 	routineList?: any[];
+	toggleRoutineCheck?: (id: string) => void;
+	reminderInput?: string;
+    setReminderInput?: (value: string) => void;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -3606,12 +3609,12 @@ const Menutab = (props: MenutabProps) => {
                                                                             id="92_8655_0"
                                                                             className="Pixso-paragraph-92_8655_0"
                                                                         >
-                                                                            <textarea 
-    value={reminderInput} 
-    onChange={(e) => setReminderInput(e.target.value)} 
+                                                                            <textarea // (또는 input)
+    value={props.reminderInput || ""} // 🌟 부모가 들고 있는 진짜 금고 데이터와 연결!
+    onChange={(e) => props.setReminderInput && props.setReminderInput(e.target.value)} // 🌟 타자를 칠 때마다 부모의 두뇌에 실시간 기록!
     placeholder="오늘의 한 줄" 
     className="Pixso-span-92_8655_0_1" 
-    style={{ 
+    style={{
         width: "360px",
         height: "45px",
         border: "none", 
