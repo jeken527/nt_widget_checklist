@@ -25,7 +25,7 @@ const Frame1019 = () => {
         
         loadData();
     }, []);
-    
+    const [isChecklistPopupOpen, setIsChecklistPopupOpen] = useState(false);
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
     const [repInput, setRepInput] = useState("");
