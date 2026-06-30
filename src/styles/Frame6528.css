@@ -1,12 +1,12 @@
 
 .scroll-container {
-        height: 100%;
-width: 100%;
-overflow: auto;
+        height: 270px;
+width: 240px;
+overflow: hidden;
       }
 .Pixso-frame-65_28 {
-        width: 100%;
-height: 100%;
+        width: 240px;
+height: 270px;
 position: relative;
 flex-shrink: 0;
 display: flex;
@@ -24,13 +24,13 @@ gap: 8px;
 align-items: center;
 justify-content: center;
 padding: 5px 3px 8px 5px;
-width: 100%;
-height: 100%;
+width: 240px;
+height: 270px;
 position: relative;
       }
 .stroke-wrapper-65_28 {
         position: relative;
-width: 100%;
+width: 240px;
 height: 270px;
 display: flex;
 flex-shrink: 0;
