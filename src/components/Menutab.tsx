@@ -3863,16 +3863,35 @@ const Menutab = (props: MenutabProps) => {
                                                                 <Serchbutton
     id="92_7329"
     className="Pixso-instance-92_7329"
-    search_button_state={
-        search_button_state_92_7329
-    }
-    transitionConfig={
-        transitionConfig92_7329
-    }
-    mouseover={
-        mouseover_92_7329
-    }
-    click={() => setIsSearchPopupOpen(true)}
+    search_button_state={search_button_state_92_7329}
+    transitionConfig={transitionConfig92_7329}
+    mouseover={mouseover_92_7329}
+    click={() => {
+        // 1. 검색어가 비어있다면 에러 방지 (그냥 엔터 쳤을 때)
+        if (!searchInput.trim()) {
+            alert("검색어를 입력해 주세요!");
+            return;
+        }
+
+        // 2. 금고에서 꺼내둔 전체 루틴(routineList) 중 검색어가 포함된 것만 솎아내기!
+        // (toLowerCase()를 써서 대소문자 상관없이 검색되도록 똑똑하게 처리합니다)
+        const results = routineList.filter((routine: any) => 
+            routine.description.toLowerCase().includes(searchInput.toLowerCase().trim())
+        );
+
+        // 3. 솎아낸 결과 개수에 따라 어떤 팝업을 띄울지 결정! 🌟
+        if (results.length > 0) {
+            // 매칭되는 결과가 1개라도 있다면? 결과창(Frame63372) OPEN!
+            setFilteredRoutines(results); // 자식에게 넘겨줄 가방에 결과물 담기
+            setIsSearchPopupOpen(true);
+            setIsSearchNoResultPopupOpen(false); // 결과 없음 창은 확실히 닫아두기
+        } else {
+            // 매칭되는 결과가 아예 없다면? 결과 없음 창(Frame63357) OPEN!
+            setFilteredRoutines([]); // 가방 비우기
+            setIsSearchPopupOpen(false); // 결과창은 확실히 닫아두기
+            setIsSearchNoResultPopupOpen(true);
+        }
+    }}
 ></Serchbutton>
                                                             )}
                                                         </div>
