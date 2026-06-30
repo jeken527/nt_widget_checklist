@@ -1,8 +1,8 @@
 
 .scroll-container {
-        height: 270px;
-width: 240px;
-overflow: hidden;
+        height: 100%;
+width: 100%;
+overflow: auto;
       }
 .Pixso-frame-65_28 {
         width: 240px;
