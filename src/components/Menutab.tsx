@@ -14,6 +14,8 @@ interface MenutabProps {
 	toggleRoutineCheck?: (id: string) => void;
 	reminderInput?: string;
     setReminderInput?: (value: string) => void;
+	searchInput?: string;
+    setSearchInput?: (value: string) => void;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -3834,8 +3836,8 @@ const Menutab = (props: MenutabProps) => {
                                                                         {slot_92_7328 ?? (
     <input 
     type="text" 
-    value={searchInput} 
-    onChange={(e) => setSearchInput(e.target.value)} 
+    value={props.searchInput || ""}
+    onChange={(e) => props.setSearchInput && props.setSearchInput(e.target.value)}
     placeholder="SEARCH"
 	className="Pixso-paragraph-92_7328"
     style={{
