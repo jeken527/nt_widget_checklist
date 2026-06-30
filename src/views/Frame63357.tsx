@@ -1,79 +1,58 @@
 import { OverlayManager } from "@/components/overlay";
 import { withStopPropagation } from "@/utils/utils";
 import Button3components from "@/components/Button3components";
-import { useNavigate } from "react-router";
-import { getPathByGuid } from "@/router/routes";
-import { useState } from "react";
 import "@/styles/Frame63357.css";
-const Frame63357 = () => {
-    const navigate = useNavigate();
-    const [button3state_63_328, setButton3state_63_328] = useState("default");
-    const [transitionConfig63_328, setTransitionConfig63_328] = useState({});
-    const transitionConfig: any = {
-        "63:328_63:315_mo": {
-            transition: { duration: 0, ease: [0.215, 0.61, 0.355, 1] }
-        }
-    };
 
-    const click_63_328_63_311_135_151 = () => {
-        navigate(getPathByGuid("63:315"), {
-            state: {
-                from: "63:328_63:311_135:151",
-                et: "c"
-            }
-        });
-    };
+// 🌟 1. 부모(Frame1019)가 전달하는 닫기 명령을 받을 이름표(Props)
+interface Frame63357Props {
+    onClose?: () => void;
+}
 
-    const mouseover_63_328 = () => {
-        setButton3state_63_328("checked");
-    };
+const Frame63357 = (props: Frame63357Props) => {
+    // 🌟 2. 부모가 준 닫기 함수 꺼내기
+    const { onClose } = props;
 
     return (
         <div className="scroll-container">
             <div id="63_357" className="stroke-wrapper-63_357">
                 <div className="Pixso-frame-63_357">
+                    
+                    {/* 🌟 팝업 바깥 어두운 배경 클릭 시 닫기 기능 */}
+                    <div 
+                        onClick={onClose} 
+                        style={{ position: "absolute", top:0, left:0, width:"100%", height:"100%", zIndex: -1, cursor: "pointer" }}
+                    ></div>
+
                     <div className="frame-content-63_357">
-                        <div
-                            id="63_325"
-                            className="Pixso-frame-63_325"
-                            onClick={withStopPropagation(() => {
-                                OverlayManager.instance.close();
-                            })}
-                        >
+                        
+                        {/* 🎯 상단 "SEARCH" 타이틀 및 닫기[X] 버튼 영역 */}
+                        <div id="63_325" className="Pixso-frame-63_325">
                             <div className="frame-content-63_325">
-                                <p
-                                    id="63_327"
-                                    className="Pixso-paragraph-63_327"
-                                >
+                                <p id="63_327" className="Pixso-paragraph-63_327">
                                     {"SEARCH"}
                                 </p>
                                 <Button3components
                                     id="63_328"
                                     className="Pixso-instance-63_328"
-                                    onClick63_32863_311139_132={withStopPropagation(
-                                        () => {
-                                            OverlayManager.instance.close();
-                                        }
-                                    )}
-                                    onClick63_32863_311135_151={withStopPropagation(
-                                        click_63_328_63_311_135_151
-                                    )}
-                                    button3state={button3state_63_328}
-                                    transitionConfig={transitionConfig63_328}
-                                    mouseover={mouseover_63_328}
+                                    // 🌟 우리가 개조한 버튼 부품에 맞게 "click" 속성으로 닫기 연결!
+                                    click={() => {
+                                        if (onClose) onClose();
+                                        OverlayManager.instance.close();
+                                    }}
+                                    button3state="default" // 고정된 스타일
                                 ></Button3components>
                             </div>
                         </div>
+                        
+                        {/* 🎯 하단 "NO RESULT" 텍스트 영역 */}
                         <div id="63_330" className="Pixso-frame-63_330">
                             <div className="frame-content-63_330">
-                                <p
-                                    id="63_331"
-                                    className="Pixso-paragraph-63_331"
-                                >
-                                    {"N0 RESULT"}
+                                <p id="63_331" className="Pixso-paragraph-63_331">
+                                    {"NO RESULT"} {/* 원본의 숫자 0(N0)을 알파벳 O(NO)로 살짝 교정해 두었습니다! */}
                                 </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div className="stroke-63_357"></div>
