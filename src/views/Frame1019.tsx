@@ -5,6 +5,7 @@ import Checkbox from "@/components/Checkbox";
 import "@/styles/Frame1019.css";
 import { fetchRoutineData, saveRoutineData } from "@/api/jsonbin";
 import { useEffect } from "react";
+import Frame6528 from "@/views/Frame6528";
 
 const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
@@ -341,7 +342,7 @@ const Frame1019 = () => {
                         </div>
                     }
                 ></Menutab>
-                
+
                 <div id="6_15" className="Pixso-frame-6_15">
                     <div className="frame-content-6_15">
                         <div id="6_16" className="Pixso-rectangle-6_16"></div>
@@ -352,7 +353,19 @@ const Frame1019 = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        {isChecklistPopupOpen && (
+<div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
+<Frame6528
+routineList={routineList}
+onClose={() => setIsChecklistPopupOpen(false)}
+onSelectDesc={(desc) => {
+setDescrbInput(desc);
+setIsChecklistPopupOpen(false);
+}}
+/>
+</div>
+)}
+</div>
     );
 };
 export default Frame1019;
