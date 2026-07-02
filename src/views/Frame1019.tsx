@@ -101,7 +101,47 @@ const Frame1019 = () => {
     const [repInput, setRepInput] = useState("");
     const today = new Date();
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
-    const currentYear = `${today.getFullYear()}`;
+    // 🌟 [추가] 트래커 달성률 및 달력 도트 색칠 데이터 계산 로직
+    const currentYear = today.getFullYear();
+    const currentMonthStr = String(today.getMonth() + 1).padStart(2, '0');
+    const currentMonthPrefix = `${currentYear}-${currentMonthStr}`; // 예: "2026-07"
+    
+    let yearlyTotal = 0, yearlyChecked = 0;
+    let monthlyTotal = 0, monthlyChecked = 0;
+    const monthlyStatusMap: { [date: string]: string } = {};
+
+    if (selectedTrackerRoutine && historyData) {
+        Object.keys(historyData).forEach((dateStr) => {
+            const dailyRecords = historyData[dateStr];
+            // 해당 날짜에 선택된 루틴이 등록되어 있었는지 확인
+            const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
+            
+            if (record) {
+                // [연간 통계 합산]
+                if (dateStr.startsWith(String(currentYear))) {
+                    yearlyTotal++;
+                    if (record.checked) yearlyChecked++;
+                }
+
+                // [월간 통계 합산 및 도트 달력 상태 저장]
+                if (dateStr.startsWith(currentMonthPrefix)) {
+                    monthlyTotal++;
+                    if (record.checked) monthlyChecked++;
+                    // 체크 했으면 'checked', 안 했으면 'unchecked' 기록!
+                    monthlyStatusMap[dateStr] = record.checked ? 'checked' : 'unchecked';
+                }
+            }
+        });
+    }
+
+    // 달성률(%) 계산 (0으로 나누기 방지)
+    const yearlyRate = yearlyTotal === 0 ? 0 : Math.round((yearlyChecked / yearlyTotal) * 100);
+    const monthlyRate = monthlyTotal === 0 ? 0 : Math.round((monthlyChecked / monthlyTotal) * 100);
+
+    // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
+    const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const currentMonthLabel = monthNames[today.getMonth()];
+    
 
     // 🌟 [추가] 자식이 돋보기 버튼을 누르면 부모가 대신 실행해 줄 검색 두뇌 함수!
     const handleSearch = () => {
