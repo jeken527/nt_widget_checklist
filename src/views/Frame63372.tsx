@@ -67,7 +67,6 @@ const Frame63372 = (props: Frame63372Props) => {
                                                 if (props.onSelectRoutine) props.onSelectRoutine(desc as string);
                                                 if (props.onClose) props.onClose();
                                             }}
-                                        >
                                             <Routinedataselect
                                                 id={`search_result_${index}`}
                                                 className="Pixso-instance-63_402" // 기존 클래스명 활용
