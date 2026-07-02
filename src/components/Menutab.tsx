@@ -20,6 +20,7 @@ interface MenutabProps {
 	monthlyRate?: number;
 	yearlyRate?: number;
 	yearlyStatusMap?: { [date: string]: string };
+	holidays?: Set<string>;
 	selectedTrackerRoutine?: string | null;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
@@ -754,20 +755,23 @@ const Menutab = (props: MenutabProps) => {
     const currentYear = today.getFullYear();
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
     const yearCalendar = Array.from({ length: 12 }, (_, monthIndex) => {
+        const firstDay = new Date(currentYear, monthIndex, 1).getDay();
         const daysInMonth = new Date(currentYear, monthIndex + 1, 0).getDate();
-        const days = Array.from({ length: daysInMonth }, (_, dayIndex) => {
-            const dayNum = dayIndex + 1;
+        const days = Array.from({ length: 42 }, (_, i) => {
+            const dayNum = i - firstDay + 1;
+            if (dayNum <= 0 || dayNum > daysInMonth) {
+                return { dayNum: null, status: "disable", dateStr: "", isRedDay: false };
+            }
             const dateStr = `${currentYear}-${String(monthIndex + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
             let status = props.yearlyStatusMap?.[dateStr] || "unlisted";
             const isFuture = new Date(currentYear, monthIndex, dayNum) > today;
             if (isFuture) status = "unlisted";
-
-            return { dayNum, status, dateStr };
+            const dateObj = new Date(currentYear, monthIndex, dayNum);
+            const isWeekend = dateObj.getDay() === 0 || dateObj.getDay() === 6;
+            const isHoliday = props.holidays?.has(dateStr) || false;
+            const isRedDay = isWeekend || isHoliday;
+            return { dayNum, status, dateStr, isRedDay };
         });
-        while (days.length < 31) {
-            days.push({ dayNum: null, status: "disable", dateStr: "" });
-        }
-
         return { monthName: monthNames[monthIndex], days };
     });
     const {
