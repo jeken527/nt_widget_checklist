@@ -11,10 +11,9 @@ interface Frame63372Props {
 }
 
 const Frame63372 = (props: Frame63372Props) => {
-    // 🌟 2. 부모가 준 데이터 꺼내기 (배열이 비어있으면 빈 배열로 초기화)
-    const { close, filteredRoutines = [] } = props;
+    // 🌟 2. 부모가 준 데이터 꺼낼 때도 'onClose'로 꺼내기
+    const { onClose, filteredRoutines = [] } = props; // 👈 여기도 close를 onClose로 변경!
 
-    // 🌟 3. 중복된 이름(description) 제거 (같은 루틴이 여러 개 뜨면 안 되니까!)
     const uniqueDescriptions = Array.from(new Set(filteredRoutines.map(r => r.description)));
 
     return (
@@ -22,15 +21,13 @@ const Frame63372 = (props: Frame63372Props) => {
             <div id="63_372" className="stroke-wrapper-63_372">
                 <div className="Pixso-frame-63_372">
                     
-                    {/* 팝업 바깥 배경 클릭 시 닫기 (선택사항) */}
+                    {/* 🌟 3. 배경 클릭 시 닫기도 onClose 연결 */}
                     <div 
-                        onClick={close} 
+                        onClick={onClose} // 👈 여기도 close를 onClose로 변경!
                         style={{ position: "absolute", top:0, left:0, width:"100%", height:"100%", zIndex: -1, cursor: "pointer" }}
                     ></div>
 
                     <div className="frame-content-63_372">
-                        
-                        {/* 🎯 상단 "SEARCH" 타이틀 및 닫기[X] 버튼 영역 (디자인 유지) */}
                         <div id="63_373" className="Pixso-frame-63_373">
                             <div className="frame-content-63_373">
                                 <p id="63_375" className="Pixso-paragraph-63_375">
@@ -39,10 +36,10 @@ const Frame63372 = (props: Frame63372Props) => {
                                 <Button3components
                                     id="63_376"
                                     className="Pixso-instance-63_376"
-                                    // 🌟 닫기 버튼을 누르면 부모의 close 함수를 실행하여 창을 닫습니다!
+                                    
+                                    // 🌟 4. [X] 버튼 클릭 시 닫기도 onClose 연결!
                                     click={() => {
-                                        if (close) close();
-                                        OverlayManager.instance.close();
+                                        if (onClose) onClose(); // 👈 여기도 close를 onClose로 변경!
                                     }}
                                 ></Button3components>
                             </div>
