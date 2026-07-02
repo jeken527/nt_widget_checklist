@@ -496,20 +496,6 @@ const Frame1019 = () => {
                                     {"CHECKLIST"}
                                 </span>
                             </p>
-        {/* 2. 하단 두 번째 줄 서브타이틀 구역 */}
-        <p className="Pixso-paragraph-12_563_1">
-            <span 
-                className="Pixso-span-12_563_1_1"
-                style={{ 
-                    fontSize: "35px", 
-                    fontFamily: "'Retro Gaming-Regular', sans-serif"
-                }}
-            >
-                {menuState === "checklist" && "CHECKLIST"}
-                {menuState === "daily_planner" && "TIMELINE"}
-                {menuState === "tracker" && "TRACKER"}
-            </span>
-        </p>
                         </div>
                     }
                 ></Menutab>
