@@ -19,6 +19,7 @@ interface MenutabProps {
 	monthlyStatusMap?: { [date: string]: string };
 	monthlyRate?: number;
 	yearlyRate?: number;
+	yearlyStatusMap?: { [date: string]: string };
 	selectedTrackerRoutine?: string | null;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
@@ -750,25 +751,24 @@ const Menutab = (props: MenutabProps) => {
     const [planRoutine16, setPlanRoutine16] = useState("");
 	const today = new Date();
 	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
-	const currentYear = today.getFullYear();
-	const currentMonth = today.getMonth();
-	const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-	const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-	const calendarDays = Array.from({ length: 42 }, (_, i) => {
-        const dayNum = i - firstDay + 1; // 실제 날짜
-        
-        // 1. 전월 또는 다음월 일자 (disable)
-        if (dayNum <= 0 || dayNum > daysInMonth) {
-            return { dayNum: null, status: "disable" }; 
+    const currentYear = today.getFullYear();
+    const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const yearCalendar = Array.from({ length: 12 }, (_, monthIndex) => {
+        const daysInMonth = new Date(currentYear, monthIndex + 1, 0).getDate();
+        const days = Array.from({ length: daysInMonth }, (_, dayIndex) => {
+            const dayNum = dayIndex + 1;
+            const dateStr = `${currentYear}-${String(monthIndex + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+            let status = props.yearlyStatusMap?.[dateStr] || "unlisted";
+            const isFuture = new Date(currentYear, monthIndex, dayNum) > today;
+            if (isFuture) status = "unlisted";
+
+            return { dayNum, status, dateStr };
+        });
+        while (days.length < 31) {
+            days.push({ dayNum: null, status: "disable", dateStr: "" });
         }
-        
-        const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
-        
-        // 2. 부모가 넘겨준 색칠 맵에 기록이 있다면 그 상태(checked/unchecked)를 쓰고, 없다면 unlisted!
-        const status = props.monthlyStatusMap?.[dateStr] || "unlisted";
-        
-        return { dayNum, status, isToday: dayNum === today.getDate() };
+
+        return { monthName: monthNames[monthIndex], days };
     });
     const {
         setMenuState,
@@ -4081,7 +4081,7 @@ const Menutab = (props: MenutabProps) => {
                     className="body2-container"
                     style={{
                         width: "380px",
-                        height: "295px",
+                        height: "295px", // 기존 피그마 높이 유지
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
@@ -4091,63 +4091,50 @@ const Menutab = (props: MenutabProps) => {
                         margin: "0"
                     }}
                 >
-                    {/* 1. 상단 라인 (LINE1) */}
+                    {/* 상단 라인 */}
                     <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
 
-                    {/* 2. Calendar 고정 컨테이너 (364 x 281) */}
+                    {/* 12개월 트래커 본체 (가로 364px 유지) */}
                     <div 
                         className="calendar-container"
                         style={{
                             width: "364px",
-                            height: "281px",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            gap: "10px",
-                            padding: "0",
-                            margin: "0"
+                            height: "281px", 
+                            display: "flex", // 가로로 12달을 나열!
+                            justifyContent: "space-between", // JAN~DEC 사이 간격 균등 분배
+                            alignItems: "flex-start",
+                            padding: "5px",
+                            boxSizing: "border-box"
                         }}
                     >
-                        {/* 2-a. 월 표시(JAN, FEB..) 및 월간 달성률(%) 영역 */}
-                        <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center", padding: "0 10px", boxSizing: "border-box" }}>
-                            <span style={{ fontSize: "16px", fontWeight: "bold", fontFamily: "'Retro Gaming-Regular', sans-serif" }}>
-                                {monthNames[currentMonth]}
-                            </span>
-                            <span style={{ fontSize: "14px", fontFamily: "'Retro Gaming-Regular', sans-serif" }}>
-                                RATE: {props.monthlyRate || 0}%
-                            </span>
-                        </div>
-
-                        {/* 2-b. 42칸 자동 생성 도트 캘린더 (그리드 정렬) */}
-                        <div style={{ 
-                            display: "grid", 
-                            gridTemplateColumns: "repeat(7, 1fr)", 
-                            gap: "6px 12px", // 상하 6px, 좌우 12px 간격 (크기에 맞게 조절 가능)
-                            width: "100%", 
-                            justifyItems: "center" 
-                        }}>
-                            {calendarDays.map((day, idx) => (
-                                <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
-                                    
-                                    {/* 날짜 숫자 (오늘 날짜는 붉은색 포인트!) */}
-                                    <span style={{ 
-                                        fontSize: "10px", 
-                                        fontWeight: day.isToday ? "bold" : "normal",
-                                        color: day.isToday ? "#EA4335" : (day.dayNum ? "#333" : "transparent"),
-                                        fontFamily: "'Retro Gaming-Regular', sans-serif"
+                        {yearCalendar.map((monthObj, idx) => (
+                            <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
+                                
+                                {/* 상단 달 이름 (JAN, FEB...) */}
+                                <span style={{ 
+                                    fontSize: "8px", // 스크린샷처럼 아주 작게
+                                    fontWeight: "bold",
+                                    fontFamily: "'Retro Gaming-Regular', sans-serif",
+                                    marginBottom: "4px",
+                                    color: "#555"
+                                }}>
+                                    {monthObj.monthName}
+                                </span>
+                                
+                                {/* 세로로 31개의 도트 쏟아내기 (숫자 숨김!) */}
+                                {monthObj.days.map((day, dIdx) => (
+                                    <div key={dIdx} title={day.dateStr} style={{ 
+                                        // 🌟 스크린샷 155712.png 의 비율에 맞게 도트를 촘촘하게 배치합니다
+                                        display: "flex", justifyContent: "center", alignItems: "center" 
                                     }}>
-                                        {day.dayNum || "0"}
-                                    </span>
-                                    
-                                    {/* 4가지 상태를 띄우는 Datecomponents 부품! */}
-                                    <Datecomponents date_state={day.status} />
-                                </div>
-                            ))}
-                        </div>
+                                        <Datecomponents date_state={day.status} />
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
 
-                    {/* 3. 하단 라인 (LINE1) */}
+                    {/* 하단 라인 */}
                     <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
                 </div>
                 )}
