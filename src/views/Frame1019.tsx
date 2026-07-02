@@ -243,8 +243,6 @@ const Frame1019 = () => {
                     searchInput={searchInput}
                     setSearchInput={setSearchInput}
                     onSearchClick={handleSearch}
-                    monthlyStatusMap={monthlyStatusMap} 
-                    monthlyRate={monthlyRate}
                     yearlyRate={yearlyRate}
                     yearlyStatusMap={yearlyStatusMap}
                     selectedTrackerRoutine={selectedTrackerRoutine}
