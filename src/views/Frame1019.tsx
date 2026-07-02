@@ -103,40 +103,27 @@ const Frame1019 = () => {
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     // 🌟 [추가] 트래커 달성률 및 달력 도트 색칠 데이터 계산 로직
     const currentYear = today.getFullYear();
-    const currentMonthStr = String(today.getMonth() + 1).padStart(2, '0');
-    const currentMonthPrefix = `${currentYear}-${currentMonthStr}`; // 예: "2026-07"
-    
     let yearlyTotal = 0, yearlyChecked = 0;
-    let monthlyTotal = 0, monthlyChecked = 0;
-    const monthlyStatusMap: { [date: string]: string } = {};
+    
+    // 1년 전체 날짜의 상태를 담을 거대한 가방
+    const yearlyStatusMap: { [date: string]: string } = {};
 
     if (selectedTrackerRoutine && historyData) {
         Object.keys(historyData).forEach((dateStr) => {
             const dailyRecords = historyData[dateStr];
-            // 해당 날짜에 선택된 루틴이 등록되어 있었는지 확인
             const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
             
-            if (record) {
-                // [연간 통계 합산]
-                if (dateStr.startsWith(String(currentYear))) {
-                    yearlyTotal++;
-                    if (record.checked) yearlyChecked++;
-                }
-
-                // [월간 통계 합산 및 도트 달력 상태 저장]
-                if (dateStr.startsWith(currentMonthPrefix)) {
-                    monthlyTotal++;
-                    if (record.checked) monthlyChecked++;
-                    // 체크 했으면 'checked', 안 했으면 'unchecked' 기록!
-                    monthlyStatusMap[dateStr] = record.checked ? 'checked' : 'unchecked';
-                }
+            if (record && dateStr.startsWith(String(currentYear))) {
+                yearlyTotal++;
+                if (record.checked) yearlyChecked++;
+                
+                // 해당 날짜(예: 2026-07-02)에 checked인지 unchecked인지 1년 치 가방에 몽땅 저장!
+                yearlyStatusMap[dateStr] = record.checked ? 'checked' : 'unchecked';
             }
         });
     }
 
-    // 달성률(%) 계산 (0으로 나누기 방지)
     const yearlyRate = yearlyTotal === 0 ? 0 : Math.round((yearlyChecked / yearlyTotal) * 100);
-    const monthlyRate = monthlyTotal === 0 ? 0 : Math.round((monthlyChecked / monthlyTotal) * 100);
 
     // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -259,6 +246,7 @@ const Frame1019 = () => {
                     monthlyStatusMap={monthlyStatusMap} 
                     monthlyRate={monthlyRate}
                     yearlyRate={yearlyRate}
+                    yearlyStatusMap={yearlyStatusMap}
                     selectedTrackerRoutine={selectedTrackerRoutine}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
