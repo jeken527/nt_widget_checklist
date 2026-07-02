@@ -258,6 +258,8 @@ const Frame1019 = () => {
                     onSearchClick={handleSearch}
                     monthlyStatusMap={monthlyStatusMap} 
                     monthlyRate={monthlyRate}
+                    yearlyRate={yearlyRate}
+                    selectedTrackerRoutine={selectedTrackerRoutine}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
