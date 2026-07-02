@@ -6,40 +6,39 @@ import "@/styles/Frame63357.css";
 // 🌟 1. 부모(Frame1019)가 전달하는 닫기 명령을 받을 이름표(Props)
 interface Frame63357Props {
     onClose?: () => void;
+    filteredRoutines?: any[]; 
 }
 
 const Frame63357 = (props: Frame63357Props) => {
     // 🌟 2. 부모가 준 닫기 함수 꺼내기
-    const { onClose } = props;
+    const { onClose, filteredRoutines = [] } = props;
+    const uniqueDescriptions = Array.from(new Set(filteredRoutines.map(r => r.description)));
 
     return (
         <div className="scroll-container">
-            <div id="63_357" className="stroke-wrapper-63_357">
-                <div className="Pixso-frame-63_357">
+            <div id="63_372" className="stroke-wrapper-63_372">
+                <div className="Pixso-frame-63_372">
                     
-                    {/* 🌟 팝업 바깥 어두운 배경 클릭 시 닫기 기능 */}
+                    {/* 🌟 3. 배경 클릭 시 닫기도 onClose 연결 */}
                     <div 
-                        onClick={onClose} 
+                        onClick={onClose} // 👈 여기도 close를 onClose로 변경!
                         style={{ position: "absolute", top:0, left:0, width:"100%", height:"100%", zIndex: -1, cursor: "pointer" }}
                     ></div>
 
-                    <div className="frame-content-63_357">
-                        
-                        {/* 🎯 상단 "SEARCH" 타이틀 및 닫기[X] 버튼 영역 */}
-                        <div id="63_325" className="Pixso-frame-63_325">
-                            <div className="frame-content-63_325">
-                                <p id="63_327" className="Pixso-paragraph-63_327">
+                    <div className="frame-content-63_372">
+                        <div id="63_373" className="Pixso-frame-63_373">
+                            <div className="frame-content-63_373">
+                                <p id="63_375" className="Pixso-paragraph-63_375">
                                     {"SEARCH"}
                                 </p>
                                 <Button3components
-                                    id="63_328"
-                                    className="Pixso-instance-63_328"
-                                    // 🌟 우리가 개조한 버튼 부품에 맞게 "click" 속성으로 닫기 연결!
+                                    id="63_376"
+                                    className="Pixso-instance-63_376"
+                                    
+                                    // 🌟 4. [X] 버튼 클릭 시 닫기도 onClose 연결!
                                     click={() => {
-                                        if (onClose) onClose();
-                                        OverlayManager.instance.close();
+                                        if (onClose) onClose(); // 👈 여기도 close를 onClose로 변경!
                                     }}
-                                    button3state="default" // 고정된 스타일
                                 ></Button3components>
                             </div>
                         </div>
