@@ -351,9 +351,9 @@ const Frame1019 = () => {
                         />
                     }
                     slot_92_5788={<p id="12_691" className="Pixso-paragraph-12_691">{"%"}</p>}
-                    slot_92_5787={<p id="12_690" className="Pixso-paragraph-12_690">{"80"}</p>}
+                    slot_92_5787={<p className="Pixso-paragraph-12_690">{yearlyRate}</p>}
                     slot_92_5785={<p id="12_688" className="Pixso-paragraph-12_688">{"RATE:"}</p>}
-                    slot_92_5783={<p id="12_686" className="Pixso-paragraph-12_686">{"10"}</p>}
+                    slot_92_5783={<p className="Pixso-paragraph-12_686">{yearlyTotal}</p>}
                     slot_92_5781={<p id="12_684" className="Pixso-paragraph-12_684">{"TOTAL:"}</p>}
                     slot_92_5776={
                         <Checkbox
@@ -471,12 +471,16 @@ const Frame1019 = () => {
                     slot_92_5673={<p id="12_567" className="Pixso-paragraph-12_567">{"DATE:"}</p>}
                     slot_92_5671={<p id="12_565" className="Pixso-paragraph-12_565">{"DON’T FORGET TO CHECKOUT DAILY ROUTINES"}</p>}
                     slot_92_5669={
-                        <div id="12_563" className="Pixso-text-12_563">
-                            <p id="12_563_0" className="Pixso-paragraph-12_563_0">
-                                <span id="12_563_0_1" className="Pixso-span-12_563_0_1">{"ROUTINE"}</span>
+                        <div className="Pixso-text-12_563">
+                            <p className="Pixso-paragraph-12_563_0">
+                                <span className="Pixso-span-12_563_0_1" style={{ fontSize: "16px" }}>
+                                    {selectedTrackerRoutine ? selectedTrackerRoutine : "ROUTINE"}
+                                </span>
                             </p>
-                            <p id="12_563_1" className="Pixso-paragraph-12_563_1">
-                                <span id="12_563_1_1" className="Pixso-span-12_563_1_1">{"CHECKLIST"}</span>
+                            <p className="Pixso-paragraph-12_563_1">
+                                <span className="Pixso-span-12_563_1_1">
+                                    {selectedTrackerRoutine ? "TRACKER" : "CHECKLIST"}
+                                </span>
                             </p>
                         </div>
                     }
