@@ -481,7 +481,6 @@ const Frame1019 = () => {
                 style={{ 
                     /* 🌟 기획 조건 1: 모든 탭의 기본 텍스트 크기를 피그마 순정 의도대로 커다란 "35px"로 통일합니다. */
                     fontSize: "35px", 
-                    fontWeight: "bold",
                     fontFamily: "'Retro Gaming-Regular', sans-serif"
                 }}
             >
