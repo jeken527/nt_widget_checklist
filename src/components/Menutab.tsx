@@ -4073,7 +4073,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     >
                                                                                         <div className="frame-content-92_7353">
                                                                                             {slot_92_7354 ?? (
-                                                                                                {/* 🌟 교체된 스마트 캘린더 엔진 시작 */}
                 <div 
                     className="body2-container"
                     style={{
@@ -4147,7 +4146,7 @@ const Menutab = (props: MenutabProps) => {
                     {/* 3. 하단 라인 (LINE1) */}
                     <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
                 </div>
-                {/* 🌟 교체된 스마트 캘린더 엔진 끝 */}
+                )}
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
