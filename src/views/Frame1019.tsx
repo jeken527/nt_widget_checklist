@@ -498,7 +498,6 @@ const Frame1019 = () => {
                 className="Pixso-span-12_563_1_1"
                 style={{ 
                     fontSize: "35px", 
-                    fontWeight: "bold",
                     fontFamily: "'Retro Gaming-Regular', sans-serif"
                 }}
             >
