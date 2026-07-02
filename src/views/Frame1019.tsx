@@ -23,6 +23,7 @@ const Frame1019 = () => {
     const [reminderInput, setReminderInput] = useState("")
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState("");
+    const [selectedTrackerRoutine, setSelectedTrackerRoutine] = useState<string | null>(null);
     const [filteredRoutines, setFilteredRoutines] = useState<any[]>([]); 
     const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false); 
     const [isNoResultPopupOpen, setIsSearchNoResultPopupOpen] = useState(false);
@@ -466,6 +467,7 @@ setIsChecklistPopupOpen(false);
                     <Frame63372 
                         filteredRoutines={filteredRoutines} // 필터링된 진짜 결과만 전달!
                         onClose={() => setIsSearchPopupOpen(false)} // 닫기 스위치
+                    onSelectRoutine={(desc) => setSelectedTrackerRoutine(desc)} 
                     />
                 </div>
             )}
