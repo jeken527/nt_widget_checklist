@@ -18,6 +18,8 @@ interface MenutabProps {
     setSearchInput?: (value: string) => void;
 	monthlyStatusMap?: { [date: string]: string };
 	monthlyRate?: number;
+	yearlyRate?: number;
+	selectedTrackerRoutine?: string | null;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -3913,18 +3915,18 @@ const Menutab = (props: MenutabProps) => {
                                                                         </p>
                                                                     )}
                                                                     <div
-                                                                        id="92_7333"
-                                                                        className="Pixso-frame-92_7333"
-                                                                    >
-                                                                        <div className="frame-content-92_7333">
-                                                                            {slot_92_7334 ?? (
-                                                                                <p
-                                                                                    id="92_7334"
-                                                                                    className="Pixso-paragraph-92_7334"
-                                                                                >
-                                                                                    {
-                                                                                        "데이터 정리하기"
-                                                                                    }
+                                                        id="92_7333"
+                                                        className="Pixso-frame-92_7333"
+                                                    >
+                                                        <div className="frame-content-92_7333">
+                                                            {slot_92_7334 ?? (
+                                                                <p
+                                                                    id="92_7334"
+                                                                    className="Pixso-paragraph-92_7334"
+                                                                >
+                                                                    {
+                                                                        props.selectedTrackerRoutine || "SELECT"
+                                                                    }
                                                                                 </p>
                                                                             )}
                                                                         </div>
@@ -3957,7 +3959,9 @@ const Menutab = (props: MenutabProps) => {
                                                                                     className="Pixso-paragraph-92_7338"
                                                                                 >
                                                                                     {
-                                                                                        "60"
+                                                                                        props.selectedTrackerRoutine 
+                                                                            ? `${props.yearlyRate || 0}` 
+                                                                            : "0"
                                                                                     }
                                                                                 </p>
                                                                             )}
