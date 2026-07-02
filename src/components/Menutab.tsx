@@ -16,6 +16,7 @@ interface MenutabProps {
     setReminderInput?: (value: string) => void;
 	searchInput?: string;
     setSearchInput?: (value: string) => void;
+	monthlyStatusMap?: { [date: string]: string };
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -746,7 +747,25 @@ const Menutab = (props: MenutabProps) => {
     const [planRoutine16, setPlanRoutine16] = useState("");
 	const today = new Date();
 	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
-	const currentYear = `${today.getFullYear()}`;
+	const currentYear = today.getFullYear();
+	const currentMonth = today.getMonth();
+	const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+	const calendarDays = Array.from({ length: 42 }, (_, i) => {
+        const dayNum = i - firstDay + 1; // 실제 날짜
+        
+        // 1. 전월 또는 다음월 일자 (disable)
+        if (dayNum <= 0 || dayNum > daysInMonth) {
+            return { dayNum: null, status: "disable" }; 
+        }
+        
+        const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+        
+        // 2. 부모가 넘겨준 색칠 맵에 기록이 있다면 그 상태(checked/unchecked)를 쓰고, 없다면 unlisted!
+        const status = props.monthlyStatusMap?.[dateStr] || "unlisted";
+        
+        return { dayNum, status, isToday: dayNum === today.getDate() };
+    });
     const {
         setMenuState,
         menu_state,
