@@ -727,9 +727,7 @@ interface MenutabProps {
     slot_9_62?: React.ReactNode;
 }
 const Menutab = (props: MenutabProps) => {
-    const [searchInput, setSearchInput] = useState("");
 	const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
-    const [reminderInput, setReminderInput] = useState("");
     const [planRoutine1, setPlanRoutine1] = useState("");
     const [planRoutine2, setPlanRoutine2] = useState("");
     const [planRoutine3, setPlanRoutine3] = useState("");
