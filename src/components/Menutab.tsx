@@ -4012,66 +4012,84 @@ const Menutab = (props: MenutabProps) => {
                                                         </div>
                                                     </div>
                                                                                             {slot_92_7354 ?? (
-                <div 
-                    className="body2-container"
-                    style={{
-                        width: "380px",
-                        height: "295px", // 기존 피그마 높이 유지
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "5px",
-                        padding: "0",
-                        margin: "0"
-                    }}
-                >
-                    {/* 상단 라인 */}
-                    <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
-
-                    {/* 12개월 트래커 본체 (가로 364px 유지) */}
+                {/* 🧱 W380 * H295 고정 상자 컨테이너 */}
                     <div 
-                        className="calendar-container"
+                        className="body2-container"
                         style={{
-                            width: "364px",
-                            height: "281px", 
-                            display: "flex", // 가로로 12달을 나열!
-                            justifyContent: "space-between", // JAN~DEC 사이 간격 균등 분배
-                            alignItems: "flex-start",
-                            padding: "5px",
+                            width: "380px",
+                            height: "295px",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "5px",
+                            padding: "0",
+                            margin: "0",
                             boxSizing: "border-box"
                         }}
                     >
-                        {yearCalendar.map((monthObj, idx) => (
-                            <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
-                                
-                                {/* 상단 달 이름 (JAN, FEB...) */}
-                                <span style={{ 
-                                    fontSize: "8px", // 스크린샷처럼 아주 작게
-                                    fontWeight: "bold",
-                                    fontFamily: "'Retro Gaming-Regular', sans-serif",
-                                    marginBottom: "4px",
-                                    color: "#555"
-                                }}>
-                                    {monthObj.monthName}
-                                </span>
-                                
-                                {/* 세로로 31개의 도트 쏟아내기 (숫자 숨김!) */}
-                                {monthObj.days.map((day, dIdx) => (
-                                    <div key={dIdx} title={day.dateStr} style={{ 
-                                        // 🌟 스크린샷 155712.png 의 비율에 맞게 도트를 촘촘하게 배치합니다
-                                        display: "flex", justifyContent: "center", alignItems: "center" 
-                                    }}>
-                                        <Datecomponents date_state={day.status} />
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
+                        {/* 상단 구분선 (LINE1) */}
+                        <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
 
-                    {/* 하단 라인 */}
-                    <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
-                </div>
+                        {/* 🧱 12개 월 전체를 담는 calendar 투명 컨테이너 (364 x 281) */}
+                        <div 
+                            className="calendar-container"
+                            style={{
+                                width: "364px",
+                                height: "281px",
+                                display: "grid",
+                                /* 🌟 4개월씩 가로 4열 배치 */
+                                gridTemplateColumns: "repeat(4, 1fr)",
+                                /* 🌟 세로 3줄 배치 */
+                                gridTemplateRows: "repeat(3, 1fr)",
+                                gap: "8px 6px", 
+                                padding: "0",
+                                margin: "0",
+                                boxSizing: "border-box",
+                                backgroundColor: "transparent"
+                            }}
+                        >
+                            {yearCalendar.map((monthObj, idx) => (
+                                /* 🗓️ 개별 월 미니 보드 (예: JAN) */
+                                <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+                                    
+                                    {/* 월 이름 (JAN, FEB...) */}
+                                    <span style={{ 
+                                        fontSize: "10px", 
+                                        fontWeight: "bold",
+                                        fontFamily: "'Retro Gaming-Regular', sans-serif",
+                                        marginBottom: "4px",
+                                        color: "#333",
+                                        textAlign: "center"
+                                    }}>
+                                        {monthObj.monthName}
+                                    </span>
+                                    
+                                    {/* 🌟 7열 6행(42칸)짜리 요일별 도트 그리드 (숫자 없음) */}
+                                    <div style={{ 
+                                        display: "grid", 
+                                        gridTemplateColumns: "repeat(7, 1fr)", // 일~토 7열
+                                        gap: "2px 2px", // 도트 사이 초소형 마진
+                                        width: "100%",
+                                        justifyItems: "center"
+                                    }}>
+                                        {monthObj.days.map((day, dIdx) => (
+                                            <div key={dIdx} title={day.dateStr} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                                <Datecomponents 
+                                                    date_state={day.status} 
+                                                    isRedDay={day.isRedDay} 
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* 하단 구분선 (LINE1) */}
+                        <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
+                    </div>
                 )}
                                                     <div
                                                         id="92_8008"
