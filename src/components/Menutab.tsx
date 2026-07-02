@@ -4011,8 +4011,7 @@ const Menutab = (props: MenutabProps) => {
                                                             )}
                                                         </div>
                                                     </div>
-                                                                                            {slot_92_7354 ?? (
-                {/* 🧱 W380 * H295 고정 상자 컨테이너 */}
+                                                    {slot_92_7354 ?? (
                     <div 
                         className="body2-container"
                         style={{
