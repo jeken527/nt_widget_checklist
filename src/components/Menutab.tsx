@@ -755,6 +755,8 @@ const Menutab = (props: MenutabProps) => {
         id,
         className = "",
 		routineList = [],
+		searchInput,
+		setSearchInput,
         slot_92_5669,
         slot_92_5671,
         slot_92_5673,
