@@ -102,7 +102,27 @@ const Frame1019 = () => {
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     const currentYear = `${today.getFullYear()}`;
 
+    // 🌟 [추가] 자식이 돋보기 버튼을 누르면 부모가 대신 실행해 줄 검색 두뇌 함수!
+    const handleSearch = () => {
+        if (!searchInput.trim()) {
+            alert("검색어를 입력해 주세요!");
+            return;
+        }
 
+        const results = routineList.filter((routine: any) => 
+            routine.description.toLowerCase().includes(searchInput.toLowerCase().trim())
+        );
+
+        if (results.length > 0) {
+            setFilteredRoutines(results);
+            setIsSearchPopupOpen(true);
+            setIsSearchNoResultPopupOpen(false);
+        } else {
+            setFilteredRoutines([]);
+            setIsSearchPopupOpen(false);
+            setIsSearchNoResultPopupOpen(true);
+        }
+    };
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
     const [checkbox_state_12_678, setCheckbox_state_12_678] = useState("default");
@@ -194,6 +214,7 @@ const Frame1019 = () => {
                     setReminderInput={setReminderInput}
                     searchInput={searchInput}
                     setSearchInput={setSearchInput}
+                    onSearchClick={handleSearch}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
