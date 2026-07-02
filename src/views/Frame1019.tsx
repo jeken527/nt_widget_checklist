@@ -24,6 +24,7 @@ const Frame1019 = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState("");
     const [selectedTrackerRoutine, setSelectedTrackerRoutine] = useState<string | null>(null);
+    const [holidays, setHolidays] = useState<Set<string>>(new Set());
     const [filteredRoutines, setFilteredRoutines] = useState<any[]>([]); 
     const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false); 
     const [isNoResultPopupOpen, setIsSearchNoResultPopupOpen] = useState(false);
@@ -31,6 +32,39 @@ const Frame1019 = () => {
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
     useEffect(() => {
+        // 🌟 [추가] 구글 캘린더에서 대한민국 공휴일 가져오기
+        const fetchHolidays = async () => {
+            try {
+                // 환경변수에서 API 키 꺼내기 (Vite 방식)
+                const API_KEY = import.meta.env.VITE_GOOGLE_CALENDAR_API_KEY;
+                if (!API_KEY) return;
+                
+                const calendarId = "ko.south_korea#holiday@group.v.calendar.google.com";
+                const currentYear = new Date().getFullYear();
+                
+                // 올해 1월 1일부터 12월 31일까지의 데이터만 한정해서 요청
+                const timeMin = new Date(`${currentYear}-01-01T00:00:00Z`).toISOString();
+                const timeMax = new Date(`${currentYear}-12-31T23:59:59Z`).toISOString();
+                
+                const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&timeMin=${timeMin}&timeMax=${timeMax}&singleEvents=true`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.items) {
+                    const holidaySet = new Set<string>();
+                    data.items.forEach((item: any) => {
+                        if (item.start && item.start.date) {
+                            holidaySet.add(item.start.date); // 예: "2026-05-05"
+                        }
+                    });
+                    setHolidays(holidaySet); // 바구니에 저장!
+                }
+            } catch (error) {
+                console.error("공휴일 데이터를 불러오는데 실패했습니다:", error);
+            }
+        };
+
         const loadAndCheckReset = async () => {
             setIsLoading(true);
             const data = await fetchRoutineData(); 
@@ -76,7 +110,7 @@ const Frame1019 = () => {
             }
             setIsLoading(false);
         };
-        
+        fetchHolidays();
         loadAndCheckReset();
     }, []);
     
@@ -246,6 +280,7 @@ const Frame1019 = () => {
                     yearlyRate={yearlyRate}
                     yearlyStatusMap={yearlyStatusMap}
                     selectedTrackerRoutine={selectedTrackerRoutine}
+                    holidays={holidays}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
