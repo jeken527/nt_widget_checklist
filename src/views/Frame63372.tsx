@@ -6,8 +6,9 @@ import "@/styles/Frame63372.css";
 
 // 🌟 1. 부모(Frame1019)로부터 검색된 진짜 결과물만 받아올 이름표(Props)
 interface Frame63372Props {
-    close?: () => void; // 닫기 명령 (유저님의 기존 props 이름 유지)
+    onclose?: () => void; // 닫기 명령 (유저님의 기존 props 이름 유지)
     filteredRoutines?: any[]; // 부모가 솎아낸 검색 결과 배열
+    onSelectRoutine?: (description: string) => void;
 }
 
 const Frame63372 = (props: Frame63372Props) => {
@@ -61,7 +62,12 @@ const Frame63372 = (props: Frame63372Props) => {
                                     
                                     {/* 🌟 진짜 검색 결과만 반복문으로 쫙 뽑아냅니다. */}
                                     {uniqueDescriptions.map((desc, index) => (
-                                        <div key={index} style={{ width: "100%" }}>
+                                        <div key={index} style={{ width: "100%", cursor: "pointer"}}>
+                                            onClick={() => {
+                                                if (props.onSelectRoutine) props.onSelectRoutine(desc as string);
+                                                if (props.onClose) props.onClose();
+                                            }}
+                                        >
                                             <Routinedataselect
                                                 id={`search_result_${index}`}
                                                 className="Pixso-instance-63_402" // 기존 클래스명 활용
