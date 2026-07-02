@@ -44,14 +44,14 @@ const Frame1019 = () => {
 
                 // ⏰ 날이 바뀌었을 때
                 if (lastDate !== todayKST) {
-                    const completedRoutines = savedRoutines
-                        .filter((r: any) => r.checked === true)
-                        .map((r: any) => r.description);
+                    const dailyRecord = savedRoutines.map((r: any) => ({
+                        description: r.description,
+                        checked: r.checked
+                    }));
                     
-                    if (completedRoutines.length > 0) {
-                        savedHistory[lastDate] = completedRoutines; 
+                    if (dailyRecord.length > 0) {
+                        savedHistory[lastDate] = dailyRecord; 
                     }
-
                     // 1. 루틴 체크박스만 초기화!
                     savedRoutines = savedRoutines.map((r: any) => ({ ...r, checked: false }));
                     
