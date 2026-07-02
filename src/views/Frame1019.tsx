@@ -473,24 +473,29 @@ const Frame1019 = () => {
                     slot_92_5673={<p id="12_567" className="Pixso-paragraph-12_567">{"DATE:"}</p>}
                     slot_92_5671={<p id="12_565" className="Pixso-paragraph-12_565">{"DON’T FORGET TO CHECKOUT DAILY ROUTINES"}</p>}
                     slot_92_5669={
-    <div className="Pixso-text-12_563" style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-        {/* 1. 상단 첫 번째 줄 타이틀 구역 */}
-        <p className="Pixso-paragraph-12_563_0">
-            <span 
-                className="Pixso-span-12_563_0_1" 
-                style={{ 
-                    /* 🌟 기획 조건 1: 모든 탭의 기본 텍스트 크기를 피그마 순정 의도대로 커다란 "35px"로 통일합니다. */
-                    fontSize: "35px", 
-                    fontFamily: "'Retro Gaming-Regular', sans-serif"
-                }}
-            >
-                {/* 🌟 기획 조건 2: 현재 활성화된 탭(menuState)에 따라 메인 타이틀을 완벽하게 격리 분기합니다. */}
-                {menuState === "checklist" && "ROUTINE"}
-                {menuState === "daily_planner" && "ROUTINE"}
-                {menuState === "tracker" && (selectedTrackerRoutine ? selectedTrackerRoutine : "ROUTINE")}
-            </span>
-        </p>
-
+                        <div id="12_563" className="Pixso-text-12_563">
+                            <p
+                                id="12_563_0"
+                                className="Pixso-paragraph-12_563_0"
+                            >
+                                <span
+                                    id="12_563_0_1"
+                                    className="Pixso-span-12_563_0_1"
+                                >
+                                    {"ROUTINE"}
+                                </span>
+                            </p>
+                            <p
+                                id="12_563_1"
+                                className="Pixso-paragraph-12_563_1"
+                            >
+                                <span
+                                    id="12_563_1_1"
+                                    className="Pixso-span-12_563_1_1"
+                                >
+                                    {"CHECKLIST"}
+                                </span>
+                            </p>
         {/* 2. 하단 두 번째 줄 서브타이틀 구역 */}
         <p className="Pixso-paragraph-12_563_1">
             <span 
