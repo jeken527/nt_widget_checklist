@@ -4073,7 +4073,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                     >
                                                                                         <div className="frame-content-92_7353">
                                                                                             {slot_92_7354 ?? (
-                                                                                                <{/* 🌟 교체된 스마트 캘린더 엔진 시작 */}
+                                                                                                {/* 🌟 교체된 스마트 캘린더 엔진 시작 */}
                 <div 
                     className="body2-container"
                     style={{
