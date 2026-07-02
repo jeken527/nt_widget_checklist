@@ -4069,16 +4069,6 @@ const Menutab = (props: MenutabProps) => {
                     <div style={{ width: "380px", height: "2px", background: "url(/src/assets/images/LINE1.svg) no-repeat center/contain" }}></div>
                 </div>
                 )}
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     <div
                                                         id="92_8008"
                                                         className="Pixso-frame-92_8008"
