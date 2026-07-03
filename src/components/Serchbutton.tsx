@@ -1,70 +1,61 @@
-import React, { useState } from "react";
 import { withStopPropagation } from "@/utils/utils";
 import "@/styles/Serchbutton.css";
 
 interface SerchbuttonProps {
-    serch_button_state?: string;
+    search_button_state?: string;
+    searchbutton?: string;
     id?: string;
     className?: string;
-    click?: (e: any) => void;
     mouseover?: (e: any) => void;
-    slot_63_352?: React.ReactNode;
-    slot_63_353?: React.ReactNode;
+    click?: (e: any) => void;
 }
 
 const Serchbutton = (props: SerchbuttonProps) => {
     const {
-        serch_button_state,
+        search_button_state,
+        searchbutton,
         id,
         className = "",
-        click,
         mouseover,
-        slot_63_352,
-        slot_63_353
+        click
     } = props;
-
-    // 🌟 완전 독립적인 마우스 호버 지능 탑재
-    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div
-            className={`component-63_356 ${className}`}
+            className={`component-55_283 ${className}`}
             id={id}
             onMouseOver={mouseover ? withStopPropagation(mouseover) : undefined}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={(e) => {
-                // 🌟 핵심 해결: 클릭(팝업 호출) 즉시 호버를 풀어버립니다!
-                setIsHovered(false); 
-                if (click) withStopPropagation(click)(e);
-            }}
+            onClick={click ? withStopPropagation(click) : undefined}
             style={{ cursor: "pointer" }}
         >
-            <div id="63_356" className="Pixso-symbol-63_356">
-                {!isHovered && (
-                    <div id="63_355" className="stroke-wrapper-63_355">
-                        <div className="Pixso-symbol-63_355">
-                            {slot_63_352 ?? (
-                                <div id="63_352" className="Pixso-vector-63_352"></div>
-                            )}
+            <div id="55_283" className="Pixso-symbol-55_283">
+                {search_button_state === "default" && (
+                    <div id="55_282" className="stroke-wrapper-55_282">
+                        <div className="Pixso-symbol-55_282">
+                            <div
+                                id="55_272"
+                                className="Pixso-rectangle-55_272"
+                            ></div>
                         </div>
-                        <div className="stroke-63_355"></div>
+                        <div className="stroke-55_282"></div>
                     </div>
                 )}
-                {isHovered && (
-                    <div id="63_354" className="stroke-wrapper-63_354">
-                        <div className="Pixso-symbol-63_354">
-                            <div className="shadow-blend-unknown-0"></div>
-                            {slot_63_353 ?? (
-                                <div id="63_353" className="Pixso-vector-63_353"></div>
+                {search_button_state === "checked" && (
+                    <div id="55_281" className="stroke-wrapper-55_281">
+                        <div className="Pixso-symbol-55_281">
+                            {search_button_state === "checked" && (
+                                <div className="shadow-blend-unknown-0"></div>
                             )}
+                            <div
+                                id="55_275"
+                                className="Pixso-rectangle-55_275"
+                            ></div>
                         </div>
-                        <div className="stroke-63_354"></div>
+                        <div className="stroke-55_281"></div>
                     </div>
                 )}
             </div>
         </div>
     );
 };
-
 export default Serchbutton;
