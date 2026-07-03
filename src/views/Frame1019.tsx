@@ -31,41 +31,38 @@ const Frame1019 = () => {
     const [priorityInput, setPriorityInput] = useState("");
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
+    // 🌟 [안전하게 결합된 useEffect] 공휴일 로드 + JSONBin 데이터 로드 완벽 유지!
     useEffect(() => {
-        // 🌟 [추가] 구글 캘린더에서 대한민국 공휴일 가져오기
-        const fetchHolidays = async () => {
+        // 1번 일꾼: 구글에서 공휴일 가져오기
+        const loadDataAndHolidays = async () => {
+            let holidaySet = new Set<string>();
             try {
-                // 환경변수에서 API 키 꺼내기 (Vite 방식)
                 const API_KEY = import.meta.env.VITE_GOOGLE_CALENDAR_API_KEY;
-                if (!API_KEY) return;
-                
-                const calendarId = "ko.south_korea#holiday@group.v.calendar.google.com";
-                const currentYear = new Date().getFullYear();
-                
-                // 올해 1월 1일부터 12월 31일까지의 데이터만 한정해서 요청
-                const timeMin = new Date(`${currentYear}-01-01T00:00:00Z`).toISOString();
-                const timeMax = new Date(`${currentYear}-12-31T23:59:59Z`).toISOString();
-                
-                const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&timeMin=${timeMin}&timeMax=${timeMax}&singleEvents=true`;
-                
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                if (data.items) {
-                    const holidaySet = new Set<string>();
-                    data.items.forEach((item: any) => {
-                        if (item.start && item.start.date) {
-                            holidaySet.add(item.start.date); // 예: "2026-05-05"
-                        }
-                    });
-                    setHolidays(holidaySet); // 바구니에 저장!
+                if (API_KEY) {
+                    const calendarId = "ko.south_korea#holiday@group.v.calendar.google.com";
+                    const currentYear = new Date().getFullYear();
+                    const timeMin = new Date(`${currentYear}-01-01T00:00:00Z`).toISOString();
+                    const timeMax = new Date(`${currentYear}-12-31T23:59:59Z`).toISOString();
+                    
+                    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${API_KEY}&timeMin=${timeMin}&timeMax=${timeMax}&singleEvents=true`;
+                    
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    
+                    if (data.items) {
+                        data.items.forEach((item: any) => {
+                            if (item.start && item.start.date) {
+                                holidaySet.add(item.start.date);
+                            }
+                        });
+                        setHolidays(holidaySet); // 공휴일 가방 세팅 완료!
+                    }
                 }
             } catch (error) {
-                console.error("공휴일 데이터를 불러오는데 실패했습니다:", error);
+                console.error("구글 공휴일 데이터를 가져오지 못했습니다:", error);
             }
-        };
 
-        const loadAndCheckReset = async () => {
+            // 2번 일꾼: 기존 유저님의 JSONBin 및 데일리 플래너 로직 (100% 원본 유지)
             setIsLoading(true);
             const data = await fetchRoutineData(); 
 
@@ -74,10 +71,9 @@ const Frame1019 = () => {
                 
                 let savedRoutines = data.routines || [];
                 let savedHistory = data.history || {};
-                let savedPlanner = data.daily_planner || ""; // 🌟 만약 텍스트 그대로 저장했다면 기본값 ""
+                let savedPlanner = data.daily_planner || ""; 
                 const lastDate = data.lastDate || todayKST;
 
-                // ⏰ 날이 바뀌었을 때
                 if (lastDate !== todayKST) {
                     const dailyRecord = savedRoutines.map((r: any) => ({
                         description: r.description,
@@ -87,31 +83,25 @@ const Frame1019 = () => {
                     if (dailyRecord.length > 0) {
                         savedHistory[lastDate] = dailyRecord; 
                     }
-                    // 1. 루틴 체크박스만 초기화!
                     savedRoutines = savedRoutines.map((r: any) => ({ ...r, checked: false }));
                     
-                    // ❌ 데일리 플래너 리셋 코드는 넣지 않습니다! (savedPlanner 데이터 유지)
-
-                    // 2. 금고에 그대로 저장
                     await saveRoutineData({
                         lastDate: todayKST,
                         routines: savedRoutines,
                         history: savedHistory,
-                        daily_planner: savedPlanner // 🌟 어제 쓰던 내용 그대로 백업!
+                        daily_planner: savedPlanner 
                     });
                 }
 
-                // 📺 [화면 출력] 정리가 다 끝난 데이터를 진짜 화면 변수에 세팅!
                 setRoutineList(savedRoutines);
                 setHistoryData(savedHistory);
-                
-                // 🌟 [주석 해제 및 수정] 금고에서 가져온 리마인더 텍스트를 부모 변수에 보관합니다.
                 setReminderInput(savedPlanner); 
             }
             setIsLoading(false);
         };
-        fetchHolidays();
-        loadAndCheckReset();
+
+        // 두 가지 일을 순서대로 안전하게 실행합니다.
+        loadDataAndHolidays();
     }, []);
     
     const toggleRoutineCheck = async (id: string) => {
@@ -136,6 +126,7 @@ const Frame1019 = () => {
     const today = new Date();
     const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     // 🌟 [추가] 트래커 달성률 및 달력 도트 색칠 데이터 계산 로직
+    // 🌟 [안전하게 결합된 통계 엔진] 기존 계산 흐름 유지 + 주말/공휴일 자동 unlisted 낙인 및 면제 처리!
     const currentYear = today.getFullYear();
     let yearlyChecked = 0;
     let yearlyUnchecked = 0;
@@ -144,29 +135,44 @@ const Frame1019 = () => {
     if (selectedTrackerRoutine && historyData) {
         Object.keys(historyData).forEach((dateStr) => {
             if (dateStr.startsWith(String(currentYear))) {
-                const dailyRecords = historyData[dateStr];
-                const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
                 
-                if (record) {
-                    if (record.checked) {
-                        yearlyChecked++;
-                        yearlyStatusMap[dateStr] = 'checked';
-                    } else {
-                        yearlyUnchecked++;
-                        yearlyStatusMap[dateStr] = 'unchecked';
-                    }
-                } else {
+                // 🗓️ 1. 날짜 객체를 생성해 오늘이 주말인지, 구글 공휴일 가방에 있는지 판별
+                const dateObj = new Date(dateStr);
+                const isWeekend = dateObj.getDay() === 0 || dateObj.getDay() === 6; // 0: 일요일, 6: 토요일
+                const isGoogleHoliday = holidays.has(dateStr); // 우리가 구글 API로 받아온 공휴일 바구니
+                const isRedDay = isWeekend || isGoogleHoliday; // 둘 중 하나라도 맞으면 빨간 날(휴일)!
+
+                if (isRedDay) {
+                    // 🌟 [유저님 최종 요청 사항] 
+                    // 주말이나 공휴일에는 checklist 기록(상태)과 전혀 상관없이 무조건 unlisted(휴일 면제) 상태로 낙인 찍습니다!
+                    // Checked나 Unchecked 통계 변수를 건드리지 않으므로 연간 달성률 분모에서 완벽히 면제됩니다.
                     yearlyStatusMap[dateStr] = 'unlisted'; 
+                } else {
+                    // 2. 평일일 때만 기존 유저님의 소중한 루틴 추적 로직이 그대로 가동됩니다.
+                    const dailyRecords = historyData[dateStr];
+                    const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
+                    
+                    if (record) {
+                        if (record.checked) {
+                            yearlyChecked++;
+                            yearlyStatusMap[dateStr] = 'checked'; // 평일에 등록했고 실천도 완수함!
+                        } else {
+                            yearlyUnchecked++;
+                            yearlyStatusMap[dateStr] = 'unchecked'; // 평일에 등록했는데 실천 안 함 (달성률 감소)
+                        }
+                    } else {
+                        // 평일인데 체크리스트에 이 루틴이 없었다면 미가동 처리
+                        yearlyStatusMap[dateStr] = 'unlisted'; 
+                    }
                 }
             }
         });
     }
 
-    // 🎯 달성률 공식 계산: 실천일 / (실천일 + 미실천일)
+    // 🎯 달성률 공식 계산: 실천일 / (실천일 + 미실천일) -> 유저님의 원본 코드 규칙 100% 복사
     const totalTrackedDays = yearlyChecked + yearlyUnchecked;
     const yearlyRate = totalTrackedDays === 0 ? 0 : Math.round((yearlyChecked / totalTrackedDays) * 100);
     const yearlyTotal = totalTrackedDays;
-
     // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
     const currentMonthLabel = monthNames[today.getMonth()];
