@@ -2389,6 +2389,86 @@ const Menutab = (props: MenutabProps) => {
                                                             </div>
                                                         </div>
                                                     </div>
+													<div
+                                                        id="92_8536"
+                                                        className="Pixso-frame-92_8536"
+                                                    >
+                                                        <div className="frame-content-92_8536">
+                                                            <div
+                                                                id="92_8537"
+                                                                className="Pixso-frame-92_8537"
+                                                            >
+                                                                <div className="frame-content-92_8537">
+                                                                    {slot_92_8538 ?? (
+                                                                        <p
+                                                                            id="92_8538"
+                                                                            className="Pixso-paragraph-92_8538"
+                                                                        >
+                                                                            {
+                                                                                "06"
+                                                                            }
+                                                                        </p>
+                                                                    )}
+                                                                    {slot_92_8539 ?? (
+                                                                        <div
+                                                                            id="92_8539"
+                                                                            className="Pixso-vector-92_8539"
+                                                                        ></div>
+                                                                    )}
+                                                                    <div
+                                                                        id="92_8540"
+                                                                        className="Pixso-frame-92_8540"
+                                                                    >
+                                                                        <div className="frame-content-92_8540">
+                                                                            {slot_92_8541 ?? (
+                                                                                <input
+        type="text"
+        value={planRoutine1}
+        onChange={(e) => setPlanRoutine1(e.target.value)}
+        placeholder="TYPE HERE"
+	className="Pixso-paragraph-92_8541"
+        style={{
+            width: "180px",
+            height: "20px",
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            fontFamily: "inherit",
+            color: "inherit",
+            padding: "10px",
+            margin: 0,
+            lineHeight: "normal",
+            boxSizing: "border-box"
+        }}
+    />
+
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        id="92_8542"
+                                                                        className="Pixso-frame-92_8542"
+                                                                    >
+                                                                        <div className="frame-content-92_8542">
+                                                                            {slot_92_8543 ?? (
+                                                                                <Checkbox
+                                                                                    id="92_8543"
+                                                                                    className="Pixso-instance-92_8543"
+                                                                                    checkbox_state={
+                                                                                        checkbox_state_92_8543
+                                                                                    }
+                                                                                    transitionConfig={
+                                                                                        transitionConfig92_8543
+                                                                                    }
+                                                                                    click={
+                                                                                        click_92_8543
+                                                                                    }
+                                                                                ></Checkbox>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                     <div
                                                         id="92_8536"
                                                         className="Pixso-frame-92_8536"
