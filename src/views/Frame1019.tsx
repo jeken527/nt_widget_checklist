@@ -31,6 +31,35 @@ const Frame1019 = () => {
     const [priorityInput, setPriorityInput] = useState("");
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
+
+    const handleCheckToggle = async (index: number) => {
+        // 1. 내가 클릭한 루틴의 체크 상태를 반대로 뒤집습니다 (true <-> false)
+        const newRoutines = [...routineList];
+        newRoutines[index].checked = !newRoutines[index].checked;
+        setRoutineList(newRoutines); // 뷰 즉시 갱신
+
+        // 2. 오늘 날짜(KST)를 구해서, 달력(History) 가방에도 오늘 기록을 실시간으로 덮어씌웁니다.
+        const todayStr = getKSTDateString();
+        const newHistory = { ...historyData };
+        
+        // 오늘 날짜의 기록을 업데이트합니다.
+        newHistory[todayStr] = newRoutines.map(r => ({
+            description: r.description,
+            checked: r.checked
+        }));
+        
+        // 🌟 이 코드가 실행되는 순간, 부모의 통계 엔진이 돌면서 달력 도트와 %가 즉각 변합니다!
+        setHistoryData(newHistory);
+
+        // 3. 브라우저가 꺼져도 날아가지 않게 JSONBin 서버 금고에 즉시 백업합니다.
+        await saveRoutineData({
+            lastDate: todayStr,
+            routines: newRoutines,
+            history: newHistory,
+            daily_planner: reminderInput // 메모장 텍스트도 함께 보존
+        });
+    };
+    
     // 🌟 [안전하게 결합된 useEffect] 공휴일 로드 + JSONBin 데이터 로드 완벽 유지!
     useEffect(() => {
         // 1번 일꾼: 구글에서 공휴일 가져오기
@@ -201,15 +230,7 @@ const Frame1019 = () => {
     };
 
     const [insert_button_state_12_703, setInsert_button_state_12_703] = useState("default");
-    const [checkbox_state_12_678, setCheckbox_state_12_678] = useState("default");
-    const [checkbox_state_12_667, setCheckbox_state_12_667] = useState("default");
-    const [checkbox_state_12_656, setCheckbox_state_12_656] = useState("default");
-    const [checkbox_state_12_645, setCheckbox_state_12_645] = useState("default");
-    const [checkbox_state_12_634, setCheckbox_state_12_634] = useState("default");
-    const [checkbox_state_12_623, setCheckbox_state_12_623] = useState("default");
-    const [checkbox_state_12_612, setCheckbox_state_12_612] = useState("default");
-    const [checkbox_state_12_601, setCheckbox_state_12_601] = useState("default");
-    const [checkbox_state_12_590, setCheckbox_state_12_590] = useState("default");
+
     const [transitionConfig12_703, setTransitionConfig12_703] = useState({});
     const [transitionConfig12_678, setTransitionConfig12_678] = useState({});
     const [transitionConfig12_667, setTransitionConfig12_667] = useState({});
@@ -234,6 +255,13 @@ const Frame1019 = () => {
     const click_12_612 = () => { setCheckbox_state_12_612("checked"); };
     const click_12_601 = () => { setCheckbox_state_12_601("checked"); };
     const click_12_590 = () => { setCheckbox_state_12_590("checked"); };
+
+    const getRoutineState = (index: number) => {
+        if (routineList[index]) {
+            return routineList[index].checked ? "checked" : "default";
+        }
+        return "default";
+    };
 
     return (
         <div className="scroll-container">
@@ -396,9 +424,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_678"
                             className="Pixso-instance-12_678"
-                            checkbox_state={checkbox_state_12_678}
+                            checkbox_state={getRoutineState(0)}
                             transitionConfig={transitionConfig12_678}
-                            click={click_12_678}
+                            click={() => routineList[0] && handleCheckToggle(0)}
                         ></Checkbox>
                     }
                     slot_92_5774={<p id="12_676" className="Pixso-paragraph-12_676">{"3"}</p>}
@@ -408,9 +436,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_667"
                             className="Pixso-instance-12_667"
-                            checkbox_state={checkbox_state_12_667}
+                            checkbox_state={getRoutineState(1)}
                             transitionConfig={transitionConfig12_667}
-                            click={click_12_667}
+                            click={() => routineList[1] && handleCheckToggle(1)}
                         ></Checkbox>
                     }
                     slot_92_5764={<p id="12_665" className="Pixso-paragraph-12_665">{"3"}</p>}
@@ -420,9 +448,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_656"
                             className="Pixso-instance-12_656"
-                            checkbox_state={checkbox_state_12_656}
+                            checkbox_state={getRoutineState(2)}
                             transitionConfig={transitionConfig12_656}
-                            click={click_12_656}
+                            click={() => routineList[2] && handleCheckToggle(2)}
                         ></Checkbox>
                     }
                     slot_92_5754={<p id="12_654" className="Pixso-paragraph-12_654">{"1"}</p>}
@@ -432,9 +460,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_645"
                             className="Pixso-instance-12_645"
-                            checkbox_state={checkbox_state_12_645}
+                            checkbox_state={getRoutineState(3)}
                             transitionConfig={transitionConfig12_645}
-                            click={click_12_645}
+                            click={() => routineList[3] && handleCheckToggle(3)}
                         ></Checkbox>
                     }
                     slot_92_5744={<p id="12_643" className="Pixso-paragraph-12_643">{"5"}</p>}
@@ -444,9 +472,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_634"
                             className="Pixso-instance-12_634"
-                            checkbox_state={checkbox_state_12_634}
+                            checkbox_state={getRoutineState(4)}
                             transitionConfig={transitionConfig12_634}
-                            click={click_12_634}
+                            click={() => routineList[4] && handleCheckToggle(4)}
                         ></Checkbox>
                     }
                     slot_92_5734={<p id="12_632" className="Pixso-paragraph-12_632">{"1"}</p>}
@@ -456,9 +484,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_623"
                             className="Pixso-instance-12_623"
-                            checkbox_state={checkbox_state_12_623}
+                            checkbox_state={getRoutineState(5)}
                             transitionConfig={transitionConfig12_623}
-                            click={click_12_623}
+                            click={() => routineList[5] && handleCheckToggle(5)}
                         ></Checkbox>
                     }
                     slot_92_5724={<p id="12_621" className="Pixso-paragraph-12_621">{"2"}</p>}
@@ -468,9 +496,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_612"
                             className="Pixso-instance-12_612"
-                            checkbox_state={checkbox_state_12_612}
+                            checkbox_state={getRoutineState(6)}
                             transitionConfig={transitionConfig12_612}
-                            click={click_12_612}
+                            click={() => routineList[6] && handleCheckToggle(6)}
                         ></Checkbox>
                     }
                     slot_92_5714={<p id="12_610" className="Pixso-paragraph-12_610">{"2"}</p>}
@@ -480,9 +508,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_601"
                             className="Pixso-instance-12_601"
-                            checkbox_state={checkbox_state_12_601}
+                            checkbox_state={getRoutineState(7)}
                             transitionConfig={transitionConfig12_601}
-                            click={click_12_601}
+                            click={() => routineList[7] && handleCheckToggle(7)}
                         ></Checkbox>
                     }
                     slot_92_5704={<p id="12_599" className="Pixso-paragraph-12_599">{"1"}</p>}
@@ -492,9 +520,9 @@ const Frame1019 = () => {
                         <Checkbox
                             id="12_590"
                             className="Pixso-instance-12_590"
-                            checkbox_state={checkbox_state_12_590}
+                            checkbox_state={getRoutineState(8)}
                             transitionConfig={transitionConfig12_590}
-                            click={click_12_590}
+                            click={() => routineList[8] && handleCheckToggle(8)}
                         ></Checkbox>
                     }
                     slot_92_5694={<p id="12_588" className="Pixso-paragraph-12_588">{"1"}</p>}
