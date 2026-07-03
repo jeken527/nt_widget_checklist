@@ -58,7 +58,7 @@ const Frame63372 = (props: Frame63372Props) => {
                                     gap: "4px", 
                                     overflowY: "auto", 
                                     maxHeight: "150px", 
-                                    width: "100%"
+                                    width: "220px"
                                 }}>
                                     
                                     {/* 🌟 진짜 검색 결과만 반복문으로 정밀 출력 */}
