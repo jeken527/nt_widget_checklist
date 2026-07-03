@@ -4286,8 +4286,8 @@ const Menutab = (props: MenutabProps) => {
                         <Frame63372 close={() => setIsSearchPopupOpen(false)} />
                     </div>
                 )}
-				)}
             </div>
+				)}
         </div>
 );
 };
