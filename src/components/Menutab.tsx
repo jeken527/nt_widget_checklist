@@ -22,6 +22,7 @@ interface MenutabProps {
 	yearlyStatusMap?: { [date: string]: string };
 	holidays?: Set<string>;
 	selectedTrackerRoutine?: string | null;
+	setSelectedTrackerRoutine?: (routine: string) => void;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -4205,6 +4206,13 @@ const Menutab = (props: MenutabProps) => {
                     }}>
                         {/* 🌟 팝업창 본체에 닫기 기능을 수행할 함수(close)를 Props로 넘겨줍니다! */}
                         <Frame63372 close={() => setIsSearchPopupOpen(false)} />
+						onSelect={(routineName) => {
+                                if (props.setSelectedTrackerRoutine) {
+                                    // 1. 부모의 리모컨을 눌러 선택된 루틴 이름을 갱신합니다.
+                                    props.setSelectedTrackerRoutine(routineName); 
+                                }
+								setIsSearchPopupOpen(false); 
+                            }}
                     </div>
                 )}
 
