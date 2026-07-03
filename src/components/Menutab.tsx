@@ -4289,6 +4289,7 @@ const Menutab = (props: MenutabProps) => {
 
             </div>
         </div>
+);				
 };
 
 export default Menutab;
