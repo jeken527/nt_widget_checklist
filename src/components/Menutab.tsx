@@ -752,25 +752,24 @@ const Menutab = (props: MenutabProps) => {
     const [planRoutine16, setPlanRoutine16] = useState("");
 	const today = new Date();
 	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
+    // 🌟 [수정된 엔진] Pure 컴포넌트 조건부 상태 매핑 버전
     const currentYear = today.getFullYear();
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
     const yearCalendar = Array.from({ length: 12 }, (_, monthIndex) => {
         const firstDay = new Date(currentYear, monthIndex, 1).getDay();
         const daysInMonth = new Date(currentYear, monthIndex + 1, 0).getDate();
         const days = Array.from({ length: 42 }, (_, i) => {
             const dayNum = i - firstDay + 1;
             if (dayNum <= 0 || dayNum > daysInMonth) {
-                return { dayNum: null, status: "disable", dateStr: "", isRedDay: false };
+                return { dayNum: null, status: "disable", dateStr: "" };
             }
             const dateStr = `${currentYear}-${String(monthIndex + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
             let status = props.yearlyStatusMap?.[dateStr] || "unlisted";
             const isFuture = new Date(currentYear, monthIndex, dayNum) > today;
             if (isFuture) status = "unlisted";
-            const dateObj = new Date(currentYear, monthIndex, dayNum);
-            const isWeekend = dateObj.getDay() === 0 || dateObj.getDay() === 6;
-            const isHoliday = props.holidays?.has(dateStr) || false;
-            const isRedDay = isWeekend || isHoliday;
-            return { dayNum, status, dateStr, isRedDay };
+
+            return { dayNum, status, dateStr };
         });
         return { monthName: monthNames[monthIndex], days };
     });
@@ -4064,20 +4063,18 @@ const Menutab = (props: MenutabProps) => {
                                         {monthObj.monthName}
                                     </span>
                                     
-                                    {/* 🌟 7열 6행(42칸)짜리 요일별 도트 그리드 (숫자 없음) */}
+                                    {/* 4x3 행렬 캘린더 매핑 본체 */}
                                     <div style={{ 
                                         display: "grid", 
-                                        gridTemplateColumns: "repeat(7, 1fr)", // 일~토 7열
-                                        gap: "2px 2px", // 도트 사이 초소형 마진
+                                        gridTemplateColumns: "repeat(7, 1fr)", 
+                                        gap: "2px 2px", 
                                         width: "100%",
                                         justifyItems: "center"
                                     }}>
                                         {monthObj.days.map((day, dIdx) => (
                                             <div key={dIdx} title={day.dateStr} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                                <Datecomponents 
-                                                    date_state={day.status} 
-                                                    isRedDay={day.isRedDay} 
-                                                />
+                                                {/* 🌟 복잡한 구글 프롭스 없이 순수하게 판정된 상태만 안전하게 도트에 주입합니다! */}
+                                                <Datecomponents date_state={day.status} />
                                             </div>
                                         ))}
                                     </div>
