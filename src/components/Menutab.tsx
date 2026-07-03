@@ -3813,7 +3813,6 @@ const Menutab = (props: MenutabProps) => {
                             </div>
                         </div>
                     </div>
-                )}
                {menu_state === "tracker" && (
                     <div id="9_63" className="Pixso-symbol-9_63" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_54" className="stroke-wrapper-9_54">
@@ -4290,7 +4289,6 @@ const Menutab = (props: MenutabProps) => {
 
             </div>
         </div>
-    );
 };
 
 export default Menutab;
