@@ -162,6 +162,7 @@ const Frame1019 = () => {
     }
     const totalTrackedDays = yearlyChecked + yearlyUnchecked;
     const yearlyRate = totalTrackedDays === 0 ? 0 : Math.round((yearlyChecked / totalTrackedDays) * 100);
+    const yearlyTotal = totalTrackedDays;
 
     // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
