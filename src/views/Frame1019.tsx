@@ -143,9 +143,10 @@ const Frame1019 = () => {
 
     if (selectedTrackerRoutine && historyData) {
         Object.keys(historyData).forEach((dateStr) => {
-            const dailyRecords = historyData[dateStr];
-            const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
             if (dateStr.startsWith(String(currentYear))) {
+                const dailyRecords = historyData[dateStr];
+                const record = dailyRecords.find((r: any) => r.description === selectedTrackerRoutine);
+                
                 if (record) {
                     if (record.checked) {
                         yearlyChecked++;
@@ -160,6 +161,8 @@ const Frame1019 = () => {
             }
         });
     }
+
+    // 🎯 달성률 공식 계산: 실천일 / (실천일 + 미실천일)
     const totalTrackedDays = yearlyChecked + yearlyUnchecked;
     const yearlyRate = totalTrackedDays === 0 ? 0 : Math.round((yearlyChecked / totalTrackedDays) * 100);
     const yearlyTotal = totalTrackedDays;
