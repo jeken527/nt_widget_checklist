@@ -12,6 +12,8 @@ interface MenutabProps {
     className?: string;
 	routineList?: any[];
 	toggleRoutineCheck?: (id: string) => void;
+	hideRoutine?: (id: string) => void;
+    deleteRoutinePermanently?: (id: string) => void;
 	reminderInput?: string;
     setReminderInput?: (value: string) => void;
 	searchInput?: string;
@@ -1894,7 +1896,7 @@ const Menutab = (props: MenutabProps) => {
                             boxSizing: "border-box"
                         }}
                     >
-                        {routineList && routineList.map((routine) => (
+                        {routineList && routineList.filter((r) => !r.hidden).map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
                                 alignItems: 'center', 
@@ -1909,7 +1911,25 @@ const Menutab = (props: MenutabProps) => {
                                 </p>
 
                                 {/* [2] DESCRB */}
-                                <p style={{ paddingLeft: '8px', margin: 0, padding: 0, textAlign: 'left', flexShrink: 0, color: '#000000' }}>
+                                <p 
+                                    style={{ 
+                                        paddingLeft: '8px', margin: 0, padding: 0, textAlign: 'left', 
+                                        flexShrink: 0, color: '#000000', 
+                                        cursor: 'pointer' 
+                                    }}
+                                    title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
+                                    
+                                    // 마우스 우클릭 (숨기기)
+                                    onContextMenu={(e) => {
+                                        e.preventDefault(); // 브라우저 기본 우클릭 메뉴(새 탭 열기 등) 방지
+                                        if (props.hideRoutine) props.hideRoutine(routine.id);
+                                    }}
+                                    
+                                    // 마우스 좌 더블클릭 (영구 삭제)
+                                    onDoubleClick={() => {
+                                        if (props.deleteRoutinePermanently) props.deleteRoutinePermanently(routine.id);
+                                    }}
+                                >
                                     {routine.description}
                                 </p>
 
