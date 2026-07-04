@@ -137,6 +137,34 @@ const Frame1019 = () => {
         const updatedList = routineList.map((routine) => 
             routine.id === id ? { ...routine, checked: !routine.checked } : routine
         );
+
+        // 🌟 마법 1 (우클릭): 화면에서만 숨기기 (서버에는 hidden 기록을 남겨 이력 유지)
+    const hideRoutine = async (id: string) => {
+        const updatedList = routineList.map((routine) =>
+            routine.id === id ? { ...routine, hidden: true } : routine
+        );
+        setRoutineList(updatedList); // 화면 즉시 반영
+
+        await saveRoutineData({
+            lastDate: getKSTDateString(),
+            routines: updatedList,
+            history: historyData,
+            daily_planner: reminderInput
+        });
+    };
+
+    // 🌟 마법 2 (좌 더블클릭): 완전 삭제 (서버에서도 영구적으로 날림)
+    const deleteRoutinePermanently = async (id: string) => {
+        const updatedList = routineList.filter((routine) => routine.id !== id);
+        setRoutineList(updatedList);
+
+        await saveRoutineData({
+            lastDate: getKSTDateString(),
+            routines: updatedList,
+            history: historyData,
+            daily_planner: reminderInput
+        });
+    };
         
         setRoutineList(updatedList); // 화면 즉시 변경 (틱! 하고 체크됨)
         
@@ -314,6 +342,8 @@ const Frame1019 = () => {
                     setMenuState={setMenuState}
                     routineList={routineList}
                     toggleRoutineCheck={toggleRoutineCheck}
+                    hideRoutine={hideRoutine}
+                    deleteRoutinePermanently={deleteRoutinePermanently}
                     reminderInput={reminderInput}
                     setReminderInput={setReminderInput}
                     searchInput={searchInput}
