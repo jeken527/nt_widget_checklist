@@ -1855,28 +1855,31 @@ const Menutab = (props: MenutabProps) => {
                                 height: '18px',
                                 flexShrink: 0
                             }}>
-                                {/* [1] PRI */}
-                                <p style={{ width: '60px', height: '18px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                {/* [1] PRI (세로 중앙 정렬 장착) */}
+                                <p style={{ width: '40px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.priority}
                                 </p>
 
-                                {/* [2] DESCRB */}
+                                {/* [2] DESCRB (세로 중앙 정렬 장착) */}
                                 <p 
                                     style={{ 
-                                        width: '150px', height: '18px',
-										margin: 0, paddingLeft: '2px', textAlign: 'left', 
-                                        flexShrink: 0, color: '#000000', 
+                                        width: '140px', 
+                                        height: '18px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        margin: 0, 
+                                        paddingLeft: '4px', 
+                                        textAlign: 'left', 
+                                        flexShrink: 0, 
+                                        color: '#000000', 
                                         cursor: 'pointer',
-										fontSize: '12px'}}
+                                        fontSize: '12px'
+                                    }}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
-                                    
-                                    // 마우스 우클릭 (숨기기)
                                     onContextMenu={(e) => {
-                                        e.preventDefault(); // 브라우저 기본 우클릭 메뉴(새 탭 열기 등) 방지
+                                        e.preventDefault(); 
                                         if (props.hideRoutine) props.hideRoutine(routine.id);
                                     }}
-                                    
-                                    // 마우스 좌 더블클릭 (영구 삭제)
                                     onDoubleClick={() => {
                                         if (props.deleteRoutinePermanently) props.deleteRoutinePermanently(routine.id);
                                     }}
@@ -1887,26 +1890,35 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    height: '4px', 
-                                    margin: 0, 
-                                    backgroundImage: 'url(/src/assets/images/Line20.svg)',
+                                    height: '1px', 
+                                    margin: '0 8px', 
+                                    backgroundImage: 'url(/src/assets/images/Line2.svg)',
                                     backgroundSize: '100% 100%',
                                     backgroundRepeat: 'no-repeat',
                                     flexShrink: 1
                                 }}></div>
 
-                                {/* [4] REP */}
-                                <p style={{ width: '60px', height: '18px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                {/* [4] REP (세로 중앙 정렬 장착) */}
+                                <p style={{ width: '40px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.repeat}
                                 </p>
 
-                                {/* [5] Checkbox (오류를 일으키던 주석 제거 완료!) */}
+                                {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
-                                    style={{ width: '50px', height: '18px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 0, paddingLeft: '12px', padding: '20px',flexShrink: 0, cursor: 'pointer' }}
+                                    style={{ 
+                                        width: '24px', 
+                                        height: '18px', 
+                                        display: 'flex', 
+                                        justifyContent: 'center', 
+                                        alignItems: 'center', 
+                                        margin: 0, 
+                                        padding: 0,
+                                        flexShrink: 0, 
+                                        cursor: 'pointer' 
+                                    }}
                                     onClick={() => props.toggleRoutineCheck && props.toggleRoutineCheck(routine.id)}
                                 >
-                                    {/* 🌟 여기서부터 괄호를 완벽하게 닫아줍니다! */}
-                                    <div style={{ pointerEvents: 'none' }}>
+                                    <div style={{ pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <Checkbox checkbox_state={routine.checked ? "checked" : "default"} />
                                     </div>
                                 </div>
