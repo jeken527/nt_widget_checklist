@@ -236,6 +236,9 @@ const Frame1019 = () => {
     const dailyCheckedCount = activeRoutines.filter(routine => routine.checked).length;
     const dailyRate = dailyTotal === 0 ? 0 : Math.round((dailyCheckedCount / dailyTotal) * 100);
 
+    const displayTotal = menuState === "checklist" ? dailyTotal : yearlyTotal;
+    const displayRate = menuState === "checklist" ? dailyRate : yearlyRate;
+
     // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
     const currentMonthLabel = monthNames[today.getMonth()];
