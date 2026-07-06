@@ -1846,7 +1846,7 @@ const Menutab = (props: MenutabProps) => {
                             boxSizing: "border-box"
                         }}
                     >
-                        {routineList && routineList.filter((r) => !r.hidden).map((routine) => (
+						{routineList && routineList.filter((r) => !r.hidden).sort((a, b) => Number(a.priority) - Number(b.priority)) .map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
                                 alignItems: 'flex-start',
