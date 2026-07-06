@@ -1875,7 +1875,7 @@ const Menutab = (props: MenutabProps) => {
                                         flexShrink: 0, 
                                         color: '#000000', 
                                         cursor: 'pointer',
-                                        fontSize: '12px'
+                                        fontSize: '14px'
                                     }}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
                                     onContextMenu={(e) => {
@@ -1901,8 +1901,8 @@ const Menutab = (props: MenutabProps) => {
                                 }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0,
-										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
+										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
