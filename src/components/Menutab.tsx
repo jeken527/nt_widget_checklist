@@ -1858,7 +1858,7 @@ const Menutab = (props: MenutabProps) => {
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
                                 <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
-										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
