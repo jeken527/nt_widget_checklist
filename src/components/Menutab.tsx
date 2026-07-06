@@ -1838,25 +1838,26 @@ const Menutab = (props: MenutabProps) => {
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",  
-                            justifyContent: "flex-start",
+                            justifyContent: "center",
                             gap: "2px",            
                             overflowX: "hidden",   
                             overflowY: "auto",     
-                            marginTop: "5px",      
+                            marginTop: "8px",      
                             boxSizing: "border-box"
                         }}
                     >
                         {routineList && routineList.filter((r) => !r.hidden).map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
-                                alignItems: 'center', 
+                                alignItems: 'center',
+								gap: "10px",
                                 width: '380px',
-                                minHeight: '18px',
-                                height: '18px',
+                                minHeight: '20px',
+                                height: '20px',
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '40px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1864,11 +1865,11 @@ const Menutab = (props: MenutabProps) => {
                                 <p 
                                     style={{ 
                                         width: '140px', 
-                                        height: '18px',
+                                        height: '20px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         margin: 0, 
-                                        paddingLeft: '4px', 
+                                        paddingLeft: '2px', 
                                         textAlign: 'left', 
                                         flexShrink: 0, 
                                         color: '#000000', 
@@ -1899,15 +1900,15 @@ const Menutab = (props: MenutabProps) => {
                                 }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '40px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.repeat}
                                 </p>
 
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '24px', 
-                                        height: '18px', 
+                                        width: '50px', 
+                                        height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'center', 
                                         alignItems: 'center', 
