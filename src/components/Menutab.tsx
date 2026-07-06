@@ -1915,7 +1915,7 @@ const Menutab = (props: MenutabProps) => {
                                         justifyContent: 'flex-start', 
                                         alignItems: 'flex-start', 
                                         margin: 0, 
-                                        padding: 0,
+                                        paddingLeft: '12px',
                                         flexShrink: 0, 
                                         cursor: 'pointer' 
                                     }}
