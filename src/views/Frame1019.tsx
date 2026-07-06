@@ -19,7 +19,6 @@ const getKSTDateString = () => {
 const Frame1019 = () => {
     const [menuState, setMenuState] = useState("checklist");
     const [routineList, setRoutineList] = useState<any[]>([]);
-    const [currentPlannerData, setCurrentPlannerData] = useState<any>({});
     const [historyData, setHistoryData] = useState<any>({});
     const [reminderInput, setReminderInput] = useState("")
     const [isLoading, setIsLoading] = useState(true);
@@ -152,17 +151,6 @@ const Frame1019 = () => {
             routines: updatedList,
             history: newHistory,
             daily_planner: reminderInput
-        });
-    };
-
-    const handlePlannerUpdate = async (plannerData: any) => {
-        setCurrentPlannerData(plannerData); // 임시 보관소 갱신
-        
-        await saveRoutineData({
-            lastDate: getKSTDateString(),
-            routines: routineList, // 루틴은 그대로 유지
-            history: historyData,  // 잔디밭 기록도 그대로 유지
-            daily_planner: plannerData // 🌟 자식이 조립해서 보내준 플래너 패키지를 통째로 덮어쓰기!
         });
     };
 
@@ -371,7 +359,6 @@ const Frame1019 = () => {
                     setMenuState={setMenuState}
                     routineList={routineList}
                     toggleRoutineCheck={toggleRoutineCheck}
-                    onPlannerUpdate={handlePlannerUpdate}
                     hideRoutine={hideRoutine}
                     deleteRoutinePermanently={deleteRoutinePermanently}
                     reminderInput={reminderInput}
