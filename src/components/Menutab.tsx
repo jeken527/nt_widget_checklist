@@ -1889,10 +1889,10 @@ const Menutab = (props: MenutabProps) => {
                             flexDirection: "column",
                             alignItems: "center",  
                             justifyContent: "flex-start",
-                            gap: "2px",           
+                            gap: "2px",            
                             overflowX: "hidden",   
                             overflowY: "auto",     
-                            marginTop: "8px",     
+                            marginTop: "8px",      
                             boxSizing: "border-box"
                         }}
                     >
@@ -1954,10 +1954,13 @@ const Menutab = (props: MenutabProps) => {
                                     style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0, cursor: 'pointer' }}
                                     onClick={() => props.toggleRoutineCheck && props.toggleRoutineCheck(routine.id)}
                                 >
+                                    {/* 🌟 여기서부터 괄호를 완벽하게 닫아줍니다! */}
                                     <div style={{ pointerEvents: 'none' }}>
                                         <Checkbox checkbox_state={routine.checked ? "checked" : "default"} />
+                                    </div>
                                 </div>
                             </div>
+                        ))} 
                     </div>
                                                     <div
                                                         id="92_5777"
