@@ -1842,7 +1842,7 @@ const Menutab = (props: MenutabProps) => {
                             gap: "2px",            
                             overflowX: "hidden",   
                             overflowY: "auto",     
-                            marginTop: "8px",      
+                            marginTop: "5px",      
                             boxSizing: "border-box"
                         }}
                     >
@@ -1850,13 +1850,13 @@ const Menutab = (props: MenutabProps) => {
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
                                 alignItems: 'center', 
-                                width: '100%', 
-                                minHeight: '24px',
-                                height: '24px',
+                                width: '380px',
+                                minHeight: '20px',
+                                height: '20px',
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI */}
-                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '10px' }}>
+                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1867,7 +1867,7 @@ const Menutab = (props: MenutabProps) => {
 										margin: 0, paddingLeft: '2px', textAlign: 'left', 
                                         flexShrink: 0, color: '#000000', 
                                         cursor: 'pointer',
-										fontSize: '10px'}}
+										fontSize: '12px'}}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
                                     
                                     // 마우스 우클릭 (숨기기)
@@ -1887,8 +1887,8 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    height: '1px', 
-                                    margin: '0 8px', 
+                                    height: '4px', 
+                                    margin: 0, 
                                     backgroundImage: 'url(/src/assets/images/Line20.svg)',
                                     backgroundSize: '100% 100%',
                                     backgroundRepeat: 'no-repeat',
@@ -1896,7 +1896,7 @@ const Menutab = (props: MenutabProps) => {
                                 }}></div>
 
                                 {/* [4] REP */}
-                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '10px' }}>
+                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.repeat}
                                 </p>
 
