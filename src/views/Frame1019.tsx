@@ -137,8 +137,19 @@ const Frame1019 = () => {
         const updatedList = routineList.map((routine) => 
             routine.id === id ? { ...routine, checked: !routine.checked } : routine
         );
+        
+        setRoutineList(updatedList); // 화면 즉시 변경 (틱! 하고 체크됨)
+        
+        // JSONBin에 변경된 상태를 통째로 덮어쓰기 (새로고침해도 체크 상태 유지!)
+        await saveRoutineData({
+            lastDate: getKSTDateString(),
+            routines: updatedList,
+            history: historyData, // 기존 히스토리 유지
+            daily_planner: reminderInput // 데일리 플래너 데이터 유지
+        });
+    };
 
-        // 🌟 마법 1 (우클릭): 화면에서만 숨기기 (서버에는 hidden 기록을 남겨 이력 유지)
+    // 🌟 마법 1 (우클릭): 화면에서만 숨기기 (서버에는 hidden 기록을 남겨 이력 유지)
     const hideRoutine = async (id: string) => {
         const updatedList = routineList.map((routine) =>
             routine.id === id ? { ...routine, hidden: true } : routine
@@ -163,17 +174,6 @@ const Frame1019 = () => {
             routines: updatedList,
             history: historyData,
             daily_planner: reminderInput
-        });
-    };
-        
-        setRoutineList(updatedList); // 화면 즉시 변경 (틱! 하고 체크됨)
-        
-        // JSONBin에 변경된 상태를 통째로 덮어쓰기 (새로고침해도 체크 상태 유지!)
-        await saveRoutineData({
-            lastDate: getKSTDateString(),
-            routines: updatedList,
-            history: historyData, // 기존 히스토리 유지
-            daily_planner: {} // 데일리 플래너 데이터 유지 (필요에 따라 변수 추가)
         });
     };
     const [isChecklistPopupOpen, setIsChecklistPopupOpen] = useState(false);
