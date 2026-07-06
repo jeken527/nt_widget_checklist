@@ -1856,17 +1856,18 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI */}
-                                <p style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontWeight: 'bold' }}>
+                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: '1px', paddingleft: '2px', flexShrink: 0, color: '#000000', fontsize: '10px' }}>
                                     {routine.priority}
                                 </p>
 
                                 {/* [2] DESCRB */}
                                 <p 
                                     style={{ 
-                                        paddingLeft: '8px', margin: 0, padding: 0, textAlign: 'left', 
+                                        width: '150px', height: '20px',
+										margin: '1px', paddingleft: '2px', textAlign: 'left', 
                                         flexShrink: 0, color: '#000000', 
-                                        cursor: 'pointer' 
-                                    }}
+                                        cursor: 'pointer',
+										fontSize: '10px'}}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
                                     
                                     // 마우스 우클릭 (숨기기)
@@ -1894,14 +1895,14 @@ const Menutab = (props: MenutabProps) => {
                                     flexShrink: 1
                                 }}></div>
 
-                                {/* [4] REP */}
-                                <p style={{ width: '30px', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000' }}>
+                                {/* [4] REP */}'
+                                <p style={{ width: '60px', height: '20px', textAlign: 'left', margin: '1px', paddingleft: '2px', flexShrink: 0, color: '#000000', fontsize: '10px' }}>
                                     {routine.repeat}
                                 </p>
 
                                 {/* [5] Checkbox (오류를 일으키던 주석 제거 완료!) */}
                                 <div 
-                                    style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0, cursor: 'pointer' }}
+                                    style={{ width: '50px', height: '20px', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', margin: '0px', paddingleft: '12px', padding: '20px',flexShrink: 0, cursor: 'pointer' }}
                                     onClick={() => props.toggleRoutineCheck && props.toggleRoutineCheck(routine.id)}
                                 >
                                     {/* 🌟 여기서부터 괄호를 완벽하게 닫아줍니다! */}
