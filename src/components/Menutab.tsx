@@ -1,5 +1,5 @@
 import Checkbox from "@/components/Checkbox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Insertbutton from "@/components/Insertbutton";
 import Serchbutton from "@/components/Serchbutton";
 import Datecomponents from "@/components/Datecomponents";
@@ -12,6 +12,7 @@ interface MenutabProps {
     className?: string;
 	routineList?: any[];
 	toggleRoutineCheck?: (id: string) => void;
+	onPlannerUpdate?: (plannerData: any) => void;
 	hideRoutine?: (id: string) => void;
     deleteRoutinePermanently?: (id: string) => void;
 	reminderInput?: string;
@@ -1577,6 +1578,33 @@ const Menutab = (props: MenutabProps) => {
         useState("default");
     const [transitionConfig92_7329, setTransitionConfig92_7329] = useState({});
     const transitionConfig: any = {};
+
+	useEffect(() => {
+        if (props.onPlannerUpdate) {
+            const plannerData = {
+                p7:  { text: planRoutine1,  checked: checkbox_state_92_8543  === "checked" },
+                p8:  { text: planRoutine2,  checked: checkbox_state_92_8550  === "checked" },
+                p9:  { text: planRoutine3,  checked: checkbox_state_92_8557  === "checked" },
+                p10: { text: planRoutine4,  checked: checkbox_state_92_8564  === "checked" },
+                p11: { text: planRoutine5,  checked: checkbox_state_92_8571  === "checked" },
+                p12: { text: planRoutine6,  checked: checkbox_state_92_8578  === "checked" },
+                p13: { text: planRoutine7,  checked: checkbox_state_92_8585  === "checked" },
+                p14: { text: planRoutine8,  checked: checkbox_state_92_8592  === "checked" },
+                p15: { text: planRoutine9,  checked: checkbox_state_92_8599  === "checked" },
+                p16: { text: planRoutine10, checked: checkbox_state_92_8606  === "checked" },
+                p17: { text: planRoutine11, checked: checkbox_state_92_8613  === "checked" },
+                p18: { text: planRoutine12, checked: checkbox_state_92_8620  === "checked" },
+                p19: { text: planRoutine13, checked: checkbox_state_92_8627  === "checked" },
+                p20: { text: planRoutine14, checked: checkbox_state_92_8634  === "checked" },
+                p21: { text: planRoutine15, checked: checkbox_state_92_8641  === "checked" },
+                p22: { text: planRoutine16, checked: checkbox_state_92_8648  === "checked" },
+            };
+            props.onPlannerUpdate(plannerData);
+        }
+    }, [
+        planRoutine1, planRoutine2, planRoutine3, planRoutine4, planRoutine5, planRoutine6, planRoutine7, planRoutine8, planRoutine9, planRoutine10, planRoutine11, planRoutine12, planRoutine13, planRoutine14, planRoutine15, planRoutine16,
+        checkbox_state_92_8543, checkbox_state_92_8550, checkbox_state_92_8557, checkbox_state_92_8564, checkbox_state_92_8571, checkbox_state_92_8578, checkbox_state_92_8585, checkbox_state_92_8592, checkbox_state_92_8599, checkbox_state_92_8606, checkbox_state_92_8613, checkbox_state_92_8620, checkbox_state_92_8627, checkbox_state_92_8634, checkbox_state_92_8641, checkbox_state_92_8648
+    ]);
 
     const click_92_5696 = () => {
         setCheckbox_state_92_5696("checked");
