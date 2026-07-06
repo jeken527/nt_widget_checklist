@@ -1,5 +1,5 @@
 import Checkbox from "@/components/Checkbox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Insertbutton from "@/components/Insertbutton";
 import Serchbutton from "@/components/Serchbutton";
 import Datecomponents from "@/components/Datecomponents";
@@ -25,6 +25,8 @@ interface MenutabProps {
 	holidays?: Set<string>;
 	selectedTrackerRoutine?: string | null;
 	setSelectedTrackerRoutine?: (routine: string) => void;
+	saveDailyPlannerToServer?: (plannerSnapshot: any) => void;
+	initialPlannerData?: any;
     slot_92_5669?: React.ReactNode;
     slot_92_5671?: React.ReactNode;
     slot_92_5673?: React.ReactNode;
@@ -737,22 +739,22 @@ interface MenutabProps {
 }
 const Menutab = (props: MenutabProps) => {
 	const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
-    const [planRoutine1, setPlanRoutine1] = useState("");
-    const [planRoutine2, setPlanRoutine2] = useState("");
-    const [planRoutine3, setPlanRoutine3] = useState("");
-    const [planRoutine4, setPlanRoutine4] = useState("");
-    const [planRoutine5, setPlanRoutine5] = useState("");
-    const [planRoutine6, setPlanRoutine6] = useState("");
-    const [planRoutine7, setPlanRoutine7] = useState("");
-    const [planRoutine8, setPlanRoutine8] = useState("");
-    const [planRoutine9, setPlanRoutine9] = useState("");
-    const [planRoutine10, setPlanRoutine10] = useState("");
-    const [planRoutine11, setPlanRoutine11] = useState("");
-    const [planRoutine12, setPlanRoutine12] = useState("");
-    const [planRoutine13, setPlanRoutine13] = useState("");
-    const [planRoutine14, setPlanRoutine14] = useState("");
-    const [planRoutine15, setPlanRoutine15] = useState("");
-    const [planRoutine16, setPlanRoutine16] = useState("");
+    const [planRoutine1, setPlanRoutine1] = useState(props.initialPlannerData?.p7?.text || "");
+    const [planRoutine2, setPlanRoutine2] = useState(props.initialPlannerData?.p8?.text || "");
+    const [planRoutine3, setPlanRoutine3] = useState(props.initialPlannerData?.p9?.text || "");
+    const [planRoutine4, setPlanRoutine4] = useState(props.initialPlannerData?.p10?.text || "");
+    const [planRoutine5, setPlanRoutine5] = useState(props.initialPlannerData?.p11?.text || "");
+    const [planRoutine6, setPlanRoutine6] = useState(props.initialPlannerData?.p12?.text || "");
+    const [planRoutine7, setPlanRoutine7] = useState(props.initialPlannerData?.p13?.text || "");
+    const [planRoutine8, setPlanRoutine8] = useState(props.initialPlannerData?.p14?.text || "");
+    const [planRoutine9, setPlanRoutine9] = useState(props.initialPlannerData?.p15?.text || "");
+    const [planRoutine10, setPlanRoutine10] = useState(props.initialPlannerData?.p16?.text || "");
+    const [planRoutine11, setPlanRoutine11] = useState(props.initialPlannerData?.p17?.text || "");
+    const [planRoutine12, setPlanRoutine12] = useState(props.initialPlannerData?.p18?.text || "");
+    const [planRoutine13, setPlanRoutine13] = useState(props.initialPlannerData?.p19?.text || "");
+    const [planRoutine14, setPlanRoutine14] = useState(props.initialPlannerData?.p20?.text || "");
+    const [planRoutine15, setPlanRoutine15] = useState(props.initialPlannerData?.p21?.text || "");
+    const [planRoutine16, setPlanRoutine16] = useState(props.initialPlannerData?.p22?.text || "");
 	const today = new Date();
 	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     // 🌟 [수정된 엔진] Pure 컴포넌트 조건부 상태 매핑 버전
@@ -1525,53 +1527,37 @@ const Menutab = (props: MenutabProps) => {
     const [insert_button_state_92_5800, setInsert_button_state_92_5800] =
         useState("default");
     const [transitionConfig92_5800, setTransitionConfig92_5800] = useState({});
-    const [checkbox_state_92_8543, setCheckbox_state_92_8543] =
-        useState("default");
+    const [checkbox_state_92_8543, setCheckbox_state_92_8543] = useState(props.initialPlannerData?.p7?.checked ? "checked" : "default");
     const [transitionConfig92_8543, setTransitionConfig92_8543] = useState({});
-    const [checkbox_state_92_8550, setCheckbox_state_92_8550] =
-        useState("default");
+    const [checkbox_state_92_8550, setCheckbox_state_92_8550] = useState(props.initialPlannerData?.p8?.checked ? "checked" : "default");
     const [transitionConfig92_8550, setTransitionConfig92_8550] = useState({});
-    const [checkbox_state_92_8557, setCheckbox_state_92_8557] =
-        useState("default");
+    const [checkbox_state_92_8557, setCheckbox_state_92_8557] = useState(props.initialPlannerData?.p9?.checked ? "checked" : "default");
     const [transitionConfig92_8557, setTransitionConfig92_8557] = useState({});
-    const [checkbox_state_92_8564, setCheckbox_state_92_8564] =
-        useState("default");
+    const [checkbox_state_92_8564, setCheckbox_state_92_8564] = useState(props.initialPlannerData?.p10?.checked ? "checked" : "default");
     const [transitionConfig92_8564, setTransitionConfig92_8564] = useState({});
-    const [checkbox_state_92_8571, setCheckbox_state_92_8571] =
-        useState("default");
+    const [checkbox_state_92_8571, setCheckbox_state_92_8571] = useState(props.initialPlannerData?.p11?.checked ? "checked" : "default");
     const [transitionConfig92_8571, setTransitionConfig92_8571] = useState({});
-    const [checkbox_state_92_8578, setCheckbox_state_92_8578] =
-        useState("default");
+    const [checkbox_state_92_8578, setCheckbox_state_92_8578] = useState(props.initialPlannerData?.p12?.checked ? "checked" : "default");
     const [transitionConfig92_8578, setTransitionConfig92_8578] = useState({});
-    const [checkbox_state_92_8585, setCheckbox_state_92_8585] =
-        useState("default");
+    const [checkbox_state_92_8585, setCheckbox_state_92_8585] = useState(props.initialPlannerData?.p13?.checked ? "checked" : "default");
     const [transitionConfig92_8585, setTransitionConfig92_8585] = useState({});
-    const [checkbox_state_92_8592, setCheckbox_state_92_8592] =
-        useState("default");
+    const [checkbox_state_92_8592, setCheckbox_state_92_8592] = useState(props.initialPlannerData?.p14?.checked ? "checked" : "default");
     const [transitionConfig92_8592, setTransitionConfig92_8592] = useState({});
-    const [checkbox_state_92_8599, setCheckbox_state_92_8599] =
-        useState("default");
+    const [checkbox_state_92_8599, setCheckbox_state_92_8599] = useState(props.initialPlannerData?.p15?.checked ? "checked" : "default");
     const [transitionConfig92_8599, setTransitionConfig92_8599] = useState({});
-    const [checkbox_state_92_8606, setCheckbox_state_92_8606] =
-        useState("default");
+    const [checkbox_state_92_8606, setCheckbox_state_92_8606] = useState(props.initialPlannerData?.p16?.checked ? "checked" : "default");
     const [transitionConfig92_8606, setTransitionConfig92_8606] = useState({});
-    const [checkbox_state_92_8613, setCheckbox_state_92_8613] =
-        useState("default");
+    const [checkbox_state_92_8613, setCheckbox_state_92_8613] = useState(props.initialPlannerData?.p17?.checked ? "checked" : "default");
     const [transitionConfig92_8613, setTransitionConfig92_8613] = useState({});
-    const [checkbox_state_92_8620, setCheckbox_state_92_8620] =
-        useState("default");
+    const [checkbox_state_92_8620, setCheckbox_state_92_8620] = useState(props.initialPlannerData?.p18?.checked ? "checked" : "default");
     const [transitionConfig92_8620, setTransitionConfig92_8620] = useState({});
-    const [checkbox_state_92_8627, setCheckbox_state_92_8627] =
-        useState("default");
+    const [checkbox_state_92_8627, setCheckbox_state_92_8627] = useState(props.initialPlannerData?.p19?.checked ? "checked" : "default");
     const [transitionConfig92_8627, setTransitionConfig92_8627] = useState({});
-    const [checkbox_state_92_8634, setCheckbox_state_92_8634] =
-        useState("default");
+    const [checkbox_state_92_8634, setCheckbox_state_92_8634] = useState(props.initialPlannerData?.p20?.checked ? "checked" : "default");
     const [transitionConfig92_8634, setTransitionConfig92_8634] = useState({});
-    const [checkbox_state_92_8641, setCheckbox_state_92_8641] =
-        useState("default");
+    const [checkbox_state_92_8641, setCheckbox_state_92_8641] = useState(props.initialPlannerData?.p21?.checked ? "checked" : "default");
     const [transitionConfig92_8641, setTransitionConfig92_8641] = useState({});
-    const [checkbox_state_92_8648, setCheckbox_state_92_8648] =
-        useState("default");
+    const [checkbox_state_92_8648, setCheckbox_state_92_8648] = useState(props.initialPlannerData?.p22?.checked ? "checked" : "default");
     const [transitionConfig92_8648, setTransitionConfig92_8648] = useState({});
     const [search_button_state_92_7329, setSearch_button_state_92_7329] =
         useState("default");
@@ -1618,6 +1604,37 @@ const Menutab = (props: MenutabProps) => {
         setInsert_button_state_92_5800("checked");
     };
 
+	useEffect(() => {
+        const timer = setTimeout(() => {
+            if (props.saveDailyPlannerToServer) {
+                const plannerSnapshot = {
+                    p7:  { text: planRoutine1,  checked: checkbox_state_92_8543  === "checked" },
+                    p8:  { text: planRoutine2,  checked: checkbox_state_92_8550  === "checked" },
+                    p9:  { text: planRoutine3,  checked: checkbox_state_92_8557  === "checked" },
+                    p10: { text: planRoutine4,  checked: checkbox_state_92_8564  === "checked" },
+                    p11: { text: planRoutine5,  checked: checkbox_state_92_8571  === "checked" },
+                    p12: { text: planRoutine6,  checked: checkbox_state_92_8578  === "checked" },
+                    p13: { text: planRoutine7,  checked: checkbox_state_92_8585  === "checked" },
+                    p14: { text: planRoutine8,  checked: checkbox_state_92_8592  === "checked" },
+                    p15: { text: planRoutine9,  checked: checkbox_state_92_8599  === "checked" },
+                    p16: { text: planRoutine10, checked: checkbox_state_92_8606  === "checked" },
+                    p17: { text: planRoutine11, checked: checkbox_state_92_8613  === "checked" },
+                    p18: { text: planRoutine12, checked: checkbox_state_92_8620  === "checked" },
+                    p19: { text: planRoutine13, checked: checkbox_state_92_8627  === "checked" },
+                    p20: { text: planRoutine14, checked: checkbox_state_92_8634  === "checked" },
+                    p21: { text: planRoutine15, checked: checkbox_state_92_8641  === "checked" },
+                    p22: { text: planRoutine16, checked: checkbox_state_92_8648  === "checked" },
+                };
+                props.saveDailyPlannerToServer(plannerSnapshot);
+            }
+        }, 1000); // 1000ms
+
+        return () => clearTimeout(timer);
+    }, [
+        planRoutine1, planRoutine2, planRoutine3, planRoutine4, planRoutine5, planRoutine6, planRoutine7, planRoutine8, planRoutine9, planRoutine10, planRoutine11, planRoutine12, planRoutine13, planRoutine14, planRoutine15, planRoutine16,
+        checkbox_state_92_8543, checkbox_state_92_8550, checkbox_state_92_8557, checkbox_state_92_8564, checkbox_state_92_8571, checkbox_state_92_8578, checkbox_state_92_8585, checkbox_state_92_8592, checkbox_state_92_8599, checkbox_state_92_8606, checkbox_state_92_8613, checkbox_state_92_8620, checkbox_state_92_8627, checkbox_state_92_8634, checkbox_state_92_8641, checkbox_state_92_8648
+    ]);
+	
     const click_92_8543 = () => { setCheckbox_state_92_8543(prev => prev === "checked" ? "default" : "checked"); };
     const click_92_8550 = () => { setCheckbox_state_92_8550(prev => prev === "checked" ? "default" : "checked"); };
     const click_92_8557 = () => { setCheckbox_state_92_8557(prev => prev === "checked" ? "default" : "checked"); };
