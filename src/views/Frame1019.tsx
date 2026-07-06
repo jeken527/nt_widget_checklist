@@ -230,6 +230,12 @@ const Frame1019 = () => {
     const totalTrackedDays = yearlyChecked + yearlyUnchecked;
     const yearlyRate = totalTrackedDays === 0 ? 0 : Math.round((yearlyChecked / totalTrackedDays) * 100);
     const yearlyTotal = totalTrackedDays;
+
+    const activeRoutines = routineList.filter(routine => !routine.hidden);
+    const dailyTotal = activeRoutines.length;
+    const dailyCheckedCount = activeRoutines.filter(routine => routine.checked).length;
+    const dailyRate = dailyTotal === 0 ? 0 : Math.round((dailyCheckedCount / dailyTotal) * 100);
+
     // 월 표기 영문 변환기 (자바스크립트가 알아서 현재 월의 영문 이름을 찾습니다!)
     const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
     const currentMonthLabel = monthNames[today.getMonth()];
@@ -353,6 +359,7 @@ const Frame1019 = () => {
                     yearlyStatusMap={yearlyStatusMap}
                     selectedTrackerRoutine={selectedTrackerRoutine}
                     holidays={holidays}
+                    
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
@@ -446,9 +453,9 @@ const Frame1019 = () => {
                         />
                     }
                     slot_92_5788={<p id="12_691" className="Pixso-paragraph-12_691">{"%"}</p>}
-                    slot_92_5787={<p className="Pixso-paragraph-12_690">{yearlyRate}</p>}
+                    slot_92_5787={<p id="92_5787" className="Pixso-paragraph-92_5787">{dailyRate}</p>}
                     slot_92_5785={<p id="12_688" className="Pixso-paragraph-12_688">{"RATE:"}</p>}
-                    slot_92_5783={<p className="Pixso-paragraph-12_686">{yearlyTotal}</p>}
+                    slot_92_5783={<p id="92_5783" className="Pixso-paragraph-92_5783">{dailyTotal}</p>}
                     slot_92_5781={<p id="12_684" className="Pixso-paragraph-12_684">{"TOTAL:"}</p>}
                     
                     slot_92_5685={<p id="12_579" className="Pixso-paragraph-12_579">{"CHECK"}</p>}
