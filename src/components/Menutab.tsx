@@ -1849,7 +1849,7 @@ const Menutab = (props: MenutabProps) => {
                         {routineList && routineList.filter((r) => !r.hidden).map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
-                                alignItems: 'center',
+                                alignItems: 'flex-start',
 								gap: "10px",
                                 width: '380px',
                                 minHeight: '20px',
@@ -1857,7 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '12px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1867,7 +1867,7 @@ const Menutab = (props: MenutabProps) => {
                                         width: '140px', 
                                         height: '20px',
                                         display: 'flex',
-                                        alignItems: 'center',
+                                        alignItems: 'flex-start',
                                         margin: 0, 
                                         paddingLeft: '2px', 
                                         textAlign: 'left', 
