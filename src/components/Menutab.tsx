@@ -1954,7 +1954,8 @@ const Menutab = (props: MenutabProps) => {
                                     style={{ width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '4px', flexShrink: 0, cursor: 'pointer' }}
                                     onClick={() => props.toggleRoutineCheck && props.toggleRoutineCheck(routine.id)}
                                 >
-                                    <Checkbox checkbox_state={routine.checked ? "checked" : "default"} />
+                                    <div style={{ pointerEvents: 'none' }}>
+                                        <Checkbox checkbox_state={routine.checked ? "checked" : "default"} />
                                 </div>
                             </div>
                         ))}
@@ -2469,21 +2470,16 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8542"
                                                                         className="Pixso-frame-92_8542"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8543}
                                                                     >
-                                                                        <div className="frame-content-92_8542">
+                                                                        <div className="frame-content-92_8542" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8543 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8543"
                                                                                     className="Pixso-instance-92_8543"
-                                                                                    checkbox_state={
-                                                                                        checkbox_state_92_8543
-                                                                                    }
-                                                                                    transitionConfig={
-                                                                                        transitionConfig92_8543
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8543
-                                                                                    }
+                                                                                    checkbox_state={checkbox_state_92_8543}
+                                                                                    transitionConfig={transitionConfig92_8543}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2544,8 +2540,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8549"
                                                                         className="Pixso-frame-92_8549"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8550}
                                                                     >
-                                                                        <div className="frame-content-92_8549">
+                                                                        <div className="frame-content-92_8549" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8550 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8550"
@@ -2554,11 +2552,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                         checkbox_state_92_8550
                                                                                     }
                                                                                     transitionConfig={
-                                                                                        transitionConfig92_8550
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8550
-                                                                                    }
+                                                                                        transitionConfig92_8550}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2618,8 +2612,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8556"
                                                                         className="Pixso-frame-92_8556"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8557}
                                                                     >
-                                                                        <div className="frame-content-92_8556">
+                                                                        <div className="frame-content-92_8556" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8557 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8557"
@@ -2628,11 +2624,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                         checkbox_state_92_8557
                                                                                     }
                                                                                     transitionConfig={
-                                                                                        transitionConfig92_8557
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8557
-                                                                                    }
+                                                                                        transitionConfig92_8557}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2693,8 +2685,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8563"
                                                                         className="Pixso-frame-92_8563"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8564}
                                                                     >
-                                                                        <div className="frame-content-92_8563">
+                                                                        <div className="frame-content-92_8563"  style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8564 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8564"
@@ -2703,11 +2697,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                         checkbox_state_92_8564
                                                                                     }
                                                                                     transitionConfig={
-                                                                                        transitionConfig92_8564
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8564
-                                                                                    }
+                                                                                        transitionConfig92_8564}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2768,8 +2758,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8570"
                                                                         className="Pixso-frame-92_8570"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8571}
                                                                     >
-                                                                        <div className="frame-content-92_8570">
+                                                                        <div className="frame-content-92_8570" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8571 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8571"
@@ -2778,11 +2770,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                         checkbox_state_92_8571
                                                                                     }
                                                                                     transitionConfig={
-                                                                                        transitionConfig92_8571
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8571
-                                                                                    }
+                                                                                        transitionConfig92_8571}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2842,8 +2830,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8577"
                                                                         className="Pixso-frame-92_8577"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8578}
                                                                     >
-                                                                        <div className="frame-content-92_8577">
+                                                                        <div className="frame-content-92_8577" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8578 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8578"
@@ -2852,11 +2842,7 @@ const Menutab = (props: MenutabProps) => {
                                                                                         checkbox_state_92_8578
                                                                                     }
                                                                                     transitionConfig={
-                                                                                        transitionConfig92_8578
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8578
-                                                                                    }
+                                                                                        transitionConfig92_8578}
                                                                                 ></Checkbox>
                                                                             )}
                                                                         </div>
@@ -2917,8 +2903,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8584"
                                                                         className="Pixso-frame-92_8584"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8585}
                                                                     >
-                                                                        <div className="frame-content-92_8584">
+                                                                        <div className="frame-content-92_8584"  style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8585 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8585"
@@ -2928,9 +2916,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8585
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8585
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -2992,8 +2977,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8591"
                                                                         className="Pixso-frame-92_8591"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8592}
                                                                     >
-                                                                        <div className="frame-content-92_8591">
+                                                                        <div className="frame-content-92_8591"  style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8592 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8592"
@@ -3003,9 +2990,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8592
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8592
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3066,8 +3050,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8598"
                                                                         className="Pixso-frame-92_8598"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8599}
                                                                     >
-                                                                        <div className="frame-content-92_8598">
+                                                                        <div className="frame-content-92_8598" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8599 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8599"
@@ -3077,9 +3063,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8599
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8599
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3140,8 +3123,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8605"
                                                                         className="Pixso-frame-92_8605"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8606}
                                                                     >
-                                                                        <div className="frame-content-92_8605">
+                                                                        <div className="frame-content-92_8605" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8606 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8606"
@@ -3151,9 +3136,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8606
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8606
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3214,8 +3196,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8612"
                                                                         className="Pixso-frame-92_8612"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8613}
                                                                     >
-                                                                        <div className="frame-content-92_8612">
+                                                                        <div className="frame-content-92_8612" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8613 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8613"
@@ -3225,9 +3209,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8613
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8613
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3288,8 +3269,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8619"
                                                                         className="Pixso-frame-92_8619"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8620}
                                                                     >
-                                                                        <div className="frame-content-92_8619">
+                                                                        <div className="frame-content-92_8619" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8620 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8620"
@@ -3299,9 +3282,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8620
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8620
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3362,8 +3342,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8626"
                                                                         className="Pixso-frame-92_8626"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8627}
                                                                     >
-                                                                        <div className="frame-content-92_8626">
+                                                                        <div className="frame-content-92_8626" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8627 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8627"
@@ -3373,9 +3355,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8627
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8627
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3436,8 +3415,9 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8633"
                                                                         className="Pixso-frame-92_8633"
+																		style={{ cursor: 'pointer' }} onClick={click_92_8634}
                                                                     >
-                                                                        <div className="frame-content-92_8633">
+                                                                        <div className="frame-content-92_8633" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8634 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8634"
@@ -3447,9 +3427,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8634
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8634
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3510,8 +3487,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8640"
                                                                         className="Pixso-frame-92_8640"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8641}
                                                                     >
-                                                                        <div className="frame-content-92_8640">
+                                                                        <div className="frame-content-92_8640" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8641 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8641"
@@ -3521,9 +3500,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8641
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8641
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
@@ -3584,8 +3560,10 @@ const Menutab = (props: MenutabProps) => {
                                                                     <div
                                                                         id="92_8647"
                                                                         className="Pixso-frame-92_8647"
+																		style={{ cursor: 'pointer' }}
+																		onClick={click_92_8648}
                                                                     >
-                                                                        <div className="frame-content-92_8647">
+                                                                        <div className="frame-content-92_8647" style={{ pointerEvents: 'none' }}>
                                                                             {slot_92_8648 ?? (
                                                                                 <Checkbox
                                                                                     id="92_8648"
@@ -3595,9 +3573,6 @@ const Menutab = (props: MenutabProps) => {
                                                                                     }
                                                                                     transitionConfig={
                                                                                         transitionConfig92_8648
-                                                                                    }
-                                                                                    click={
-                                                                                        click_92_8648
                                                                                     }
                                                                                 ></Checkbox>
                                                                             )}
