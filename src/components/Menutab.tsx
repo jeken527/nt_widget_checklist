@@ -2449,7 +2449,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine1}
         onChange={(e) => setPlanRoutine1(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8541"
         style={{
             width: "180px",
@@ -2519,7 +2519,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine2}
         onChange={(e) => setPlanRoutine2(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8548"
         style={{
             width: "180px",
@@ -2592,7 +2592,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine3}
         onChange={(e) => setPlanRoutine3(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8555"
         style={{
             width: "180px",
@@ -2664,7 +2664,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine4}
         onChange={(e) => setPlanRoutine4(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8562"
         style={{
             width: "180px",
@@ -2737,7 +2737,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine5}
         onChange={(e) => setPlanRoutine5(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8569"
         style={{
             width: "180px",
@@ -2810,7 +2810,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine6}
         onChange={(e) => setPlanRoutine6(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8576"
         style={{
             width: "180px",
@@ -2882,7 +2882,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine7}
         onChange={(e) => setPlanRoutine7(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8583"
         style={{
             width: "180px",
@@ -2956,7 +2956,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine8}
         onChange={(e) => setPlanRoutine8(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8590"
         style={{
             width: "180px",
@@ -3030,7 +3030,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine9}
         onChange={(e) => setPlanRoutine9(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8597"
         style={{
             width: "180px",
@@ -3103,7 +3103,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine10}
         onChange={(e) => setPlanRoutine10(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8604"
         style={{
             width: "180px",
@@ -3176,7 +3176,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine11}
         onChange={(e) => setPlanRoutine11(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8611"
         style={{
             width: "180px",
@@ -3249,7 +3249,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine12}
         onChange={(e) => setPlanRoutine12(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8618"
         style={{
             width: "180px",
@@ -3322,7 +3322,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine13}
         onChange={(e) => setPlanRoutine13(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8625"
         style={{
             width: "180px",
@@ -3395,7 +3395,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine14}
         onChange={(e) => setPlanRoutine14(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8632"
         style={{
             width: "180px",
@@ -3467,7 +3467,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine15}
         onChange={(e) => setPlanRoutine15(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8639"
         style={{
             width: "180px",
@@ -3540,7 +3540,7 @@ const Menutab = (props: MenutabProps) => {
         type="text"
         value={planRoutine16}
         onChange={(e) => setPlanRoutine16(e.target.value)}
-        placeholder="TYPE HERE"
+        placeholder="…"
 	className="Pixso-paragraph-92_8646"
         style={{
             width: "180px",
