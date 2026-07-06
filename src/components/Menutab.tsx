@@ -1890,15 +1890,18 @@ const Menutab = (props: MenutabProps) => {
                                 </p>
 
                                 {/* [3] Line 2 */}
-                                <div style={{ 
-                                    flex: 1, 
-                                    height: '1px', 
-                                    margin: '0 8px', 
-                                    backgroundImage: 'url(/src/assets/images/Line2.svg)',
-                                    backgroundSize: '100% 100%',
-                                    backgroundRepeat: 'no-repeat',
-                                    flexShrink: 1
-                                }}></div>
+                                <div 
+                                    id="92_8539_checklist" // 기존 아이디와 충돌 방지를 위해 살짝 변경
+                                    className="Pixso-vector-92_8539" // 🌟 데일리 플래너에서 선을 그리던 마법의 클래스 적용!
+                                    style={{ 
+                                        flex: 1,            // 🌟 좌우 글자 사이의 남는 공간을 꽉 채우며 늘어납니다.
+                                        height: '4px',      // 데일리 플래너와 동일한 높이 지정
+                                        margin: '0 8px',    // 좌우 글자들과의 최소 여백
+                                        flexShrink: 1,
+                                        backgroundPosition: 'center',
+                                        backgroundRepeat: 'repeat-x' // 선이 가로로 끊기지 않고 쭈욱 이어지도록 설정
+                                    }}
+                                ></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
                                 <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
