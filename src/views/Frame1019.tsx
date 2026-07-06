@@ -135,17 +135,22 @@ const Frame1019 = () => {
     
     const toggleRoutineCheck = async (id: string) => {
         const updatedList = routineList.map((routine) => 
-            routine.id === id ? { ...routine, checked: !routine.checked } : routine
-        );
-        
+            routine.id === id ? { ...routine, checked: !routine.checked } : routine);
         setRoutineList(updatedList); // 화면 즉시 변경 (틱! 하고 체크됨)
-        
-        // JSONBin에 변경된 상태를 통째로 덮어쓰기 (새로고침해도 체크 상태 유지!)
+
+        const todayStr = getKSTDateString();
+        const newHistory = { ...historyData };
+        newHistory[todayStr] = updatedList.map(r => ({
+            description: r.description,
+            checked: r.checked
+        }));
+        setHistoryData(newHistory);
+
         await saveRoutineData({
-            lastDate: getKSTDateString(),
+            lastDate: todayStr,
             routines: updatedList,
-            history: historyData, // 기존 히스토리 유지
-            daily_planner: reminderInput // 데일리 플래너 데이터 유지
+            history: newHistory,
+            daily_planner: reminderInput
         });
     };
 
@@ -154,10 +159,11 @@ const Frame1019 = () => {
         const updatedList = routineList.map((routine) =>
             routine.id === id ? { ...routine, hidden: true } : routine
         );
-        setRoutineList(updatedList); // 화면 즉시 반영
+        setRoutineList(updatedList);
 
+        const todayStr = getKSTDateString();
         await saveRoutineData({
-            lastDate: getKSTDateString(),
+            lastDate: todayStr,
             routines: updatedList,
             history: historyData,
             daily_planner: reminderInput
@@ -169,13 +175,15 @@ const Frame1019 = () => {
         const updatedList = routineList.filter((routine) => routine.id !== id);
         setRoutineList(updatedList);
 
+        const todayStr = getKSTDateString();
         await saveRoutineData({
-            lastDate: getKSTDateString(),
+            lastDate: todayStr,
             routines: updatedList,
             history: historyData,
             daily_planner: reminderInput
         });
     };
+    
     const [isChecklistPopupOpen, setIsChecklistPopupOpen] = useState(false);
     const [priInput, setPriInput] = useState("");
     const [descrbInput, setDescrbInput] = useState("");
