@@ -1618,73 +1618,23 @@ const Menutab = (props: MenutabProps) => {
         setInsert_button_state_92_5800("checked");
     };
 
-    const click_92_8543 = () => {
-        setCheckbox_state_92_8543("checked");
-    };
-
-    const click_92_8550 = () => {
-        setCheckbox_state_92_8550("checked");
-    };
-
-    const click_92_8557 = () => {
-        setCheckbox_state_92_8557("checked");
-    };
-
-    const click_92_8564 = () => {
-        setCheckbox_state_92_8564("checked");
-    };
-
-    const click_92_8571 = () => {
-        setCheckbox_state_92_8571("checked");
-    };
-
-    const click_92_8578 = () => {
-        setCheckbox_state_92_8578("checked");
-    };
-
-    const click_92_8585 = () => {
-        setCheckbox_state_92_8585("checked");
-    };
-
-    const click_92_8592 = () => {
-        setCheckbox_state_92_8592("checked");
-    };
-
-    const click_92_8599 = () => {
-        setCheckbox_state_92_8599("checked");
-    };
-
-    const click_92_8606 = () => {
-        setCheckbox_state_92_8606("checked");
-    };
-
-    const click_92_8613 = () => {
-        setCheckbox_state_92_8613("checked");
-    };
-
-    const click_92_8620 = () => {
-        setCheckbox_state_92_8620("checked");
-    };
-
-    const click_92_8627 = () => {
-        setCheckbox_state_92_8627("checked");
-    };
-
-    const click_92_8634 = () => {
-        setCheckbox_state_92_8634("checked");
-    };
-
-    const click_92_8641 = () => {
-        setCheckbox_state_92_8641("checked");
-    };
-
-    const click_92_8648 = () => {
-        setCheckbox_state_92_8648("checked");
-    };
-
-    const mouseover_92_7329 = () => {
-        setSearch_button_state_92_7329("checked");
-    };
+    const click_92_8543 = () => { setCheckbox_state_92_8543(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8550 = () => { setCheckbox_state_92_8550(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8557 = () => { setCheckbox_state_92_8557(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8564 = () => { setCheckbox_state_92_8564(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8571 = () => { setCheckbox_state_92_8571(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8578 = () => { setCheckbox_state_92_8578(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8585 = () => { setCheckbox_state_92_8585(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8592 = () => { setCheckbox_state_92_8592(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8599 = () => { setCheckbox_state_92_8599(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8606 = () => { setCheckbox_state_92_8606(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8613 = () => { setCheckbox_state_92_8613(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8620 = () => { setCheckbox_state_92_8620(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8627 = () => { setCheckbox_state_92_8627(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8634 = () => { setCheckbox_state_92_8634(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8641 = () => { setCheckbox_state_92_8641(prev => prev === "checked" ? "default" : "checked"); };
+    const click_92_8648 = () => { setCheckbox_state_92_8648(prev => prev === "checked" ? "default" : "checked"); };
+    const mouseover_92_7329 = () => { setSearch_button_state_92_7329("checked"); };
 
     return (
         <div className={`component-9_66 ${className}`} id={id}>
