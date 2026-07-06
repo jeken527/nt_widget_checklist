@@ -1838,7 +1838,7 @@ const Menutab = (props: MenutabProps) => {
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "flex-start",  
-                            justifyContent: "center",
+                            justifyContent: "flex-start",
                             gap: "2px",            
                             overflowX: "hidden",   
                             overflowY: "auto",     
