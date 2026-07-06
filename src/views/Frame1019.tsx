@@ -31,6 +31,7 @@ const Frame1019 = () => {
     const [priorityInput, setPriorityInput] = useState("");
     const [descriptionInput, setDescriptionInput] = useState("");
     const [repeatInput, setRepeatInput] = useState("");
+    const [savedPlannerData, setSavedPlannerData] = useState<any>(null);
 
     const handleCheckToggle = async (index: number) => {
         // 1. 내가 클릭한 루틴의 체크 상태를 반대로 뒤집습니다 (true <-> false)
@@ -60,7 +61,6 @@ const Frame1019 = () => {
         });
     };
     
-    // 🌟 [안전하게 결합된 useEffect] 공휴일 로드 + JSONBin 데이터 로드 완벽 유지!
     useEffect(() => {
         // 1번 일꾼: 구글에서 공휴일 가져오기
         const loadDataAndHolidays = async () => {
@@ -100,9 +100,10 @@ const Frame1019 = () => {
                 
                 let savedRoutines = data.routines || [];
                 let savedHistory = data.history || {};
-                let savedPlanner = data.daily_planner || ""; 
+                let savedPlanner = data.daily_planner || {}; // 🌟 중요: 꼬임 방지를 위해 기본값을 빈 가방 {} 객체로 안전하게 설정합니다.
                 const lastDate = data.lastDate || todayKST;
 
+                // [자정 리셋 스위치 구역] 자정이 지나 날짜가 바뀌었다면 플래너와 체크박스를 깨끗하게 비웁니다.
                 if (lastDate !== todayKST) {
                     const dailyRecord = savedRoutines.map((r: any) => ({
                         description: r.description,
@@ -114,6 +115,9 @@ const Frame1019 = () => {
                     }
                     savedRoutines = savedRoutines.map((r: any) => ({ ...r, checked: false }));
                     
+                    // 🌟 자정이 지나 날짜가 바뀌었으므로 데일리 플래너도 깨끗한 빈 가방{}으로 리셋해서 새로 저장합니다!
+                    savedPlanner = {}; 
+                    
                     await saveRoutineData({
                         lastDate: todayKST,
                         routines: savedRoutines,
@@ -124,7 +128,9 @@ const Frame1019 = () => {
 
                 setRoutineList(savedRoutines);
                 setHistoryData(savedHistory);
-                setReminderInput(savedPlanner); 
+                
+                // 🌟 [핵심 해결 자산] 서버에서 꺼내온 16칸짜리 데일리 플래너 가방을 준비된 상자에 쏙 집어넣습니다!
+                setSavedPlannerData(savedPlanner); 
             }
             setIsLoading(false);
         };
@@ -181,6 +187,17 @@ const Frame1019 = () => {
             routines: updatedList,
             history: historyData,
             daily_planner: reminderInput
+        });
+    };
+
+    const handlePlannerUpdate = async (plannerSnapshot: any) => {
+        setSavedPlannerData(plannerSnapshot); // 우리 화면의 상자도 최신화
+
+        await saveRoutineData({
+            lastDate: getKSTDateString(),
+            routines: routineList, // 루틴(체크리스트) 유지
+            history: historyData,  // 잔디밭 기록 유지
+            daily_planner: plannerSnapshot // 🌟 자식이 보낸 16칸짜리 최신 패키지를 통째로 저장!
         });
     };
     
@@ -370,7 +387,8 @@ const Frame1019 = () => {
                     yearlyStatusMap={yearlyStatusMap}
                     selectedTrackerRoutine={selectedTrackerRoutine}
                     holidays={holidays}
-                    
+                    initialPlannerData={savedPlannerData} 
+                    saveDailyPlannerToServer={handlePlannerUpdate}
                     slot_92_5778={<div id="12_681" className="Pixso-vector-12_681"></div>}
                     slot_92_5772={<div id="12_674" className="Pixso-vector-12_674"></div>}
                     slot_92_5762={<div id="12_663" className="Pixso-vector-12_663"></div>}
