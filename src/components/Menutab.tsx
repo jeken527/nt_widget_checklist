@@ -1889,7 +1889,7 @@ const Menutab = (props: MenutabProps) => {
                                     flex: 1, 
                                     height: '1px', 
                                     margin: '0 8px', 
-                                    backgroundImage: 'url(/src/assets/images/Line2.svg)',
+                                    backgroundImage: 'url(/src/assets/images/Line20.svg)',
                                     backgroundSize: '100% 100%',
                                     backgroundRepeat: 'no-repeat',
                                     flexShrink: 1
