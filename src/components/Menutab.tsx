@@ -1958,7 +1958,6 @@ const Menutab = (props: MenutabProps) => {
                                         <Checkbox checkbox_state={routine.checked ? "checked" : "default"} />
                                 </div>
                             </div>
-                        ))}
                     </div>
                                                     <div
                                                         id="92_5777"
