@@ -1851,7 +1851,7 @@ const Menutab = (props: MenutabProps) => {
                                 display: 'flex', 
                                 alignItems: 'center',
 								gap: "10px",
-                                width: '360px',
+                                width: '380px',
                                 minHeight: '22px',
                                 height: '20px',
                                 flexShrink: 0
@@ -1892,7 +1892,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '2px #000000',
+                                    borderBottom: '1px #000000',
                                     margin: '0 8px', 
                                     transform: 'translateY(-2px)'
                                 }}></div>
