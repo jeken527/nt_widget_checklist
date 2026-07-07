@@ -1857,7 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (얄쌍한 '1'도 완벽하게 정중앙에 오도록 수정) */}
-                                <p style={{ width: '45px', height: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '46px', height: '20px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1894,12 +1894,12 @@ const Menutab = (props: MenutabProps) => {
                                     flex: 1, 
                                     height: '1px', // 👈 선의 두께를 여기서 조절하세요! (1px, 1.5px, 2px 등)
                                     backgroundColor: '#000000',
-                                    margin: '0 2px' // 좌우 글자와의 간격
+                                    margin: '0 1px' // 좌우 글자와의 간격
                                 }}></div>
 
                                 {/* [4] REP (가로/세로 완벽 중앙 정렬 장착) */}
                                 <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, padding: 0,
-                                    justifyContent: 'flex-start', alignItems: 'center', textAlign: 'left',flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                    justifyContent: 'flex-start', alignItems: 'center', textAlign: 'center',flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
