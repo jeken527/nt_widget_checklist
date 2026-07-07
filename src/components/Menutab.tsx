@@ -3987,7 +3987,6 @@ const Menutab = (props: MenutabProps) => {
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "center",
-                            gap: "5px",
                             padding: "0",
                             margin: "0",
                             boxSizing: "border-box"
@@ -4023,7 +4022,7 @@ const Menutab = (props: MenutabProps) => {
                                         fontSize: "10px", 
                                         fontWeight: "bold",
                                         fontFamily: "'Retro Gaming-Regular', sans-serif",
-                                        marginBottom: "4px",
+                                        marginBottom: "2px",
                                         color: "#333",
                                         textAlign: "center"
                                     }}>
