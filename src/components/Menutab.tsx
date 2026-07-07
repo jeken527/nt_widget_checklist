@@ -3991,7 +3991,7 @@ const Menutab = (props: MenutabProps) => {
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "center",
-                            gap: "5px",
+                            gap: "2px",
                             padding: "0",
                             margin: "0",
                             boxSizing: "border-box"
