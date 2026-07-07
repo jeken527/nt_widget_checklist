@@ -1849,7 +1849,7 @@ const Menutab = (props: MenutabProps) => {
 						{routineList && routineList.filter((r) => !r.hidden).sort((a, b) => Number(a.priority) - Number(b.priority)) .map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
-                                alignItems: 'flex-start',
+                                alignItems: 'center',
 								gap: "10px",
                                 width: '370px',
                                 minHeight: '22px',
@@ -1857,8 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0, paddingLeft: '2px',
-										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '40px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1875,7 +1874,8 @@ const Menutab = (props: MenutabProps) => {
                                         flexShrink: 0, 
                                         color: '#000000', 
                                         cursor: 'pointer',
-                                        fontSize: '14px'
+                                        fontSize: '14px',
+										whiteSpace: 'nowrap'
                                     }}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
                                     onContextMenu={(e) => {
@@ -1895,8 +1895,8 @@ const Menutab = (props: MenutabProps) => {
                                     className="Pixso-vector-92_8539"
                                     style={{ 
                                         flex: 1,
-                                        height: '1px',
-                                        margin: '0',
+                                        height: '0',
+                                        margin: '0 8px',
                                         flexShrink: 1,
                                         backgroundPosition: 'center',
                                         backgroundRepeat: 'repeat-x' // 선이 가로로 끊기지 않고 쭈욱 이어지도록 설정
@@ -1904,7 +1904,7 @@ const Menutab = (props: MenutabProps) => {
                                 ></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '50px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
+                                <p style={{ width: '40px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
 										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
@@ -1912,11 +1912,11 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '50px', 
+                                        width: '40px', 
                                         height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'flex-start', 
-                                        alignItems: 'flex-start', 
+                                        alignItems: 'center', 
                                         margin: 0, 
                                         paddingLeft: '12px',
                                         flexShrink: 0, 
