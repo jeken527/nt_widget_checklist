@@ -735,24 +735,49 @@ interface MenutabProps {
     slot_9_60?: React.ReactNode;
     slot_9_62?: React.ReactNode;
 }
+
+const LOCAL_KEY = "my_daily_planner_pocket";
+
+const getTodayKST = () => {
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    return new Date(utc + (9 * 3600000)).toISOString().split("T")[0]; // YYYY-MM-DD
+};
+
+const getInitialPlannerData = () => {
+    const saved = localStorage.getItem(LOCAL_KEY);
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        // 만약 수첩에 적힌 날짜가 '오늘'이라면 썼던 내용을 그대로 돌려줍니다.
+        if (parsed.date === getTodayKST()) {
+            return parsed.data;
+        }
+    }
+    // 수첩이 비어있거나 '어제' 날짜라면, 깨끗하게 포맷해 버립니다! (자정 리셋 효과)
+    return null; 
+};
+
+// 화면이 그려지기 전, 개인 수첩 데이터를 한 번 꺼내옵니다.
+const initialData = getInitialPlannerData();
+
 const Menutab = (props: MenutabProps) => {
 	const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
-    const [planRoutine1, setPlanRoutine1] = useState("");
-    const [planRoutine2, setPlanRoutine2] = useState("");
-    const [planRoutine3, setPlanRoutine3] = useState("");
-    const [planRoutine4, setPlanRoutine4] = useState("");
-    const [planRoutine5, setPlanRoutine5] = useState("");
-    const [planRoutine6, setPlanRoutine6] = useState("");
-    const [planRoutine7, setPlanRoutine7] = useState("");
-    const [planRoutine8, setPlanRoutine8] = useState("");
-    const [planRoutine9, setPlanRoutine9] = useState("");
-    const [planRoutine10, setPlanRoutine10] = useState("");
-    const [planRoutine11, setPlanRoutine11] = useState("");
-    const [planRoutine12, setPlanRoutine12] = useState("");
-    const [planRoutine13, setPlanRoutine13] = useState("");
-    const [planRoutine14, setPlanRoutine14] = useState("");
-    const [planRoutine15, setPlanRoutine15] = useState("");
-    const [planRoutine16, setPlanRoutine16] = useState("");
+    const [planRoutine1, setPlanRoutine1] = useState(initialData?.p7?.text || "");
+    const [planRoutine2, setPlanRoutine2] = useState(initialData?.p8?.text || "");
+    const [planRoutine3, setPlanRoutine3] = useState(initialData?.p9?.text || "");
+    const [planRoutine4, setPlanRoutine4] = useState(initialData?.p10?.text || "");
+    const [planRoutine5, setPlanRoutine5] = useState(initialData?.p11?.text || "");
+    const [planRoutine6, setPlanRoutine6] = useState(initialData?.p12?.text || "");
+    const [planRoutine7, setPlanRoutine7] = useState(initialData?.p13?.text || "");
+    const [planRoutine8, setPlanRoutine8] = useState(initialData?.p14?.text || "");
+    const [planRoutine9, setPlanRoutine9] = useState(initialData?.p15?.text || "");
+    const [planRoutine10, setPlanRoutine10] = useState(initialData?.p16?.text || "");
+    const [planRoutine11, setPlanRoutine11] = useState(initialData?.p17?.text || "");
+    const [planRoutine12, setPlanRoutine12] = useState(initialData?.p18?.text || "");
+    const [planRoutine13, setPlanRoutine13] = useState(initialData?.p19?.text || "");
+    const [planRoutine14, setPlanRoutine14] = useState(initialData?.p20?.text || "");
+    const [planRoutine15, setPlanRoutine15] = useState(initialData?.p21?.text || "");
+    const [planRoutine16, setPlanRoutine16] = useState(initialData?.p22?.text || "");
 	const today = new Date();
 	const currentDate = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
     // 🌟 [수정된 엔진] Pure 컴포넌트 조건부 상태 매핑 버전
@@ -1525,53 +1550,37 @@ const Menutab = (props: MenutabProps) => {
     const [insert_button_state_92_5800, setInsert_button_state_92_5800] =
         useState("default");
     const [transitionConfig92_5800, setTransitionConfig92_5800] = useState({});
-    const [checkbox_state_92_8543, setCheckbox_state_92_8543] =
-        useState("default");
+    const [checkbox_state_92_8543, setCheckbox_state_92_8543] = useState(initialData?.p7?.checked || "default");
     const [transitionConfig92_8543, setTransitionConfig92_8543] = useState({});
-    const [checkbox_state_92_8550, setCheckbox_state_92_8550] =
-        useState("default");
+    const [checkbox_state_92_8550, setCheckbox_state_92_8550] = useState(initialData?.p8?.checked || "default");
     const [transitionConfig92_8550, setTransitionConfig92_8550] = useState({});
-    const [checkbox_state_92_8557, setCheckbox_state_92_8557] =
-        useState("default");
+    const [checkbox_state_92_8557, setCheckbox_state_92_8557] = useState(initialData?.p9?.checked || "default");
     const [transitionConfig92_8557, setTransitionConfig92_8557] = useState({});
-    const [checkbox_state_92_8564, setCheckbox_state_92_8564] =
-        useState("default");
+    const [checkbox_state_92_8564, setCheckbox_state_92_8564] = useState(initialData?.p10?.checked || "default");
     const [transitionConfig92_8564, setTransitionConfig92_8564] = useState({});
-    const [checkbox_state_92_8571, setCheckbox_state_92_8571] =
-        useState("default");
+    const [checkbox_state_92_8571, setCheckbox_state_92_8571] = useState(initialData?.p11?.checked || "default");
     const [transitionConfig92_8571, setTransitionConfig92_8571] = useState({});
-    const [checkbox_state_92_8578, setCheckbox_state_92_8578] =
-        useState("default");
+    const [checkbox_state_92_8578, setCheckbox_state_92_8578] = useState(initialData?.p12?.checked || "default");
     const [transitionConfig92_8578, setTransitionConfig92_8578] = useState({});
-    const [checkbox_state_92_8585, setCheckbox_state_92_8585] =
-        useState("default");
+    const [checkbox_state_92_8585, setCheckbox_state_92_8585] = useState(initialData?.p13?.checked || "default");
     const [transitionConfig92_8585, setTransitionConfig92_8585] = useState({});
-    const [checkbox_state_92_8592, setCheckbox_state_92_8592] =
-        useState("default");
+    const [checkbox_state_92_8592, setCheckbox_state_92_8592] = useState(initialData?.p14?.checked || "default");
     const [transitionConfig92_8592, setTransitionConfig92_8592] = useState({});
-    const [checkbox_state_92_8599, setCheckbox_state_92_8599] =
-        useState("default");
+    const [checkbox_state_92_8599, setCheckbox_state_92_8599] = useState(initialData?.p15?.checked || "default");
     const [transitionConfig92_8599, setTransitionConfig92_8599] = useState({});
-    const [checkbox_state_92_8606, setCheckbox_state_92_8606] =
-        useState("default");
+    const [checkbox_state_92_8606, setCheckbox_state_92_8606] = useState(initialData?.p16?.checked || "default");
     const [transitionConfig92_8606, setTransitionConfig92_8606] = useState({});
-    const [checkbox_state_92_8613, setCheckbox_state_92_8613] =
-        useState("default");
+    const [checkbox_state_92_8613, setCheckbox_state_92_8613] = useState(initialData?.p17?.checked || "default");
     const [transitionConfig92_8613, setTransitionConfig92_8613] = useState({});
-    const [checkbox_state_92_8620, setCheckbox_state_92_8620] =
-        useState("default");
+    const [checkbox_state_92_8620, setCheckbox_state_92_8620] = useState(initialData?.p18?.checked || "default");
     const [transitionConfig92_8620, setTransitionConfig92_8620] = useState({});
-    const [checkbox_state_92_8627, setCheckbox_state_92_8627] =
-        useState("default");
+    const [checkbox_state_92_8627, setCheckbox_state_92_8627] = useState(initialData?.p19?.checked || "default");
     const [transitionConfig92_8627, setTransitionConfig92_8627] = useState({});
-    const [checkbox_state_92_8634, setCheckbox_state_92_8634] =
-        useState("default");
+    const [checkbox_state_92_8634, setCheckbox_state_92_8634] = useState(initialData?.p20?.checked || "default");
     const [transitionConfig92_8634, setTransitionConfig92_8634] = useState({});
-    const [checkbox_state_92_8641, setCheckbox_state_92_8641] =
-        useState("default");
+    const [checkbox_state_92_8641, setCheckbox_state_92_8641] = useState(initialData?.p21?.checked || "default");
     const [transitionConfig92_8641, setTransitionConfig92_8641] = useState({});
-    const [checkbox_state_92_8648, setCheckbox_state_92_8648] =
-        useState("default");
+    const [checkbox_state_92_8648, setCheckbox_state_92_8648] = useState(initialData?.p22?.checked || "default");
     const [transitionConfig92_8648, setTransitionConfig92_8648] = useState({});
     const [search_button_state_92_7329, setSearch_button_state_92_7329] =
         useState("default");
@@ -1636,6 +1645,36 @@ const Menutab = (props: MenutabProps) => {
     const click_92_8648 = () => { setCheckbox_state_92_8648(prev => prev === "checked" ? "default" : "checked"); };
     const mouseover_92_7329 = () => { setSearch_button_state_92_7329("checked"); };
 
+	useEffect(() => {
+        const currentData = {
+            date: getTodayKST(), // 오늘 날짜 도장 쾅!
+            data: {
+                p7:  { text: planRoutine1,  checked: checkbox_state_92_8543 },
+                p8:  { text: planRoutine2,  checked: checkbox_state_92_8550 },
+                p9:  { text: planRoutine3,  checked: checkbox_state_92_8557 },
+                p10: { text: planRoutine4,  checked: checkbox_state_92_8564 },
+                p11: { text: planRoutine5,  checked: checkbox_state_92_8571 },
+                p12: { text: planRoutine6,  checked: checkbox_state_92_8578 },
+                p13: { text: planRoutine7,  checked: checkbox_state_92_8585 },
+                p14: { text: planRoutine8,  checked: checkbox_state_92_8592 },
+                p15: { text: planRoutine9,  checked: checkbox_state_92_8599 },
+                p16: { text: planRoutine10, checked: checkbox_state_92_8606 },
+                p17: { text: planRoutine11, checked: checkbox_state_92_8613 },
+                p18: { text: planRoutine12, checked: checkbox_state_92_8620 },
+                p19: { text: planRoutine13, checked: checkbox_state_92_8627 },
+                p20: { text: planRoutine14, checked: checkbox_state_92_8634 },
+                p21: { text: planRoutine15, checked: checkbox_state_92_8641 },
+                p22: { text: planRoutine16, checked: checkbox_state_92_8648 },
+            }
+        };
+        // 변경 사항을 브라우저 전용 로컬 수첩에 몰래 끼워넣습니다. (JSONBin 통신 완전 제로!)
+        localStorage.setItem(LOCAL_KEY, JSON.stringify(currentData));
+    }, [
+        // 감시 대상 목록: 이 중 하나라도 변하면 바로 수첩 업데이트!
+        planRoutine1, planRoutine2, planRoutine3, planRoutine4, planRoutine5, planRoutine6, planRoutine7, planRoutine8, planRoutine9, planRoutine10, planRoutine11, planRoutine12, planRoutine13, planRoutine14, planRoutine15, planRoutine16,
+        checkbox_state_92_8543, checkbox_state_92_8550, checkbox_state_92_8557, checkbox_state_92_8564, checkbox_state_92_8571, checkbox_state_92_8578, checkbox_state_92_8585, checkbox_state_92_8592, checkbox_state_92_8599, checkbox_state_92_8606, checkbox_state_92_8613, checkbox_state_92_8620, checkbox_state_92_8627, checkbox_state_92_8634, checkbox_state_92_8641, checkbox_state_92_8648
+    ]);
+	
     return (
         <div className={`component-9_66 ${className}`} id={id}>
             <div 
