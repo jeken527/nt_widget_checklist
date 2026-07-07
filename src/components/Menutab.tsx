@@ -1857,7 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '50px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, padding: '2px', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '45px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1892,13 +1892,13 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '1.5px solid #000000',
+                                    borderBottom: '1px solid #000000',
                                     margin: '0 8px', 
                                     transform: 'translateY(-2px)'
                                 }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '30px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
+                                <p style={{ width: '45px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
 										   textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
@@ -1906,7 +1906,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '40px', 
+                                        width: '30px', 
                                         height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'flex-start', 
