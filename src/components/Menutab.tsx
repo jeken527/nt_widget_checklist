@@ -1895,8 +1895,8 @@ const Menutab = (props: MenutabProps) => {
                                     className="Pixso-vector-92_8539"
                                     style={{ 
                                         flex: 1,
-                                        height: '10px',      // 데일리 플래너와 동일한 높이 지정
-                                        margin: '0',    // 좌우 글자들과의 최소 여백
+                                        height: '0',
+                                        margin: '0',
                                         flexShrink: 1,
                                         backgroundPosition: 'center',
                                         backgroundRepeat: 'repeat-x' // 선이 가로로 끊기지 않고 쭈욱 이어지도록 설정
