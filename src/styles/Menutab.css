@@ -3033,7 +3033,7 @@ mix-blend-mode: normal;
 .frame-content-92_8537 {
         display: flex;
 flex-direction: row;
-gap: 15px;
+gap: 10px;
 align-items: center;
 width: 100%;
 height: 100%;
@@ -3104,7 +3104,7 @@ flex-shrink: 0;
 mix-blend-mode: normal;
       }
 .Pixso-frame-92_8542 {
-        width: 50px;
+        width:65px;
 height: 20px;
 position: relative;
 flex-shrink: 0;
