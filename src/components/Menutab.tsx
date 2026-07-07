@@ -1849,9 +1849,9 @@ const Menutab = (props: MenutabProps) => {
 						{routineList && routineList.filter((r) => !r.hidden).sort((a, b) => Number(a.priority) - Number(b.priority)) .map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
-                                alignItems: 'center',
+                                alignItems: 'flex-start',
 								gap: "10px",
-                                width: '360px',
+                                width: '350px',
                                 minHeight: '22px',
                                 height: '20px',
                                 flexShrink: 0
@@ -1892,13 +1892,13 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '2px solid #000000',
-                                    margin: '0 2px', 
+                                    borderBottom: '1.2px solid #000000',
+                                    margin: 0, 
                                     transform: 'translateY(-2px)'
                                 }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '60px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
+                                <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
 										   justifyContent: 'center', alignItems: 'flex-start', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
@@ -1906,7 +1906,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '30px', 
+                                        width: '40px', 
                                         height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'flex-start', 
