@@ -1890,11 +1890,11 @@ const Menutab = (props: MenutabProps) => {
                                 </p>
 
                                 {/* [3] Line 2 */}
-                                <div style={{ 
+                               <div style={{ 
                                     flex: 1, 
-                                    height: '1px', // 👈 선의 두께를 여기서 조절하세요! (1px, 1.5px, 2px 등)
-                                    backgroundColor: '#000000',
-                                    margin: '0 1px' // 좌우 글자와의 간격
+                                    margin: '0 1px',
+                                    height: 0,
+                                    borderBottom: '1px solid #000000'
                                 }}></div>
 
                                 {/* [4] REP (가로/세로 완벽 중앙 정렬 장착) */}
