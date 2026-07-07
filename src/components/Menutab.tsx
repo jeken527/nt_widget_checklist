@@ -1846,28 +1846,28 @@ const Menutab = (props: MenutabProps) => {
                             boxSizing: "border-box"
                         }}
                     >
-						{routineList && routineList.filter((r) => !r.hidden).sort((a, b) => Number(a.priority) - Number(b.priority)) .map((routine) => (
+						{routineList && routineList.filter((r) => !r.hidden).sort((a, b) => Number(a.priority) - Number(b.priority)).map((routine) => (
                             <div key={routine.id} className="routine-list-item" style={{ 
                                 display: 'flex', 
-                                alignItems: 'flex-start',
-								gap: "10px",
-                                width: '350px',
+                                alignItems: 'center',
+                                gap: "10px",
+                                width: '360px',
                                 minHeight: '22px',
                                 height: '20px',
                                 flexShrink: 0
                             }}>
-                                {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '42px', height: '20px', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', textAlign:'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                {/* [1] PRI (얄쌍한 '1'도 완벽하게 정중앙에 오도록 수정) */}
+                                <p style={{ width: '45px', height: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
-                                {/* [2] DESCRB (세로 중앙 정렬 장착) */}
+                                {/* [2] DESCRB */}
                                 <p 
                                     style={{ 
-                                        width: '130px', 
+                                        width: '140px', 
                                         height: '20px',
                                         display: 'flex',
-                                        alignItems: 'flex-start',
+                                        alignItems: 'center',
                                         margin: 0, 
                                         paddingLeft: '2px', 
                                         textAlign: 'left', 
@@ -1875,7 +1875,7 @@ const Menutab = (props: MenutabProps) => {
                                         color: '#000000', 
                                         cursor: 'pointer',
                                         fontSize: '14px',
-										whiteSpace: 'nowrap'
+                                        whiteSpace: 'nowrap'
                                     }}
                                     title="우클릭: 숨기기 (기록 유지) / 좌 더블클릭: 영구 삭제"
                                     onContextMenu={(e) => {
@@ -1892,27 +1892,27 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '1.2px solid #000000',
-                                    margin: '0 8px', 
-                                    transform: 'translateY(-2px)'
+                                    height: '1.5px', // 👈 선의 두께를 여기서 조절하세요! (1px, 1.5px, 2px 등)
+                                    backgroundColor: '#000000',
+                                    margin: '0 8px' // 좌우 글자와의 간격
                                 }}></div>
 
-                                {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '60px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
-										   justifyContent: 'center', alignItems: 'flex-start', textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                {/* [4] REP (가로/세로 완벽 중앙 정렬 장착) */}
+                                <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, padding: 0,
+                                    justifyContent: 'center', alignItems: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
-                                {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
+                                {/* [5] Checkbox (오타 수정 및 완벽 중앙 정렬) */}
                                 <div 
                                     style={{ 
-                                        width: '35px', 
+                                        width: '30px', 
                                         height: '20px', 
                                         display: 'flex', 
-                                        justifyContent: 'felx-start', 
+                                        justifyContent: 'center', 
                                         alignItems: 'center', 
-                                        marginBottom: '2px', 
-                                        paddingLeft: '12px',
+                                        margin: 0,
+                                        padding: 0,
                                         flexShrink: 0, 
                                         cursor: 'pointer' 
                                     }}
