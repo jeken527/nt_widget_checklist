@@ -1895,7 +1895,7 @@ const Menutab = (props: MenutabProps) => {
                                     className="Pixso-vector-92_8539"
                                     style={{ 
                                         flex: 1,
-                                        height: '0',
+                                        height: '1px',
                                         margin: '0',
                                         flexShrink: 1,
                                         backgroundPosition: 'center',
