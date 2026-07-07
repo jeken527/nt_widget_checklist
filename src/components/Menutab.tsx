@@ -1864,7 +1864,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [2] DESCRB (세로 중앙 정렬 장착) */}
                                 <p 
                                     style={{ 
-                                        width: '130px', 
+                                        width: '140px', 
                                         height: '20px',
                                         display: 'flex',
                                         alignItems: 'flex-start',
@@ -1892,7 +1892,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '1.2px solid #000000',
+                                    borderBottom: 2px solid #000000',
                                     margin: '0 8px', 
                                     transform: 'translateY(-2px)'
                                 }}></div>
@@ -1906,7 +1906,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '40px', 
+                                        width: '30px', 
                                         height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'felx-start', 
