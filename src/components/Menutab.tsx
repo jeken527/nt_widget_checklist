@@ -1857,7 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '48px', height: '20px', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', textAlign:'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '48px', height: '20px', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', textAlign:'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1892,14 +1892,14 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: '1px solid #000000',
-                                    margin: '0 2px', 
+                                    borderBottom: '1.2px solid #000000',
+                                    margin: '0 10px', 
                                     transform: 'translateY(-2px)'
                                 }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
                                 <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
-										   justifyContent: 'center', alignItems: 'flex-start', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+										   justifyContent: 'center', alignItems: 'flex-start', textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
