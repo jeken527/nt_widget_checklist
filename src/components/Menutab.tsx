@@ -1899,7 +1899,7 @@ const Menutab = (props: MenutabProps) => {
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
                                 <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
-										   justifyContent: 'flex-start', alignItems: 'flex-start', textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+										   justifyContent: 'center', alignItems: 'flex-start', textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
@@ -1909,8 +1909,8 @@ const Menutab = (props: MenutabProps) => {
                                         width: '40px', 
                                         height: '20px', 
                                         display: 'flex', 
-                                        justifyContent: 'center', 
-                                        alignItems: 'flex-start', 
+                                        justifyContent: 'felx-start', 
+                                        alignItems: 'center', 
                                         marginBottom: '2px', 
                                         paddingLeft: '12px',
                                         flexShrink: 0, 
