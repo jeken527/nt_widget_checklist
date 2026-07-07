@@ -3702,7 +3702,7 @@ const Menutab = (props: MenutabProps) => {
                     </div>
                 )}
                {menu_state === "tracker" && (
-                    <div id="9_63" className="Pixso-symbol-9_63" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+                    <div id="9_63" className="Pixso-symbol-9_63" style={{ position: "absolute", top: 0, left: 0, transform: "none", margin: 0 }}>
                         <div id="9_54" className="stroke-wrapper-9_54">
                             <div className="Pixso-frame-9_54">
                                 <div className="frame-content-9_54">
@@ -3956,6 +3956,11 @@ const Menutab = (props: MenutabProps) => {
                                             <div
                                                 id="92_7340"
                                                 className="Pixso-frame-92_7340"
+												style={{
+                                                    width: '100%',     // 선이 가로로 꽉 차게
+                                                    marginTop: '4px', // 윗동네(AVG.RATE)와 16px 떨어지기
+                                                    marginBottom: '4px' // 아랫동네(캘린더)와 16px 떨어지기
+                                                }}
                                             >
                                                 <div className="frame-content-92_7340">
                                                     <div
