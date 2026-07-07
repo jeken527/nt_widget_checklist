@@ -1851,13 +1851,13 @@ const Menutab = (props: MenutabProps) => {
                                 display: 'flex', 
                                 alignItems: 'center',
 								gap: "10px",
-                                width: '370px',
+                                width: '365px',
                                 minHeight: '22px',
                                 height: '20px',
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '40px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, paddingLeft: '2px', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1890,22 +1890,16 @@ const Menutab = (props: MenutabProps) => {
                                 </p>
 
                                 {/* [3] Line 2 */}
-                                <div 
-                                    id="92_8539_checklist"
-                                    className="Pixso-vector-92_8539"
-                                    style={{ 
-                                        flex: 1,
-                                        height: '0',
-                                        margin: '0 8px',
-                                        flexShrink: 1,
-                                        backgroundPosition: 'center',
-                                        backgroundRepeat: 'repeat-x' // 선이 가로로 끊기지 않고 쭈욱 이어지도록 설정
-                                    }}
-                                ></div>
+                                <div style={{ 
+                                    flex: 1, 
+                                    borderBottom: '2px dotted #000000',
+                                    margin: '0 8px', 
+                                    transform: 'translateY(-2px)'
+                                }}></div>
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '40px', height: '20px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', margin: 0, paddingLeft: '2px',
-										   textAlign: 'left', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '50px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
+										   textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
