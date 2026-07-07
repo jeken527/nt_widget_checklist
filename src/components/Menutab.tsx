@@ -1857,7 +1857,7 @@ const Menutab = (props: MenutabProps) => {
                                 flexShrink: 0
                             }}>
                                 {/* [1] PRI (세로 중앙 정렬 장착) */}
-                                <p style={{ width: '45px', height: '20px', display: 'flex', textAlign: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+                                <p style={{ width: '45px', height: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0, flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.priority}
                                 </p>
 
@@ -1899,18 +1899,18 @@ const Menutab = (props: MenutabProps) => {
 
                                 {/* [4] REP (세로 중앙 정렬 장착) */}
                                 <p style={{ width: '45px', height: '20px', display: 'flex', margin: 0, paddingLeft: '2px',
-										   textAlign: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
+										   justifyContent: 'center', alignItems: 'center', flexShrink: 0, color: '#000000', fontSize: '14px' }}>
                                     {routine.repeat}
                                 </p>
 
                                 {/* [5] Checkbox (💥 파괴범 padding: '20px' 제거, 높이를 18px로 완전 동기화!) */}
                                 <div 
                                     style={{ 
-                                        width: '30px', 
+                                        width: '40px', 
                                         height: '20px', 
                                         display: 'flex', 
                                         justifyContent: 'flex-start', 
-                                        alignItems: 'center', 
+                                        alignItems: 'flex-start', 
                                         marginBottom: '2px', 
                                         paddingLeft: '12px',
                                         flexShrink: 0, 
