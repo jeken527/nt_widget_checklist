@@ -1,3 +1,4 @@
+import React, { useState } from "react"; // 🌟 React와 useState 불러오기 추가
 import { OverlayManager } from "@/components/overlay";
 import Button3components from "@/components/Button3components";
 import Routinedataselect from "@/components/Routinedataselect";
@@ -14,11 +15,46 @@ const Frame63372 = (props: Frame63372Props) => {
     // 🌟 2. 부모가 준 데이터와 함수들을 안전하게 꺼내기
     const { onClose, filteredRoutines = [], onSelectRoutine } = props;
 
+    // 🌟 팝업창 이동(드래그)을 위한 위치 상태 및 함수 정의 시작
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        // 텍스트 드래그 방지 (마우스 잡았을 때 글씨가 파랗게 선택되는 현상 방지)
+        e.preventDefault(); 
+        
+        const startX = e.clientX - position.x;
+        const startY = e.clientY - position.y;
+
+        const handleMouseMove = (moveEvent: MouseEvent) => {
+            setPosition({
+                x: moveEvent.clientX - startX,
+                y: moveEvent.clientY - startY,
+            });
+        };
+
+        const handleMouseUp = () => {
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        };
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    };
+    // 🌟 팝업창 이동(드래그) 함수 끝
+
     // 🌟 3. 중복된 이름(description) 제거
     const uniqueDescriptions = Array.from(new Set(filteredRoutines.map(r => r.description)));
 
     return (
-        <div className="scroll-container">
+        // 🌟 전체 컨테이너에 현재 position 만큼 화면을 이동시키는 style(transform) 추가
+        <div 
+            className="scroll-container"
+            style={{ 
+                transform: `translate(${position.x}px, ${position.y}px)`, 
+                position: "relative", 
+                zIndex: 9999 // 팝업이 항상 최상단에 오도록 보장
+            }}
+        >
             <div id="63_372" className="stroke-wrapper-63_372">
                 <div className="Pixso-frame-63_372">
                     
@@ -30,8 +66,13 @@ const Frame63372 = (props: Frame63372Props) => {
 
                     <div className="frame-content-63_372">
                         
-                        {/* 🎯 상단 "SEARCH" 타이틀 및 닫기[X] 버튼 영역 */}
-                        <div id="63_373" className="Pixso-frame-63_373">
+                        {/* 🎯 상단 "SEARCH" 타이틀 및 닫기[X] 버튼 영역 (손잡이 역할) */}
+                        <div 
+                            id="63_373" 
+                            className="Pixso-frame-63_373"
+                            onMouseDown={handleMouseDown} // 🌟 마우스를 누르면 이동 시작!
+                            style={{ cursor: "move" }}    // 🌟 마우스를 올리면 이동 커서(방향표)로 변경
+                        >
                             <div className="frame-content-63_373">
                                 <p id="63_375" className="Pixso-paragraph-63_375">
                                     {"SEARCH"}
@@ -80,7 +121,7 @@ const Frame63372 = (props: Frame63372Props) => {
                                                     className="Pixso-instance-63_402"
                                                     routinedatastate="default"
                                                     slot_63_393={
-                                                        /* 🌟 오타 청소 완료: 오직 글자(desc)만 깨끗하게 출력되도록 수정 */
+                                                        /* 🌟 오타 청소 완료: 오직 글자(desc)만 깨끗하게 출력되도록 유지 */
                                                         <p className="Pixso-paragraph-12_516" style={{ margin: 0 }}>
                                                             {desc as string}
                                                         </p>
