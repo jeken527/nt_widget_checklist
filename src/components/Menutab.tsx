@@ -3982,7 +3982,7 @@ const Menutab = (props: MenutabProps) => {
                         className="body2-container"
                         style={{
                             width: "380px",
-                            height: "295px",
+                            height: "290px",
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
