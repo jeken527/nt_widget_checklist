@@ -3958,8 +3958,8 @@ const Menutab = (props: MenutabProps) => {
                                                 className="Pixso-frame-92_7340"
 												style={{
                                                     width: '100%',     // 선이 가로로 꽉 차게
-                                                    marginTop: '4px', // 윗동네(AVG.RATE)와 16px 떨어지기
-                                                    marginBottom: '4px' // 아랫동네(캘린더)와 16px 떨어지기
+                                                    marginTop: '8px', // 윗동네(AVG.RATE)와 16px 떨어지기
+                                                    marginBottom: '8px' // 아랫동네(캘린더)와 16px 떨어지기
                                                 }}
                                             >
                                                 <div className="frame-content-92_7340">
