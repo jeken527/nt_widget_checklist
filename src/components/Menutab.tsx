@@ -1841,8 +1841,8 @@ const Menutab = (props: MenutabProps) => {
                             justifyContent: "flex-start",
                             gap: "2px",            
                             overflowX: "hidden",   
-                            overflowY: "auto",     
-                            marginTop: "8px",      
+                            overflowY: "scroll",     
+                            marginTop: "5px",      
                             boxSizing: "border-box"
                         }}
                     >
