@@ -1,3 +1,4 @@
+import React, { useState } from "react"; // 🌟 React와 useState 불러오기 추가
 import { OverlayManager } from "@/components/overlay";
 import { withStopPropagation } from "@/utils/utils";
 import Button3components from "@/components/Button3components";
@@ -13,22 +14,62 @@ interface Frame6528Props {
 const Frame6528 = (props: Frame6528Props) => {
     const { routineList = [], onClose, onSelectDesc } = props;
     
-    // 🌟 똑같은 메모가 여러 개 뜨지 않도록 중복을 제거한 설명 목록을 만듭니다.
+    // 🌟 --- 팝업창 이동(드래그)을 위한 위치 상태 및 함수 시작 ---
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        // 텍스트 드래그 방지 (마우스 잡았을 때 글씨가 파랗게 선택되는 현상 방지)
+        e.preventDefault(); 
+        
+        const startX = e.clientX - position.x;
+        const startY = e.clientY - position.y;
+
+        const handleMouseMove = (moveEvent: MouseEvent) => {
+            setPosition({
+                x: moveEvent.clientX - startX,
+                y: moveEvent.clientY - startY,
+            });
+        };
+
+        const handleMouseUp = () => {
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        };
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    };
+    // 🌟 --- 팝업창 이동(드래그) 함수 끝 ---
+
+    // 똑같은 메모가 여러 개 뜨지 않도록 중복을 제거한 설명 목록을 만듭니다.
     const uniqueDescriptions = Array.from(new Set(routineList.map(r => r.description)));
 
     return (
-        <div className="scroll-container">
+        // 🌟 전체 컨테이너에 현재 position 만큼 화면을 이동시키는 style(transform) 추가
+        <div 
+            className="scroll-container"
+            style={{ 
+                transform: `translate(${position.x}px, ${position.y}px)`, 
+                position: "relative", 
+                zIndex: 9999 // 팝업이 항상 최상단에 오도록 보장
+            }}
+        >
             <div id="65_28" className="stroke-wrapper-65_28">
                 <div className="Pixso-frame-65_28">
-                    {/* 투명한 배경 클릭 시 팝업 닫기 (선택사항, 필요 없으면 div 지우셔도 됩니다) */}
+                    {/* 투명한 배경 클릭 시 팝업 닫기 */}
                     <div 
                         onClick={onClose} 
                         style={{ position: "absolute", top:0, left:0, width:"100%", height:"100%", zIndex: -1, cursor: "pointer" }}
                     ></div>
 
                     <div className="frame-content-65_28">
-                        {/* 🌟 팝업 상단 "LIST" 타이틀 및 닫기[X] 버튼 영역 (기존 디자인 유지) */}
-                        <div id="65_29" className="Pixso-frame-65_29">
+                        {/* 🌟 팝업 상단 "LIST" 타이틀 영역 (여기가 손잡이가 됩니다) */}
+                        <div 
+                            id="65_29" 
+                            className="Pixso-frame-65_29"
+                            onMouseDown={handleMouseDown} // 🌟 마우스를 누르면 이동 시작!
+                            style={{ cursor: "move" }}    // 🌟 마우스를 올리면 십자화살표(이동) 커서로 변경
+                        >
                             <div className="frame-content-65_29">
                                 <p id="65_31" className="Pixso-paragraph-65_31">
                                     {"LIST"}
@@ -36,7 +77,7 @@ const Frame6528 = (props: Frame6528Props) => {
                                 <Button3components
                                     id="65_32"
                                     className="Pixso-instance-65_32"
-                                    // 🌟 우리가 개조했던 부품에 맞춰서 "click" 이라는 이름으로 닫기 명령을 내립니다!
+                                    // 우리가 개조했던 부품에 맞춰서 "click" 이라는 이름으로 닫기 명령을 내립니다!
                                     click={() => {
                                         if (onClose) onClose();
                                     }}
@@ -44,16 +85,16 @@ const Frame6528 = (props: Frame6528Props) => {
                             </div>
                         </div>
 
-                        {/* 🌟 리스트 데이터 출력 영역 (기존 더미는 다 지우고 동적으로 생성) */}
+                        {/* 리스트 데이터 출력 영역 */}
                         <div id="65_34" className="stroke-wrapper-65_34">
                             <div className="Pixso-frame-65_34">
                                 <div className="shadow-blend-unknown-0"></div>
                                 <div className="frame-content-65_34" style={{ 
                                     display: "flex", 
                                     flexDirection: "column", 
-                                    gap: "4px", // 리스트 사이 간격
-                                    overflowY: "auto", // 스크롤바 생성
-                                    maxHeight: "150px", // 팝업이 너무 길어지지 않게 방어선 구축
+                                    gap: "4px", 
+                                    overflowY: "auto", 
+                                    maxHeight: "150px", 
                                     width: "100%"
                                 }}>
                                     
@@ -64,9 +105,8 @@ const Frame6528 = (props: Frame6528Props) => {
                                         </p>
                                     )}
 
-                                    {/* 🌟 우리가 쓴 진짜 데이터만 반복문으로 쫙 뽑아냅니다. */}
+                                    {/* 우리가 쓴 진짜 데이터만 반복문으로 쫙 뽑아냅니다. */}
                                     {uniqueDescriptions.map((desc, index) => (
-                                        // 기존 Routinedataselect 컴포넌트를 재활용하여 일관된 디자인 유지!
                                         <div 
                                             key={index}
                                             onClick={() => {
