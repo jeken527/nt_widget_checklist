@@ -3989,6 +3989,7 @@ const Menutab = (props: MenutabProps) => {
                             justifyContent: "center",
                             padding: "0",
                             margin: "0",
+							gap: "5px",
                             boxSizing: "border-box"
                         }}
                     >
@@ -4005,8 +4006,8 @@ const Menutab = (props: MenutabProps) => {
                                 /* 🌟 4개월씩 가로 4열 배치 */
                                 gridTemplateColumns: "repeat(4, 1fr)",
                                 /* 🌟 세로 3줄 배치 */
-                                gridTemplateRows: "repeat(3, 1fr)",
-                                gap: "5px 6px", 
+                                gridTemplateRows: "repeat(1fr 1fr auto)",
+                                gap: "10px 6px", 
                                 padding: "0",
                                 margin: "0",
                                 boxSizing: "border-box",
@@ -4022,7 +4023,7 @@ const Menutab = (props: MenutabProps) => {
                                         fontSize: "10px", 
                                         fontWeight: "bold",
                                         fontFamily: "'Retro Gaming-Regular', sans-serif",
-                                        marginBottom: "2px",
+                                        marginBottom: "4px",
                                         color: "#333",
                                         textAlign: "center"
                                     }}>
