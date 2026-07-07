@@ -3989,7 +3989,6 @@ const Menutab = (props: MenutabProps) => {
                             justifyContent: "center",
                             padding: "0",
                             margin: "0",
-							gap: "5px",
                             boxSizing: "border-box"
                         }}
                     >
@@ -4007,7 +4006,7 @@ const Menutab = (props: MenutabProps) => {
                                 gridTemplateColumns: "repeat(4, 1fr)",
                                 /* 🌟 세로 3줄 배치 */
                                 gridTemplateRows: "repeat(1fr 1fr auto)",
-                                gap: "10px 6px", 
+                                gap: "8px 6px", 
                                 padding: "0",
                                 margin: "0",
                                 boxSizing: "border-box",
