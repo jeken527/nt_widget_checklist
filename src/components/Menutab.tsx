@@ -3989,7 +3989,7 @@ const Menutab = (props: MenutabProps) => {
                             justifyContent: "center",
                             gap: "5px",
                             padding: "0",
-                            margin: "0",
+                            marginTop: "8px",
                             boxSizing: "border-box"
                         }}
                     >
