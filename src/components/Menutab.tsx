@@ -1892,7 +1892,7 @@ const Menutab = (props: MenutabProps) => {
                                 {/* [3] Line 2 */}
                                 <div style={{ 
                                     flex: 1, 
-                                    borderBottom: 2px solid #000000',
+                                    borderBottom: '2px solid #000000',
                                     margin: '0 8px', 
                                     transform: 'translateY(-2px)'
                                 }}></div>
