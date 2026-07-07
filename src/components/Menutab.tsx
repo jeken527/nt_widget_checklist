@@ -4006,7 +4006,7 @@ const Menutab = (props: MenutabProps) => {
                                 gridTemplateColumns: "repeat(4, 1fr)",
                                 /* 🌟 세로 3줄 배치 */
                                 gridTemplateRows: "repeat(3, 1fr)",
-                                gap: "3px 6px", 
+                                gap: "6px 3px", 
                                 padding: "0",
                                 margin: "0",
                                 boxSizing: "border-box",
