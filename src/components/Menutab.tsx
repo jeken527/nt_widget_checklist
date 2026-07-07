@@ -3956,10 +3956,6 @@ const Menutab = (props: MenutabProps) => {
                                             <div
                                                 id="92_7340"
                                                 className="Pixso-frame-92_7340"
-												style={{
-                                                    width: '100%',     // 선이 가로로 꽉 차게
-                                                    marginBottom: '10px' // 아랫동네(캘린더)와 16px 떨어지기
-                                                }}
                                             >
                                                 <div className="frame-content-92_7340">
                                                     <div
@@ -3991,7 +3987,6 @@ const Menutab = (props: MenutabProps) => {
                             flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "center",
-                            gap: "2px",
                             padding: "0",
                             margin: "0",
                             boxSizing: "border-box"
