@@ -42,38 +42,27 @@ const Frame6528 = (props: Frame6528Props) => {
     const uniqueDescriptions = Array.from(new Set(routineList.map(r => r.description)));
 
     return (
+        // 🌟 [수정 포인트] 최상단 드래그 컨테이너에 overflow: "hidden"을 심어서
+        // 하위 테두리 선(stroke-...)들이 네모 상자 밖으로 튀어나오면 즉시 잘라버리도록 감옥을 설치합니다!
         <div 
             className="scroll-container"
             style={{ 
-                position: "fixed", // 🌟 스크롤과 상관없이 화면 전체를 덮도록 고정
-                top: 0, 
-                left: 0, 
-                width: "100vw", 
-                height: "100vh", 
+                transform: `translate(${position.x}px, ${position.y}px)`, 
+                position: "relative", 
                 zIndex: 9999,
-                display: "flex",          // 🌟 가로/세로 중앙 정렬 스위치 ON
-                justifyContent: "center", // 🌟 가로 정중앙
-                alignItems: "center",     // 🌟 세로 정중앙
+                overflow: "hidden" // 🌟 화면 끝까지 늘어나던 레이저 선 원천 차단 스위치!
             }}
         >
-            {/* 🌟 투명한 배경 (고정): 클릭 시 팝업 닫기 (이제 드래그해도 배경은 안 움직입니다!) */}
-            <div 
-                onClick={onClose} 
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0, cursor: "pointer" }}
-            ></div>
-
-            {/* 🌟 2. 실제 팝업창 본체 (드래그 시 이 상자만 움직입니다!) */}
-            <div id="65_28" className="stroke-wrapper-65_28"
-                style={{
-                    transform: `translate(${position.x}px, ${position.y}px)`, // 🌟 마우스 이동 값(드래그)을 이쪽으로 옮겼습니다!
-                    position: "relative",
-                    zIndex: 1,
-                    overflow: "hidden" // 🌟 아까 설치한 레이저 선 튀어나감 방지 감옥도 상자 본체에 적용!
-                }}
-            >
+            <div id="65_28" className="stroke-wrapper-65_28">
                 <div className="Pixso-frame-65_28">
+                    {/* 투명한 배경 클릭 시 팝업 닫기 */}
+                    <div 
+                        onClick={onClose} 
+                        style={{ position: "absolute", top:0, left:0, width:"100%", height:"100%", zIndex: -1, cursor: "pointer" }}
+                    ></div>
+
                     <div className="frame-content-65_28">
-                        {/* 팝업 상단 "LIST" 타이틀 영역 (손잡이) */}
+                        {/* 팝업 상단 "LIST" 타이틀 영역 (여기가 손잡이가 됩니다) */}
                         <div 
                             id="65_29" 
                             className="Pixso-frame-65_29"
