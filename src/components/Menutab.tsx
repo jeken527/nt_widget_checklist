@@ -736,7 +736,12 @@ interface MenutabProps {
     slot_9_62?: React.ReactNode;
 }
 
-const LOCAL_KEY = "my_daily_planner_pocket";
+const getWidgetType = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('type') || 'work'; 
+};
+
+const LOCAL_KEY = `my_daily_planner_pocket_${getWidgetType()}`;
 
 const getTodayKST = () => {
     const now = new Date();
