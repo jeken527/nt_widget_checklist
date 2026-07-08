@@ -16,7 +16,7 @@ const Frame63357 = (props: Frame63357Props) => {
     const uniqueDescriptions = Array.from(new Set(filteredRoutines.map(r => r.description)));
 
     // 🌟 --- 팝업창 이동(드래그)을 위한 위치 상태 및 함수 시작 ---
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [position, setPosition] = useState({ x: 120, y: 200 });
 
     const handleMouseDown = (e: React.MouseEvent) => {
         // 텍스트 드래그 방지 (마우스 잡았을 때 글씨가 파랗게 선택되는 현상 방지)
