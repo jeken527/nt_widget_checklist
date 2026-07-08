@@ -36,8 +36,11 @@ display: flex;
 flex-shrink: 0;
       }
 .stroke-63_372 {
-        position: absolute;
-inset: 0px;
+position: absolute;
+top: 0;
+left: 0;
+width: 240px;
+height: 150px;
 border-radius: 0px 0px 0px 0px;
 pointer-events: none;
 border-width: 2px 1px 1px 2px;
