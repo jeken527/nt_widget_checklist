@@ -15,7 +15,7 @@ const Frame6528 = (props: Frame6528Props) => {
     const { routineList = [], onClose, onSelectDesc } = props;
     
     // --- 팝업창 이동(드래그)을 위한 위치 상태 및 함수 시작 ---
-    const [position, setPosition] = useState({ x: 100, y: 200 });
+    const [position, setPosition] = useState({ x: 120, y: 200 });
 
     const handleMouseDown = (e: React.MouseEvent) => {
         e.preventDefault(); 
